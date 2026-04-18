@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="一个可直接部署到 GitHub Pages 的个人网站模板，适合展示个人简介、项目经历和联系方式。"
+    />
+    <title>Toby Qian | Personal Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#home">Toby Qian</a>
+        <nav class="nav" aria-label="主导航">
+          <a href="#about">关于我</a>
+          <a href="#projects">项目</a>
+          <a href="#notes">近况</a>
+          <a href="#contact">联系</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换主题">
+          <span class="theme-toggle__dot"></span>
+          <span id="themeLabel">Night</span>
+        </button>
+      </header>
+
+      <main>
+        <section class="hero section" id="home">
+          <div class="hero__content">
+            <p class="eyebrow">PERSONAL WEBSITE / GITHUB PAGES READY</p>
+            <h1>
+              你好，我是
+              <span class="accent">Toby Qian</span>
+            </h1>
+            <p class="hero__lead">
+              这里是我的个人主页，用来展示我的想法、项目和正在探索的方向。
+              我希望把技术、设计和表达组合在一起，做出更清晰、更有温度的网页体验。
+            </p>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#projects">查看项目</a>
+              <a class="button button--ghost" href="#contact">联系我</a>
+            </div>
+            <div class="hero__status">
+              <span class="status-dot"></span>
+              <span id="typingText">This is Toby Qian's online space for projects, ideas, and experiments.</span>
+            </div>
+          </div>
+
+          <aside class="hero-card">
+            <div class="hero-card__badge">Now Building</div>
+            <h2>一个正在成长的个人网站</h2>
+            <p>
+              这里可以承载我的介绍、项目、简历入口和联系方式。后续如果需要，也可以继续扩展留言板、博客或更完整的交互功能。
+            </p>
+            <ul class="hero-card__list">
+              <li>GitHub Pages 直接部署</li>
+              <li>纯前端交互，打开即用</li>
+              <li>结构清晰，后续方便扩展</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section class="section about-grid" id="about">
+          <div>
+            <p class="section-label">ABOUT</p>
+            <h2>我在做什么</h2>
+            <p class="section-copy">
+              我正在搭建属于自己的线上空间，把个人介绍、项目展示和后续的内容更新整理到同一个地方。
+              这里既是对外展示的窗口，也会慢慢变成我持续记录和输出的站点。
+            </p>
+          </div>
+          <div class="info-panels">
+            <article class="info-card">
+              <h3>当前方向</h3>
+              <p>个人网站搭建、网页探索、内容表达</p>
+            </article>
+            <article class="info-card">
+              <h3>最近关注</h3>
+              <p>GitHub Pages、交互体验、个人品牌表达、AI 辅助创作</p>
+            </article>
+            <article class="info-card">
+              <h3>交流方式</h3>
+              <p>技术交流、项目合作、想法讨论、线上联系</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="projects">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">PROJECTS</p>
+              <h2>项目展示</h2>
+            </div>
+            <div class="filters" role="tablist" aria-label="项目筛选">
+              <button class="filter is-active" type="button" data-filter="all">全部</button>
+              <button class="filter" type="button" data-filter="web">Web</button>
+              <button class="filter" type="button" data-filter="design">Design</button>
+              <button class="filter" type="button" data-filter="tool">Tool</button>
+            </div>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card" data-category="web">
+              <p class="project-card__meta">Web Experience</p>
+              <h3>个人网站第一版</h3>
+              <p>
+                从零搭建的第一版个人主页，重点放在结构清晰、风格明确和后续方便扩展。
+              </p>
+              <a href="#" aria-label="查看项目详情">查看案例</a>
+            </article>
+
+            <article class="project-card" data-category="design">
+              <p class="project-card__meta">Design System</p>
+              <h3>页面视觉升级</h3>
+              <p>
+                持续打磨页面视觉和信息排布，让整体展示更自然，也更适合长期更新。
+              </p>
+              <a href="#" aria-label="查看项目详情">查看案例</a>
+            </article>
+
+            <article class="project-card" data-category="tool">
+              <p class="project-card__meta">Workflow Tool</p>
+              <h3>交互与内容实验</h3>
+              <p>
+                尝试把简单交互和内容组织结合起来，让网站不只是展示页，也能承接后续功能。
+              </p>
+              <a href="#" aria-label="查看项目详情">查看案例</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="section notes-section" id="notes">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">NOW</p>
+              <h2>最近在做的事</h2>
+            </div>
+          </div>
+          <div class="notes-grid">
+            <article class="note-card">
+              <span class="note-card__index">01</span>
+              <h3>先把网站搭起来</h3>
+              <p>先完成第一版个人站点，再逐步加入更多真正属于自己的内容。</p>
+            </article>
+            <article class="note-card">
+              <span class="note-card__index">02</span>
+              <h3>尝试更自然的交互</h3>
+              <p>用尽量轻的前端方式，做出更自然的浏览、点击和互动感受。</p>
+            </article>
+            <article class="note-card">
+              <span class="note-card__index">03</span>
+              <h3>给以后留扩展空间</h3>
+              <p>后续可以接留言板、博客、简历下载，甚至更完整的数据交互。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section contact-section" id="contact">
+          <div class="contact-copy">
+            <p class="section-label">CONTACT</p>
+            <h2>想聊项目、合作，或者只是打个招呼，都可以。</h2>
+            <p>
+              这个公开页面没有直接展示邮箱明文，避免被随手采集。你可以先通过 GitHub 联系我，或者点击按钮复制邮箱。
+            </p>
+            <div class="contact-links">
+              <a href="https://github.com/Ricardo0533" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+              <button class="copy-email" id="copyEmailBtn" type="button" data-email="q1509713692@gmail.com">
+                复制联系邮箱
+              </button>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <label>
+              你的名字
+              <input id="visitorName" name="visitorName" type="text" placeholder="怎么称呼你" />
+            </label>
+            <label>
+              想说的话
+              <textarea
+                id="visitorMessage"
+                name="visitorMessage"
+                rows="5"
+                placeholder="比如：我想和你聊聊一个项目合作。"
+              ></textarea>
+            </label>
+            <button class="button button--primary button--full" type="submit">发送一条前端互动消息</button>
+            <p class="form-response" id="formResponse" aria-live="polite"></p>
+          </form>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; <span id="year"></span> Toby Qian. Built for GitHub Pages.</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
