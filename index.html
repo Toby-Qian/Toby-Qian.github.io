@@ -1,209 +1,503 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="一个可直接部署到 GitHub Pages 的个人网站模板，适合展示个人简介、项目经历和联系方式。"
-    />
-    <title>Toby Qian | Personal Website</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="site-shell">
-      <header class="topbar">
-        <a class="brand" href="#home">Toby Qian</a>
-        <nav class="nav" aria-label="主导航">
-          <a href="#about">关于我</a>
-          <a href="#projects">项目</a>
-          <a href="#notes">近况</a>
-          <a href="#contact">联系</a>
-        </nav>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="切换主题">
-          <span class="theme-toggle__dot"></span>
-          <span id="themeLabel">Night</span>
-        </button>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toby Qian | Personal Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="personal-page.css" />
+</head>
+<body>
 
-      <main>
-        <section class="hero section" id="home">
-          <div class="hero__content">
-            <p class="eyebrow">PERSONAL WEBSITE / GITHUB PAGES READY</p>
-            <h1>
-              你好，我是
-              <span class="accent">Toby Qian</span>
-            </h1>
-            <p class="hero__lead">
-              这里是我的个人主页，用来展示我的想法、项目和正在探索的方向。
-              我希望把技术、设计和表达组合在一起，做出更清晰、更有温度的网页体验。
-            </p>
-            <div class="hero__actions">
-              <a class="button button--primary" href="#projects">查看项目</a>
-              <a class="button button--ghost" href="#contact">联系我</a>
-            </div>
-            <div class="hero__status">
-              <span class="status-dot"></span>
-              <span id="typingText">This is Toby Qian's online space for projects, ideas, and experiments.</span>
-            </div>
-          </div>
+  <!-- Grain / paper texture overlay -->
+  <div class="paper-grain" aria-hidden="true"></div>
+  <div class="paper-noise" aria-hidden="true"></div>
 
-          <aside class="hero-card">
-            <div class="hero-card__badge">Now Building</div>
-            <h2>一个正在成长的个人网站</h2>
-            <p>
-              这里可以承载我的介绍、项目、简历入口和联系方式。后续如果需要，也可以继续扩展留言板、博客或更完整的交互功能。
-            </p>
-            <ul class="hero-card__list">
-              <li>GitHub Pages 直接部署</li>
-              <li>纯前端交互，打开即用</li>
-              <li>结构清晰，后续方便扩展</li>
-            </ul>
-          </aside>
-        </section>
+  <!-- Cursor follower -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
 
-        <section class="section about-grid" id="about">
-          <div>
-            <p class="section-label">ABOUT</p>
-            <h2>我在做什么</h2>
-            <p class="section-copy">
-              我正在搭建属于自己的线上空间，把个人介绍、项目展示和后续的内容更新整理到同一个地方。
-              这里既是对外展示的窗口，也会慢慢变成我持续记录和输出的站点。
-            </p>
-          </div>
-          <div class="info-panels">
-            <article class="info-card">
-              <h3>当前方向</h3>
-              <p>个人网站搭建、网页探索、内容表达</p>
-            </article>
-            <article class="info-card">
-              <h3>最近关注</h3>
-              <p>GitHub Pages、交互体验、个人品牌表达、AI 辅助创作</p>
-            </article>
-            <article class="info-card">
-              <h3>交流方式</h3>
-              <p>技术交流、项目合作、想法讨论、线上联系</p>
-            </article>
-          </div>
-        </section>
+  <!-- Floating page furniture -->
+  <div class="page-corner page-corner--tl">
+    <span class="rot">EST. 2026 · ISSUE NO. 01 · PERSONAL PRESS</span>
+  </div>
+  <div class="page-corner page-corner--tr">
+    <span>TOBY / 001</span>
+  </div>
 
-        <section class="section" id="projects">
-          <div class="section-heading">
-            <div>
-              <p class="section-label">PROJECTS</p>
-              <h2>项目展示</h2>
-            </div>
-            <div class="filters" role="tablist" aria-label="项目筛选">
-              <button class="filter is-active" type="button" data-filter="all">全部</button>
-              <button class="filter" type="button" data-filter="web">Web</button>
-              <button class="filter" type="button" data-filter="design">Design</button>
-              <button class="filter" type="button" data-filter="tool">Tool</button>
-            </div>
-          </div>
+  <!-- Top bar -->
+  <header class="topbar">
+    <a class="brand" href="#home">
+      <span class="brand__mark">◉</span>
+      <span class="brand__name">Toby Qian</span>
+      <span class="brand__sub">/ personal press</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#about"><em>01</em>About</a>
+      <a href="#stack"><em>02</em>Stack</a>
+      <a href="#work"><em>03</em>Work</a>
+      <a href="#timeline"><em>04</em>Path</a>
+      <a href="#journal"><em>05</em>Journal</a>
+      <a href="#contact"><em>06</em>Contact</a>
+    </nav>
+    <button class="time-chip" id="timeChip" type="button">
+      <span class="time-chip__dot"></span>
+      <span id="timeText">—</span>
+    </button>
+  </header>
 
-          <div class="project-grid">
-            <article class="project-card" data-category="web">
-              <p class="project-card__meta">Web Experience</p>
-              <h3>个人网站第一版</h3>
-              <p>
-                从零搭建的第一版个人主页，重点放在结构清晰、风格明确和后续方便扩展。
-              </p>
-              <a href="#" aria-label="查看项目详情">查看案例</a>
-            </article>
+  <main class="sheet">
 
-            <article class="project-card" data-category="design">
-              <p class="project-card__meta">Design System</p>
-              <h3>页面视觉升级</h3>
-              <p>
-                持续打磨页面视觉和信息排布，让整体展示更自然，也更适合长期更新。
-              </p>
-              <a href="#" aria-label="查看项目详情">查看案例</a>
-            </article>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero__meta">
+        <div class="rule"></div>
+        <p class="kicker"><span>VOL. 01</span><span>·</span><span>THE TOBY ISSUE</span><span>·</span><span id="todayText">—</span></p>
+      </div>
 
-            <article class="project-card" data-category="tool">
-              <p class="project-card__meta">Workflow Tool</p>
-              <h3>交互与内容实验</h3>
-              <p>
-                尝试把简单交互和内容组织结合起来，让网站不只是展示页，也能承接后续功能。
-              </p>
-              <a href="#" aria-label="查看项目详情">查看案例</a>
-            </article>
-          </div>
-        </section>
+      <h1 class="hero__title" aria-label="Hello, I'm Toby Qian.">
+        <span class="line line-1">
+          <span class="word"><span class="char">H</span><span class="char">e</span><span class="char">l</span><span class="char">l</span><span class="char">o</span><span class="char">,</span></span>
+        </span>
+        <span class="line line-2">
+          <span class="word word--italic"><span class="char">I</span><span class="char">'</span><span class="char">m</span></span>
+          <span class="word word--outline" data-hoverable>
+            <span class="char">T</span><span class="char">o</span><span class="char">b</span><span class="char">y</span>
+          </span>
+        </span>
+        <span class="line line-3">
+          <span class="word word--big"><span class="char">Q</span><span class="char">i</span><span class="char">a</span><span class="char">n</span><span class="char">.</span></span>
+          <span class="hero__asterisk" aria-hidden="true">✺</span>
+        </span>
+      </h1>
 
-        <section class="section notes-section" id="notes">
-          <div class="section-heading">
-            <div>
-              <p class="section-label">NOW</p>
-              <h2>最近在做的事</h2>
-            </div>
-          </div>
-          <div class="notes-grid">
-            <article class="note-card">
-              <span class="note-card__index">01</span>
-              <h3>先把网站搭起来</h3>
-              <p>先完成第一版个人站点，再逐步加入更多真正属于自己的内容。</p>
-            </article>
-            <article class="note-card">
-              <span class="note-card__index">02</span>
-              <h3>尝试更自然的交互</h3>
-              <p>用尽量轻的前端方式，做出更自然的浏览、点击和互动感受。</p>
-            </article>
-            <article class="note-card">
-              <span class="note-card__index">03</span>
-              <h3>给以后留扩展空间</h3>
-              <p>后续可以接留言板、博客、简历下载，甚至更完整的数据交互。</p>
-            </article>
-          </div>
-        </section>
+      <div class="hero__side">
+        <div class="hero__stamp">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <defs>
+              <path id="circlePath" d="M 60,60 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0" />
+            </defs>
+            <text class="stamp-text">
+              <textPath href="#circlePath">· BUILDING · WRITING · EXPLORING · INTERNET CRAFT · </textPath>
+            </text>
+            <text x="60" y="58" text-anchor="middle" class="stamp-center">TQ</text>
+            <text x="60" y="76" text-anchor="middle" class="stamp-small">2026</text>
+          </svg>
+        </div>
 
-        <section class="section contact-section" id="contact">
-          <div class="contact-copy">
-            <p class="section-label">CONTACT</p>
-            <h2>想聊项目、合作，或者只是打个招呼，都可以。</h2>
-            <p>
-              这个公开页面没有直接展示邮箱明文，避免被随手采集。你可以先通过 GitHub 联系我，或者点击按钮复制邮箱。
-            </p>
-            <div class="contact-links">
-              <a href="https://github.com/Toby-Qian" target="_blank" rel="noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-              <button class="copy-email" id="copyEmailBtn" type="button" data-email="q1509713692@gmail.com">
-                复制联系邮箱
-              </button>
-            </div>
-          </div>
+        <p class="hero__lede">
+          I design and build small corners of the internet — at the intersection of
+          <em>code</em>, <em>typography</em>, and <em>personal expression</em>. This site is my workshop.
+        </p>
 
-          <form class="contact-form" id="contactForm">
-            <label>
-              你的名字
-              <input id="visitorName" name="visitorName" type="text" placeholder="怎么称呼你" />
-            </label>
-            <label>
-              想说的话
-              <textarea
-                id="visitorMessage"
-                name="visitorMessage"
-                rows="5"
-                placeholder="比如：我想和你聊聊一个项目合作。"
-              ></textarea>
-            </label>
-            <button class="button button--primary button--full" type="submit">发送一条前端互动消息</button>
-            <p class="form-response" id="formResponse" aria-live="polite"></p>
-          </form>
-        </section>
-      </main>
+        <div class="hero__ticker">
+          <span class="hero__ticker-label">NOW</span>
+          <span class="hero__ticker-dot"></span>
+          <span id="nowText">Drafting the first issue of a personal press.</span>
+        </div>
 
-      <footer class="footer">
-        <p>&copy; <span id="year"></span> Toby Qian. Built for GitHub Pages.</p>
-      </footer>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#work" data-hoverable>
+            <span>Read the issue</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#contact" data-hoverable>
+            <span>Say hello</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <div class="scroll-hint"><span>SCROLL</span><span class="scroll-hint__arr">↓</span></div>
+    </section>
+
+    <!-- ============ MARQUEE divider ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>✺ Personal Press</span><span>·</span>
+        <span>Typography</span><span>·</span>
+        <span>Interaction</span><span>·</span>
+        <span>Front-end Craft</span><span>·</span>
+        <span>Small Web</span><span>·</span>
+        <span>Issue 01 / 2026</span><span>·</span>
+        <span>✺ Personal Press</span><span>·</span>
+        <span>Typography</span><span>·</span>
+        <span>Interaction</span><span>·</span>
+        <span>Front-end Craft</span><span>·</span>
+        <span>Small Web</span><span>·</span>
+        <span>Issue 01 / 2026</span><span>·</span>
+      </div>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <!-- ============ ABOUT ============ -->
+    <section class="about" id="about">
+      <aside class="about__aside">
+        <span class="folio">A.01</span>
+        <div class="pill">COLUMN ONE</div>
+        <p class="about__tag">The <em>about</em> page, printed.</p>
+      </aside>
+
+      <div class="about__col">
+        <h2 class="section-title"><span>A portrait,</span> <em>in five lines.</em></h2>
+        <div class="dropcap">
+          <p>
+            <span class="drop">I</span>'m a builder who likes the <em>slow, careful</em> parts of the internet —
+            the typography, the micro-interactions, the little structures that make a page feel
+            like it was made by a person.
+          </p>
+          <p>
+            By day I work on products and tools. By night I make <em>personal corners</em> like this
+            one — a place to think out loud, collect projects, and publish small experiments.
+          </p>
+        </div>
+      </div>
+
+      <div class="about__facts">
+        <div class="fact">
+          <span class="fact__k">BASED</span>
+          <span class="fact__v">Shanghai ⇄ Internet</span>
+        </div>
+        <div class="fact">
+          <span class="fact__k">ROLE</span>
+          <span class="fact__v">Builder · Designer · Writer</span>
+        </div>
+        <div class="fact">
+          <span class="fact__k">OBSESSED</span>
+          <span class="fact__v">Type, tools, small web</span>
+        </div>
+        <div class="fact">
+          <span class="fact__k">AVAILABLE</span>
+          <span class="fact__v"><span class="avail-dot"></span>Open to chats</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STACK / SKILLS ============ -->
+    <section class="stack" id="stack">
+      <div class="stack__head">
+        <span class="folio">B.02</span>
+        <h2 class="section-title"><em>Tools</em> on the desk.</h2>
+        <p class="stack__sub">A messy, honest list. Some I love, some I'm learning, some I keep around.</p>
+      </div>
+
+      <div class="stack__grid">
+        <div class="stack__group">
+          <h3>Daily</h3>
+          <ul class="chips">
+            <li>TypeScript</li><li>React</li><li>Next.js</li><li>Tailwind</li><li>Figma</li><li>Node</li>
+          </ul>
+        </div>
+        <div class="stack__group">
+          <h3>Craft</h3>
+          <ul class="chips">
+            <li>CSS · advanced</li><li>SVG</li><li>Framer Motion</li><li>Canvas</li><li>WebGL · basics</li><li>Shader Park</li>
+          </ul>
+        </div>
+        <div class="stack__group">
+          <h3>Thinking</h3>
+          <ul class="chips">
+            <li>Information design</li><li>Editorial layout</li><li>Typography</li><li>Product sense</li>
+          </ul>
+        </div>
+        <div class="stack__group">
+          <h3>Playing with</h3>
+          <ul class="chips">
+            <li>Rust</li><li>AI tooling</li><li>Spatial UI</li><li>Local-first</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stack__pullquote">
+        <span class="pq-open">“</span>
+        <p>Good tools disappear. The ones left on the desk are the ones you actually reach for.</p>
+      </div>
+    </section>
+
+    <!-- ============ WORK ============ -->
+    <section class="work" id="work">
+      <div class="work__head">
+        <span class="folio">C.03</span>
+        <h2 class="section-title">Selected <em>work</em>.</h2>
+        <div class="filters" role="tablist" aria-label="filter">
+          <button class="filter is-active" data-filter="all">All</button>
+          <button class="filter" data-filter="web">Web</button>
+          <button class="filter" data-filter="design">Design</button>
+          <button class="filter" data-filter="tool">Tools</button>
+        </div>
+      </div>
+
+      <div class="work__grid">
+
+        <article class="work-card work-card--feature" data-category="web" data-hoverable>
+          <div class="work-card__cover work-card__cover--1">
+            <div class="cover-type">
+              <span>Personal</span>
+              <em>Press</em>
+            </div>
+            <div class="cover-grid"></div>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__meta"><span>01 · Web</span><span>2026</span></div>
+            <h3>Personal Press — v1</h3>
+            <p>A magazine-style personal website. Built from scratch in HTML, CSS and a little JavaScript — a home for notes, projects and experiments.</p>
+            <span class="work-card__cta">Open issue <svg viewBox="0 0 24 24"><path d="M7 17L17 7M10 7h7v7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="design" data-hoverable>
+          <div class="work-card__cover work-card__cover--2">
+            <div class="cover-typo">Aa</div>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__meta"><span>02 · Design</span><span>2025</span></div>
+            <h3>Type specimen studies</h3>
+            <p>Small, weekly explorations of serif and display typefaces — posters, ratios, real usage.</p>
+            <span class="work-card__cta">View gallery →</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="tool" data-hoverable>
+          <div class="work-card__cover work-card__cover--3">
+            <div class="cover-mono">
+              <span>$ toby --init</span>
+              <span>› scaffolding…</span>
+              <span>› ready ✓</span>
+            </div>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__meta"><span>03 · Tool</span><span>2025</span></div>
+            <h3>CLI scaffolds for side projects</h3>
+            <p>Tiny CLI that sets up the boring parts of a new idea so I can start playing in five minutes.</p>
+            <span class="work-card__cta">See repo →</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="web" data-hoverable>
+          <div class="work-card__cover work-card__cover--4">
+            <div class="cover-lines"></div>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__meta"><span>04 · Web</span><span>2025</span></div>
+            <h3>Reading journal</h3>
+            <p>A slow, personal reading log — annotations, quotes, and connections over time.</p>
+            <span class="work-card__cta">Read entries →</span>
+          </div>
+        </article>
+
+        <article class="work-card" data-category="design" data-hoverable>
+          <div class="work-card__cover work-card__cover--5">
+            <div class="cover-sun"></div>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__meta"><span>05 · Design</span><span>2024</span></div>
+            <h3>Slow brand system</h3>
+            <p>A warm, quiet identity system for a friend's small studio — paper, ink, patience.</p>
+            <span class="work-card__cta">View case →</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ TIMELINE ============ -->
+    <section class="timeline" id="timeline">
+      <div class="timeline__head">
+        <span class="folio">D.04</span>
+        <h2 class="section-title">A <em>path</em>, so far.</h2>
+        <p class="timeline__sub">Not a resume — more like a map with a few pins in it.</p>
+      </div>
+
+      <ol class="timeline__list">
+        <li class="t-item">
+          <div class="t-item__year">2026</div>
+          <div class="t-item__body">
+            <h4>Personal Press, issue 01</h4>
+            <p>Launching the first version of this site. Magazine-style, slow web, built by hand.</p>
+          </div>
+          <div class="t-item__tag">NOW</div>
+        </li>
+        <li class="t-item">
+          <div class="t-item__year">2025</div>
+          <div class="t-item__body">
+            <h4>Independent projects</h4>
+            <p>Shipped a handful of small tools and typography studies. Started writing more.</p>
+          </div>
+          <div class="t-item__tag">SHIP</div>
+        </li>
+        <li class="t-item">
+          <div class="t-item__year">2023—24</div>
+          <div class="t-item__body">
+            <h4>Product &amp; front-end work</h4>
+            <p>Worked on interfaces, tools, design systems. Got deeper into interaction and motion.</p>
+          </div>
+          <div class="t-item__tag">WORK</div>
+        </li>
+        <li class="t-item">
+          <div class="t-item__year">Before</div>
+          <div class="t-item__body">
+            <h4>Curious about everything on a screen</h4>
+            <p>Built a lot of small pages that nobody saw. The habit stuck.</p>
+          </div>
+          <div class="t-item__tag">ORIGIN</div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ JOURNAL ============ -->
+    <section class="journal" id="journal">
+      <div class="journal__head">
+        <span class="folio">E.05</span>
+        <h2 class="section-title"><em>Journal</em> &amp; notes.</h2>
+        <p class="journal__sub">Shorter than blog posts, longer than tweets. Published when ready.</p>
+      </div>
+
+      <div class="journal__list">
+        <a class="entry" href="#" data-hoverable>
+          <span class="entry__num">No. 004</span>
+          <div class="entry__body">
+            <h3>On building a site you'd actually visit</h3>
+            <p>Why personal websites deserve real design attention — and the small decisions that compound.</p>
+          </div>
+          <span class="entry__date">APR 12</span>
+          <span class="entry__len">7 min</span>
+        </a>
+        <a class="entry" href="#" data-hoverable>
+          <span class="entry__num">No. 003</span>
+          <div class="entry__body">
+            <h3>Serifs on the web, in 2026</h3>
+            <p>A short note on display serifs, variable fonts, and the return of editorial layouts.</p>
+          </div>
+          <span class="entry__date">MAR 28</span>
+          <span class="entry__len">5 min</span>
+        </a>
+        <a class="entry" href="#" data-hoverable>
+          <span class="entry__num">No. 002</span>
+          <div class="entry__body">
+            <h3>Tools I actually kept this year</h3>
+            <p>A quiet review of the small tools that survived after the novelty wore off.</p>
+          </div>
+          <span class="entry__date">FEB 15</span>
+          <span class="entry__len">6 min</span>
+        </a>
+        <a class="entry" href="#" data-hoverable>
+          <span class="entry__num">No. 001</span>
+          <div class="entry__body">
+            <h3>Hello, again — why I started this site</h3>
+            <p>First entry. A little about the <em>why</em> behind this personal press.</p>
+          </div>
+          <span class="entry__date">JAN 02</span>
+          <span class="entry__len">4 min</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="contact__inner">
+        <span class="folio">F.06</span>
+        <h2 class="contact__title">
+          <span>Write</span> <em>a letter.</em>
+        </h2>
+        <p class="contact__lede">
+          Projects, collaborations, or just a hello — I read everything that actually sounds like a person.
+        </p>
+
+        <div class="contact__rows">
+          <a class="c-row" href="https://github.com/Toby-Qian" target="_blank" rel="noreferrer" data-hoverable>
+            <span class="c-row__k">GITHUB</span>
+            <span class="c-row__v">@Toby-Qian</span>
+            <span class="c-row__arr">↗</span>
+          </a>
+          <a class="c-row" href="#" data-hoverable>
+            <span class="c-row__k">LINKEDIN</span>
+            <span class="c-row__v">/in/toby-qian</span>
+            <span class="c-row__arr">↗</span>
+          </a>
+          <button class="c-row c-row--btn" id="copyEmailBtn" type="button" data-email="q1509713692@gmail.com" data-hoverable>
+            <span class="c-row__k">EMAIL</span>
+            <span class="c-row__v" id="emailText">click to copy address</span>
+            <span class="c-row__arr">⧉</span>
+          </button>
+          <a class="c-row" href="#" data-hoverable>
+            <span class="c-row__k">RSS</span>
+            <span class="c-row__v">/feed.xml</span>
+            <span class="c-row__arr">↗</span>
+          </a>
+        </div>
+
+        <div class="colophon">
+          <p><strong>COLOPHON.</strong> Set in <em>Fraunces</em>, <em>Instrument Serif</em>, <em>Inter</em> &amp; <em>JetBrains Mono</em>.
+          Typeset by hand in HTML &amp; CSS. Printed on the internet.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__row">
+      <span>© <span id="year"></span> Toby Qian</span>
+      <span>—</span>
+      <span>Personal Press</span>
+      <span>—</span>
+      <span>Issue 01 / 2026</span>
+    </div>
+    <div class="footer__big">TOBY · QIAN</div>
+  </footer>
+
+  <!-- Tweaks panel -->
+  <div class="tweaks" id="tweaksPanel" hidden>
+    <div class="tweaks__head">
+      <span>Tweaks</span>
+      <button class="tweaks__close" id="tweaksClose" aria-label="close">×</button>
+    </div>
+    <div class="tweaks__body">
+      <div class="tw-row">
+        <label>Accent</label>
+        <div class="tw-seg" data-key="accent">
+          <button data-val="amber" style="--sw:#c46d2b"></button>
+          <button data-val="ink"   style="--sw:#1a1a1a"></button>
+          <button data-val="ruby"  style="--sw:#a3283a"></button>
+          <button data-val="olive" style="--sw:#5a6a3a"></button>
+          <button data-val="cobalt" style="--sw:#2a4a8a"></button>
+        </div>
+      </div>
+      <div class="tw-row">
+        <label>Paper</label>
+        <div class="tw-seg" data-key="paper">
+          <button data-val="cream">Cream</button>
+          <button data-val="bone">Bone</button>
+          <button data-val="ink">Ink</button>
+        </div>
+      </div>
+      <div class="tw-row">
+        <label>Grain</label>
+        <div class="tw-seg" data-key="grain">
+          <button data-val="on">On</button>
+          <button data-val="off">Off</button>
+        </div>
+      </div>
+      <div class="tw-row">
+        <label>Cursor</label>
+        <div class="tw-seg" data-key="cursor">
+          <button data-val="on">Follow</button>
+          <button data-val="off">Off</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tweakable defaults — host can persist edits between these markers
+    window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
+      "accent": "amber",
+      "paper": "cream",
+      "grain": "on",
+      "cursor": "on"
+    }/*EDITMODE-END*/;
+  </script>
+  <script src="personal-page.js"></script>
+</body>
 </html>
