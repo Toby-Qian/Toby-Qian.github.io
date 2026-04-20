@@ -1248,7 +1248,7 @@ body.menu-open .menu-toggle span::after  { top: 0; transform: rotate(-45deg); }
 /* ======================================================
    Responsive — mobile
    ====================================================== */
-@media (max-width: 720px) {
+@media (max-width: 960px) {
   /* top chrome */
   .page-corner { display: none; }
   .cursor-dot, .cursor-ring { display: none; }

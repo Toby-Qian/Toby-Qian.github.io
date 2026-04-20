@@ -93,7 +93,7 @@
   function tick() {
     const d = new Date();
     const hh = pad(d.getHours()), mm = pad(d.getMinutes());
-    if (timeText) timeText.textContent = `SHA · ${hh}:${mm}`;
+    if (timeText) timeText.textContent = `GZ · ${hh}:${mm}`;
   }
   tick(); setInterval(tick, 30 * 1000);
   if (todayText) {
