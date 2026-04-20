@@ -232,7 +232,6 @@ body.cursor-hover .cursor-ring {
     0 1px 2px rgba(0, 0, 0, 0.04),
     0 8px 24px -8px rgba(0, 0, 0, 0.15),
     0 20px 48px -20px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
   isolation: isolate;
 }
 .topbar::before {
@@ -1311,6 +1310,16 @@ body.menu-open .menu-toggle span::after  { top: 0; transform: rotate(-45deg); }
   /* top chrome */
   .page-corner { display: none; }
   .cursor-dot, .cursor-ring { display: none; }
+
+  /* Disable backdrop-filter on topbar so the fixed fullscreen menu
+     isn't trapped inside the topbar's containing block on mobile. */
+  .topbar {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: color-mix(in oklab, var(--paper) 92%, transparent);
+  }
+  .topbar::before,
+  .topbar::after { display: none; }
 
   .topbar {
     margin: 20px 12px 0;
