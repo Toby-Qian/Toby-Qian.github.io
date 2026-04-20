@@ -6,6 +6,7 @@
 
   // ---------- Apply saved tweaks ----------
   const tw = Object.assign({
+    typeset: "quiet",
     accent: "amber",
     paper: "cream",
     grain: "on",
@@ -21,6 +22,7 @@
   };
 
   function applyTweaks(t) {
+    body.setAttribute("data-typeset", t.typeset);
     body.setAttribute("data-paper", t.paper);
     body.setAttribute("data-grain", t.grain);
     body.setAttribute("data-cursor", t.cursor);
@@ -65,6 +67,23 @@
       } catch (err) { /* noop */ }
     });
   });
+
+  // ---------- Mobile menu ----------
+  const menuToggle = document.getElementById("menuToggle");
+  const nav = document.querySelector(".nav");
+  function closeMenu() {
+    body.classList.remove("menu-open");
+    if (menuToggle) menuToggle.setAttribute("aria-expanded", "false");
+  }
+  if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+      const open = body.classList.toggle("menu-open");
+      menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
+  if (nav) {
+    nav.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+  }
 
   // ---------- Time + today ----------
   const timeText = document.getElementById("timeText");
@@ -171,14 +190,17 @@
   const stamp = document.querySelector(".hero__stamp");
   const asterisk = document.querySelector(".hero__asterisk");
 
-  window.addEventListener("mousemove", (e) => {
-    const cx = (e.clientX / innerWidth - 0.5);
-    const cy = (e.clientY / innerHeight - 0.5);
-    if (heroTitle) heroTitle.style.transform = `translate(${cx * -8}px, ${cy * -5}px)`;
-    if (heroSide)  heroSide.style.transform  = `translate(${cx * 10}px, ${cy * 6}px)`;
-    if (stamp)     stamp.style.transform     = `translate(${cx * 16}px, ${cy * 10}px)`;
-    if (asterisk)  asterisk.style.transform  = `translate(${cx * 22}px, ${cy * 12}px) rotate(${cx * 20}deg)`;
-  }, { passive: true });
+  const isCoarse = matchMedia("(hover: none), (max-width: 720px)").matches;
+  if (!isCoarse) {
+    window.addEventListener("mousemove", (e) => {
+      const cx = (e.clientX / innerWidth - 0.5);
+      const cy = (e.clientY / innerHeight - 0.5);
+      if (heroTitle) heroTitle.style.transform = `translate(${cx * -8}px, ${cy * -5}px)`;
+      if (heroSide)  heroSide.style.transform  = `translate(${cx * 10}px, ${cy * 6}px)`;
+      if (stamp)     stamp.style.transform     = `translate(${cx * 16}px, ${cy * 10}px)`;
+      if (asterisk)  asterisk.style.transform  = `translate(${cx * 22}px, ${cy * 12}px) rotate(${cx * 20}deg)`;
+    }, { passive: true });
+  }
 
   // ---------- Parallax on scroll (marquee + footer big text) ----------
   const marquee = document.querySelector(".marquee__track");
