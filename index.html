@@ -229,9 +229,37 @@
             <div class="cover-grid"></div>
           </div>
           <div class="work-card__body">
-            <div class="work-card__meta"><span>01 · Tool</span><span>2026</span></div>
+            <div class="work-card__meta"><span>01 · Claude Code Skill</span><span>2026 · MIT</span></div>
             <h3>Academic Assignment Assistant</h3>
-            <p>A Claude Code skill that reads professor-issued assignment PDFs / Word files, decodes explicit and implicit requirements, and drafts multi-version Word documents — with proper citations in GB/T 7714, APA, MLA, Chicago or IEEE. Shipped, MIT licensed.</p>
+            <p>
+              A <em>Claude Code skill</em> that turns a professor-issued assignment file into a submittable
+              Word document — without losing the <em>why</em>. Built around a single principle:
+              <em>understand first, answer second</em>.
+            </p>
+            <p>
+              It ingests <strong>PDF / .docx / .doc</strong> via a Python extraction pipeline, decodes
+              both explicit requirements (word count, citation format, deadlines) and implicit ones
+              (grading focus, expected theoretical depth, discipline conventions), then routes by field
+              into separate <strong>STEM</strong> or <strong>humanities</strong> playbooks. The output
+              is two (or more) <em>independently complete</em> versions — written from different
+              theoretical frames or technical routes — so the student picks the angle instead of
+              accepting a single draft.
+            </p>
+            <p>
+              Citations are generated in <strong>GB/T 7714 · APA · MLA · Chicago · IEEE</strong>,
+              aligned one-to-one with the argument; anything it can't verify is marked
+              <code>〔to be verified〕</code> instead of fabricated. The final
+              <strong>python-docx</strong> build ships a cover page, auto TOC, versioned body
+              sections and a reference list in one file.
+            </p>
+            <p class="work-card__tags">
+              <span>Claude Code</span>
+              <span>Python</span>
+              <span>pypdf</span>
+              <span>python-docx</span>
+              <span>Codex CLI</span>
+              <span>Bilingual docs</span>
+            </p>
             <span class="work-card__cta">View on GitHub <svg viewBox="0 0 24 24"><path d="M7 17L17 7M10 7h7v7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
           </div>
         </a>

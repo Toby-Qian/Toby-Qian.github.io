@@ -931,6 +931,31 @@ body.cursor-hover .cursor-ring {
 }
 .work-card__cta svg { width: 12px; height: 12px; }
 
+.work-card__tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-top: 4px;
+}
+.work-card__tags span {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  padding: 4px 9px;
+  border: 1px solid var(--ink-line);
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--paper) 70%, transparent);
+}
+.work-card p code {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  padding: 1px 6px;
+  border: 1px solid var(--ink-line);
+  border-radius: 6px;
+  background: color-mix(in oklab, var(--paper) 60%, transparent);
+  color: var(--ink-soft);
+}
+
 /* ======================================================
    TIMELINE
    ====================================================== */
