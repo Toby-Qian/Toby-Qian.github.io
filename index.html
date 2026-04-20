@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Toby Qian | Personal Website</title>
+  <title>Toby Qian — Personal Space</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="personal-page.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600;900&family=Inter:wght@400;500;600&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Space+Grotesk:wght@400;500;600&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="personal-page.css?v=3" />
 </head>
 <body>
 
@@ -42,6 +42,9 @@
       <a href="#journal"><em>05</em>Journal</a>
       <a href="#contact"><em>06</em>Contact</a>
     </nav>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="菜单" aria-expanded="false">
+      <span></span>
+    </button>
     <button class="time-chip" id="timeChip" type="button">
       <span class="time-chip__dot"></span>
       <span id="timeText">—</span>
@@ -410,21 +413,11 @@
             <span class="c-row__v">@Toby-Qian</span>
             <span class="c-row__arr">↗</span>
           </a>
-          <a class="c-row" href="#" data-hoverable>
-            <span class="c-row__k">LINKEDIN</span>
-            <span class="c-row__v">/in/toby-qian</span>
-            <span class="c-row__arr">↗</span>
-          </a>
           <button class="c-row c-row--btn" id="copyEmailBtn" type="button" data-email="q1509713692@gmail.com" data-hoverable>
             <span class="c-row__k">EMAIL</span>
             <span class="c-row__v" id="emailText">click to copy address</span>
             <span class="c-row__arr">⧉</span>
           </button>
-          <a class="c-row" href="#" data-hoverable>
-            <span class="c-row__k">RSS</span>
-            <span class="c-row__v">/feed.xml</span>
-            <span class="c-row__arr">↗</span>
-          </a>
         </div>
 
         <div class="colophon">
@@ -454,6 +447,16 @@
       <button class="tweaks__close" id="tweaksClose" aria-label="close">×</button>
     </div>
     <div class="tweaks__body">
+      <div class="tw-row">
+        <label>Type</label>
+        <div class="tw-seg tw-seg--type" data-key="typeset">
+          <button data-val="editorial">Editorial</button>
+          <button data-val="classic">Classic</button>
+          <button data-val="quiet">Quiet</button>
+          <button data-val="modern">Modern</button>
+          <button data-val="plex">Plex</button>
+        </div>
+      </div>
       <div class="tw-row">
         <label>Accent</label>
         <div class="tw-seg" data-key="accent">
@@ -492,12 +495,13 @@
   <script>
     // Tweakable defaults — host can persist edits between these markers
     window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
-      "accent": "amber",
+      "typeset": "modern",
+      "accent": "ruby",
       "paper": "cream",
       "grain": "on",
-      "cursor": "on"
+      "cursor": "off"
     }/*EDITMODE-END*/;
   </script>
-  <script src="personal-page.js"></script>
+  <script src="personal-page.js?v=2"></script>
 </body>
 </html>
