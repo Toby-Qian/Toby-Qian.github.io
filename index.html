@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600;900&family=Inter:wght@400;500;600&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Space+Grotesk:wght@400;500;600&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="personal-page.css?v=3" />
+  <link rel="stylesheet" href="personal-page.css?v=4" />
 </head>
 <body>
 
@@ -264,12 +264,59 @@
           </div>
         </a>
 
+        <a class="work-card work-card--feature" href="https://toby-qian.github.io/paper-figure/" target="_blank" rel="noreferrer" data-category="tool" data-hoverable>
+          <div class="work-card__cover work-card__cover--pf">
+            <div class="pf-frame">
+              <div class="pf-frame__photo"></div>
+              <span class="pf-frame__label">a</span>
+              <span class="pf-frame__scale"><i></i>10 μm</span>
+              <div class="pf-frame__arrow"></div>
+            </div>
+            <div class="pf-caption">
+              <strong>Fig. 1.</strong> A browser-only pipeline from raw photo to
+              submission-ready panel figure. <em>(a)</em> auto-fit into journal grid.
+            </div>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__meta"><span>02 · Web / Canvas Tool</span><span>2026 · MIT</span></div>
+            <h3>Paper Figure Studio</h3>
+            <p>
+              A <em>pure front-end</em> web app that turns an ordinary photo into a figure that
+              <em>looks like it belongs in a paper</em>. No install, no upload — everything renders
+              locally on <strong>Canvas 2D</strong>, nothing ever leaves the browser.
+            </p>
+            <p>
+              One click switches the whole layout between <strong>Nature · Science · Cell · IEEE ·
+              Elsevier</strong> house styles — serif stack, accent colour, caption metrics and label
+              weight all swap together. A <strong>6-preset multi-panel grid</strong> lets you drop in
+              several images at once; each image can be <em>dragged and wheel-scaled</em> inside its
+              cell, with (a)(b)(c) labels auto-assigned and cleaned up on layout change.
+            </p>
+            <p>
+              Annotations — arrows, scale bars, text, rectangles, circles — live on a unified
+              selection model, so the same <em>Aa</em> panel drives both captions and labels. Built
+              with vanilla <strong>HTML · CSS · JS</strong>, a translucent mobile drawer
+              (<code>backdrop-filter</code> + peek mode), and a landing page that doubles as a
+              worked example.
+            </p>
+            <p class="work-card__tags">
+              <span>Canvas 2D</span>
+              <span>Pointer Events</span>
+              <span>Vanilla JS</span>
+              <span>Journal presets</span>
+              <span>Mobile-first</span>
+              <span>GitHub Pages</span>
+            </p>
+            <span class="work-card__cta">Open the studio <svg viewBox="0 0 24 24"><path d="M7 17L17 7M10 7h7v7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+          </div>
+        </a>
+
         <a class="work-card" href="post.html?id=work-01" data-category="web" data-hoverable>
           <div class="work-card__cover work-card__cover--2">
             <div class="cover-typo">◉</div>
           </div>
           <div class="work-card__body">
-            <div class="work-card__meta"><span>02 · Web</span><span>2026</span></div>
+            <div class="work-card__meta"><span>03 · Web</span><span>2026</span></div>
             <h3>Personal Press — v1</h3>
             <p>A magazine-style personal website. Built from scratch in HTML, CSS and a little JavaScript — a home for notes, projects and experiments.</p>
             <span class="work-card__cta">Open issue →</span>
@@ -285,7 +332,7 @@
             </div>
           </div>
           <div class="work-card__body">
-            <div class="work-card__meta"><span>03 · Tool</span><span>2025</span></div>
+            <div class="work-card__meta"><span>04 · Tool</span><span>2025</span></div>
             <h3>CLI scaffolds for side projects</h3>
             <p>Tiny CLI that sets up the boring parts of a new idea so I can start playing in five minutes.</p>
             <span class="work-card__cta">See repo →</span>
@@ -297,7 +344,7 @@
             <div class="cover-lines"></div>
           </div>
           <div class="work-card__body">
-            <div class="work-card__meta"><span>04 · Web</span><span>2025</span></div>
+            <div class="work-card__meta"><span>05 · Web</span><span>2025</span></div>
             <h3>Reading journal</h3>
             <p>A slow, personal reading log — annotations, quotes, and connections over time.</p>
             <span class="work-card__cta">Read entries →</span>
@@ -309,7 +356,7 @@
             <div class="cover-sun"></div>
           </div>
           <div class="work-card__body">
-            <div class="work-card__meta"><span>05 · Design</span><span>2024</span></div>
+            <div class="work-card__meta"><span>06 · Design</span><span>2024</span></div>
             <h3>Slow brand system</h3>
             <p>A warm, quiet identity system for a friend's small studio — paper, ink, patience.</p>
             <span class="work-card__cta">View case →</span>
