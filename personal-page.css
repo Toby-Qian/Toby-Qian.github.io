@@ -1164,10 +1164,10 @@ body.cursor-hover .cursor-ring {
 }
 .c-row {
   display: grid;
-  grid-template-columns: 120px 1fr auto;
-  gap: 20px;
+  grid-template-columns: 90px 1fr auto;
+  gap: 16px;
   align-items: baseline;
-  padding: 20px 4px;
+  padding: 12px 4px;
   border-bottom: 1px solid var(--ink-line);
   text-align: left;
   font: inherit;
@@ -1176,20 +1176,20 @@ body.cursor-hover .cursor-ring {
 .c-row:hover { padding-left: 20px; background: color-mix(in oklab, var(--accent) 6%, transparent); }
 .c-row__k {
   font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: .25em;
+  font-size: 10px;
+  letter-spacing: .22em;
   color: var(--ink-muted);
 }
 .c-row__v {
   font-family: var(--serif-display);
   font-style: italic;
-  font-size: clamp(1.4rem, 2.2vw, 2rem);
-  color: var(--ink);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  color: var(--ink-soft);
   transition: color .25s;
 }
 .c-row:hover .c-row__v { color: var(--accent); }
 .c-row__arr {
-  font-size: 20px;
+  font-size: 14px;
   color: var(--ink-muted);
   transition: transform .3s, color .25s;
 }
