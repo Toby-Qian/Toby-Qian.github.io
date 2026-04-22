@@ -1206,6 +1206,70 @@ body.cursor-hover .cursor-ring {
 .colophon strong { font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: .25em; color: var(--ink); }
 
 /* ======================================================
+   GUESTBOOK (Waline)
+   ====================================================== */
+.guestbook {
+  margin: 0 clamp(16px, 5vw, 56px);
+  padding: 80px 0 40px;
+  border-top: 1px solid var(--ink-line);
+}
+.guestbook__inner { max-width: 860px; }
+.guestbook__title {
+  margin-top: 16px;
+  font-family: var(--serif-display);
+  font-weight: 500;
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.guestbook__title em { font-style: italic; color: var(--accent); }
+.guestbook__lede {
+  margin: 18px 0 32px;
+  font-family: "Instrument Serif", var(--serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: var(--ink-soft);
+  max-width: 60ch;
+}
+.guestbook__board {
+  margin-top: 20px;
+  padding: 20px clamp(14px, 2.5vw, 24px);
+  border: 1px solid var(--ink-line);
+  border-radius: 16px;
+  background: color-mix(in oklab, var(--paper) 72%, transparent);
+}
+.guestbook__pending {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+  text-align: center;
+  padding: 40px 20px;
+  letter-spacing: .04em;
+}
+.guestbook__pending code {
+  font-family: var(--mono);
+  padding: 1px 6px;
+  border: 1px solid var(--ink-line);
+  border-radius: 6px;
+  background: color-mix(in oklab, var(--paper) 60%, transparent);
+}
+/* Nudge Waline defaults toward the paper palette */
+#waline .wl-panel {
+  border-color: var(--ink-line);
+  background: transparent;
+  box-shadow: none;
+}
+#waline {
+  --waline-theme-color: var(--accent);
+  --waline-active-color: var(--accent);
+  --waline-bgcolor: transparent;
+  --waline-bgcolor-light: color-mix(in oklab, var(--paper) 60%, transparent);
+  --waline-color: var(--ink-soft);
+  --waline-border-color: var(--ink-line);
+  --waline-info-bgcolor: color-mix(in oklab, var(--paper) 80%, transparent);
+}
+
+/* ======================================================
    FOOTER
    ====================================================== */
 .footer {

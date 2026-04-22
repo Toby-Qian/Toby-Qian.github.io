@@ -1,0 +1,12 @@
+{
+  "name": "toby-qian-waline",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Waline serverless backend for tobyqian.github.io guestbook",
+  "dependencies": {
+    "@waline/vercel": "^3.5.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
