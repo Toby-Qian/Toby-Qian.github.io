@@ -819,6 +819,45 @@ body.cursor-hover .cursor-ring {
 }
 .work-card--feature .work-card__cover { aspect-ratio: 21 / 8; }
 
+.work-card__cover--life {
+  background:
+    radial-gradient(ellipse at 50% 40%, #1b2433 0%, #0b0f17 75%);
+  overflow: hidden;
+}
+.work-card__cover--life::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: calc(100% / 22) calc(100% / 8);
+}
+.life-grid {
+  position: absolute; inset: 0;
+}
+.life-grid span {
+  position: absolute;
+  width: calc(100% / 22);
+  height: calc(100% / 8);
+  left: calc(var(--x) * 100% / 22);
+  top: calc(var(--y) * 100% / 8);
+  background: radial-gradient(circle at 50% 50%, #7ee0ff 0%, #58a6ff 55%, transparent 80%);
+  box-shadow: 0 0 12px rgba(88, 166, 255, .6);
+  animation: life-pulse 2.4s ease-in-out infinite;
+  animation-delay: calc((var(--x) + var(--y)) * 80ms);
+}
+@keyframes life-pulse {
+  0%, 100% { opacity: .35; transform: scale(.85); }
+  50%      { opacity: 1;   transform: scale(1);   }
+}
+.life-caption {
+  position: absolute; left: 14px; bottom: 10px;
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(180, 210, 255, .7);
+}
+.work-card:hover .life-grid span { animation-duration: 1.2s; }
+
 .work-card__cover--1 {
   background:
     linear-gradient(135deg, color-mix(in oklab, var(--accent) 35%, var(--paper)) 0%, var(--paper) 100%);
