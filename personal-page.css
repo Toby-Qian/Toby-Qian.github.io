@@ -764,11 +764,11 @@ body.cursor-hover .cursor-ring {
 .work__grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-auto-rows: minmax(320px, auto);
-  gap: 22px;
+  grid-auto-rows: auto;
+  gap: 24px;
 }
 .work-card {
-  grid-column: span 2;
+  grid-column: span 3;
   border: 1px solid var(--ink-line);
   border-radius: 18px;
   background: color-mix(in oklab, var(--paper) 85%, transparent);
@@ -785,11 +785,10 @@ body.cursor-hover .cursor-ring {
   box-shadow: 0 26px 50px -28px rgba(0,0,0,.3);
   border-color: var(--ink);
 }
-.work-card--feature { grid-column: span 4; grid-row: span 2; }
-.work-card:nth-of-type(2) { grid-column: span 2; }
-.work-card:nth-of-type(3) { grid-column: span 2; }
-.work-card:nth-of-type(4) { grid-column: span 3; }
-.work-card:nth-of-type(5) { grid-column: span 3; }
+/* Two feature projects — each gets a full row */
+.work-card--feature { grid-column: span 6; }
+/* Four smaller cards below — 2 per row */
+.work-card:not(.work-card--feature) { grid-column: span 3; }
 
 .work-card.is-hidden { display: none; }
 
@@ -800,7 +799,7 @@ body.cursor-hover .cursor-ring {
   border-bottom: 1px solid var(--ink-line);
   background: var(--paper-2);
 }
-.work-card--feature .work-card__cover { aspect-ratio: 16 / 10; }
+.work-card--feature .work-card__cover { aspect-ratio: 21 / 8; }
 
 .work-card__cover--1 {
   background:
@@ -1416,13 +1415,11 @@ body.menu-open .menu-toggle span::after  { top: 0; transform: rotate(-45deg); }
   .stack__group:nth-child(3),
   .stack__group:nth-child(4) { border-bottom: 0; }
 
-  .work__grid { grid-template-columns: repeat(4, 1fr); grid-auto-rows: auto; }
-  .work-card,
-  .work-card--feature,
-  .work-card:nth-of-type(2),
-  .work-card:nth-of-type(3),
-  .work-card:nth-of-type(4),
-  .work-card:nth-of-type(5) { grid-column: span 2; grid-row: auto; }
+  /* Tablet: 2 per row, features go full width */
+  .work__grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: auto; gap: 20px; }
+  .work-card { grid-column: span 1; }
+  .work-card--feature { grid-column: span 2; }
+  .work-card--feature .work-card__cover { aspect-ratio: 16 / 9; }
 
   .sheet { margin: 0 clamp(14px, 4vw, 32px); }
   .footer { margin: 40px clamp(14px, 4vw, 32px) 0; }
