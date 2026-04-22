@@ -811,7 +811,9 @@ body.cursor-hover .cursor-ring {
 .cover-claude {
   position: absolute;
   top: 50%; left: 50%;
-  width: 42%; height: 72%;
+  width: auto; height: 60%;
+  max-width: 38%;
+  object-fit: contain;
   transform: translate(-50%, -50%);
   filter: drop-shadow(0 10px 30px rgba(0,0,0,.18));
 }
