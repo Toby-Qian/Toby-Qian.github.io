@@ -36,9 +36,11 @@
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#about"><em>01</em>About</a>
-      <a href="#work"><em>02</em>Work</a>
-      <a href="#timeline"><em>03</em>Path</a>
-      <a href="#contact"><em>04</em>Contact</a>
+      <a href="#stack"><em>02</em>Stack</a>
+      <a href="#work"><em>03</em>Work</a>
+      <a href="#timeline"><em>04</em>Path</a>
+      <a href="#journal"><em>05</em>Journal</a>
+      <a href="#contact"><em>06</em>Contact</a>
     </nav>
     <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false">
       <span></span>
@@ -134,18 +136,22 @@
 
     <!-- ============ ABOUT ============ -->
     <section class="about" id="about">
-      <div class="about__col">
+      <aside class="about__aside">
         <span class="folio">A.01</span>
-        <h2 class="section-title"><span>About,</span> <em>briefly.</em></h2>
+        <div class="pill">COLUMN ONE</div>
+        <p class="about__tag">The <em>about</em> page, printed.</p>
+      </aside>
+
+      <div class="about__col">
+        <h2 class="section-title"><span>A portrait,</span> <em>in five lines.</em></h2>
         <div class="dropcap">
           <p>
-            <span class="drop">A</span> student in Guangzhou who spends too much time
-            in a browser tab. I like small web tools with a <em>single clear job</em>,
-            typography that <em>feels like paper</em>, and code that doesn't need a build step to run.
+            <span class="drop">N</span>ot exactly a proper person. Sleeping by day, gaming by night,
+            <em>pretending</em> to learn something in between.
           </p>
           <p>
-            This site is where I keep the projects I actually shipped. Everything
-            else — the late-night games, the half-finished experiments — stays off the record.
+            A student based in Guangzhou, putting together this little corner of the internet —
+            <em>for no reason</em>, just for fun.
           </p>
         </div>
       </div>
@@ -153,15 +159,15 @@
       <div class="about__facts">
         <div class="fact">
           <span class="fact__k">BASED</span>
-          <span class="fact__v">Guangzhou</span>
+          <span class="fact__v">Guangzhou ⇄ Internet</span>
         </div>
         <div class="fact">
           <span class="fact__k">ROLE</span>
-          <span class="fact__v">Student · Builder</span>
+          <span class="fact__v">Student</span>
         </div>
         <div class="fact">
-          <span class="fact__k">MAKES</span>
-          <span class="fact__v">Small web tools</span>
+          <span class="fact__k">OBSESSED</span>
+          <span class="fact__v">Gaming</span>
         </div>
         <div class="fact">
           <span class="fact__k">AVAILABLE</span>
@@ -170,12 +176,46 @@
       </div>
     </section>
 
+    <!-- ============ STACK / SKILLS ============ -->
+    <section class="stack" id="stack">
+      <div class="stack__head">
+        <span class="folio">B.02</span>
+        <h2 class="section-title"><em>Tools</em> on the desk.</h2>
+        <p class="stack__sub">A messy, honest list. Some I love, some I'm learning, some I keep around.</p>
+      </div>
+
+      <div class="stack__grid">
+        <div class="stack__group">
+          <h3>Learning</h3>
+          <ul class="chips">
+            <li>Python</li><li>English</li>
+          </ul>
+        </div>
+        <div class="stack__group">
+          <h3>Playing</h3>
+          <ul class="chips">
+            <li>Video games</li><li>Slacking off</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="stack__pullquote">
+        <span class="pq-open">“</span>
+        <p>Good tools disappear. The ones left on the desk are the ones you actually reach for.</p>
+      </div>
+    </section>
+
     <!-- ============ WORK ============ -->
     <section class="work" id="work">
       <div class="work__head">
-        <span class="folio">B.02</span>
-        <h2 class="section-title">Things <em>I shipped</em>.</h2>
-        <p class="work__sub">Two projects I actually finished. Both are open source, both run in a browser.</p>
+        <span class="folio">C.03</span>
+        <h2 class="section-title">Selected <em>work</em>.</h2>
+        <div class="filters" role="tablist" aria-label="filter">
+          <button class="filter is-active" data-filter="all">All</button>
+          <button class="filter" data-filter="web">Web</button>
+          <button class="filter" data-filter="design">Design</button>
+          <button class="filter" data-filter="tool">Tools</button>
+        </div>
       </div>
 
       <div class="work__grid">
@@ -271,13 +311,65 @@
           </div>
         </a>
 
+        <a class="work-card" href="post.html?id=work-01" data-category="web" data-hoverable>
+          <div class="work-card__cover work-card__cover--2">
+            <div class="cover-typo">◉</div>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__meta"><span>03 · Web</span><span>2026</span></div>
+            <h3>Personal Press — v1</h3>
+            <p>A magazine-style personal website. Built from scratch in HTML, CSS and a little JavaScript — a home for notes, projects and experiments.</p>
+            <span class="work-card__cta">Open issue →</span>
+          </div>
+        </a>
+
+        <a class="work-card" href="post.html?id=work-03" data-category="tool" data-hoverable>
+          <div class="work-card__cover work-card__cover--3">
+            <div class="cover-mono">
+              <span>$ toby --init</span>
+              <span>› scaffolding…</span>
+              <span>› ready ✓</span>
+            </div>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__meta"><span>04 · Tool</span><span>2025</span></div>
+            <h3>CLI scaffolds for side projects</h3>
+            <p>Tiny CLI that sets up the boring parts of a new idea so I can start playing in five minutes.</p>
+            <span class="work-card__cta">See repo →</span>
+          </div>
+        </a>
+
+        <a class="work-card" href="post.html?id=work-04" data-category="web" data-hoverable>
+          <div class="work-card__cover work-card__cover--4">
+            <div class="cover-lines"></div>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__meta"><span>05 · Web</span><span>2025</span></div>
+            <h3>Reading journal</h3>
+            <p>A slow, personal reading log — annotations, quotes, and connections over time.</p>
+            <span class="work-card__cta">Read entries →</span>
+          </div>
+        </a>
+
+        <a class="work-card" href="post.html?id=work-05" data-category="design" data-hoverable>
+          <div class="work-card__cover work-card__cover--5">
+            <div class="cover-sun"></div>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__meta"><span>06 · Design</span><span>2024</span></div>
+            <h3>Slow brand system</h3>
+            <p>A warm, quiet identity system for a friend's small studio — paper, ink, patience.</p>
+            <span class="work-card__cta">View case →</span>
+          </div>
+        </a>
+
       </div>
     </section>
 
     <!-- ============ TIMELINE ============ -->
     <section class="timeline" id="timeline">
       <div class="timeline__head">
-        <span class="folio">C.03</span>
+        <span class="folio">D.04</span>
         <h2 class="section-title">A <em>path</em>, so far.</h2>
         <p class="timeline__sub">Not a resume — more like a map with a few pins in it.</p>
       </div>
@@ -316,6 +408,54 @@
           <div class="t-item__tag">ORIGIN</div>
         </li>
       </ol>
+    </section>
+
+    <!-- ============ JOURNAL ============ -->
+    <section class="journal" id="journal">
+      <div class="journal__head">
+        <span class="folio">E.05</span>
+        <h2 class="section-title"><em>Journal</em> &amp; notes.</h2>
+        <p class="journal__sub">Shorter than blog posts, longer than tweets. Published when ready.</p>
+      </div>
+
+      <div class="journal__list">
+        <a class="entry" href="post.html?id=journal-04" data-hoverable>
+          <span class="entry__num">No. 004</span>
+          <div class="entry__body">
+            <h3>How a student put himself on the internet</h3>
+            <p>Notes on building this site — the mistakes and the lessons.</p>
+          </div>
+          <span class="entry__date">COMING</span>
+          <span class="entry__len">—</span>
+        </a>
+        <a class="entry" href="post.html?id=journal-03" data-hoverable>
+          <span class="entry__num">No. 003</span>
+          <div class="entry__body">
+            <h3>Games worth bragging about</h3>
+            <p>Not a review — just biased opinions.</p>
+          </div>
+          <span class="entry__date">COMING</span>
+          <span class="entry__len">—</span>
+        </a>
+        <a class="entry" href="post.html?id=journal-02" data-hoverable>
+          <span class="entry__num">No. 002</span>
+          <div class="entry__body">
+            <h3>Notes from life in Guangzhou</h3>
+            <p>Weather, late-night snacks, and small things that don't quite add up.</p>
+          </div>
+          <span class="entry__date">COMING</span>
+          <span class="entry__len">—</span>
+        </a>
+        <a class="entry" href="post.html?id=journal-01" data-hoverable>
+          <span class="entry__num">No. 001</span>
+          <div class="entry__body">
+            <h3>Hello — why this site exists</h3>
+            <p>First entry. A little about the <em>why</em>.</p>
+          </div>
+          <span class="entry__date">COMING</span>
+          <span class="entry__len">—</span>
+        </a>
+      </div>
     </section>
 
     <!-- ============ CONTACT ============ -->
