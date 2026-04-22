@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600;900&family=Inter:wght@400;500;600&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Space+Grotesk:wght@400;500;600&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="personal-page.css?v=4" />
-  <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
 </head>
 <body>
 
@@ -41,8 +40,7 @@
       <a href="#work"><em>03</em>Work</a>
       <a href="#timeline"><em>04</em>Path</a>
       <a href="#journal"><em>05</em>Journal</a>
-      <a href="#guestbook"><em>06</em>Wall</a>
-      <a href="#contact"><em>07</em>Contact</a>
+      <a href="#contact"><em>06</em>Contact</a>
     </nav>
     <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false">
       <span></span>
@@ -461,23 +459,9 @@
     </section>
 
     <!-- ============ CONTACT ============ -->
-    <section class="guestbook" id="guestbook">
-      <div class="guestbook__inner">
-        <span class="folio">F.06</span>
-        <h2 class="guestbook__title">
-          <span>The</span> <em>wall.</em>
-        </h2>
-        <p class="guestbook__lede">
-          Say hi, drop a note, leave a half-formed thought. No login needed — just a name (even a fake one).
-          Everybody can read what everybody else wrote. Please be kind.
-        </p>
-        <div id="waline" class="guestbook__board"></div>
-      </div>
-    </section>
-
     <section class="contact" id="contact">
       <div class="contact__inner">
-        <span class="folio">F.07</span>
+        <span class="folio">F.06</span>
         <h2 class="contact__title">
           <span>Write</span> <em>a letter.</em>
         </h2>
@@ -528,29 +512,6 @@
   </footer>
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  <!-- Waline guestbook -->
-  <script type="module">
-    import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
-    // TODO: replace with your deployed Vercel URL (e.g. https://my-waline.vercel.app)
-    const WALINE_SERVER_URL = 'https://YOUR-WALINE-INSTANCE.vercel.app';
-    if (WALINE_SERVER_URL && !WALINE_SERVER_URL.includes('YOUR-WALINE-INSTANCE')) {
-      init({
-        el: '#waline',
-        serverURL: WALINE_SERVER_URL,
-        lang: 'en',
-        locale: { placeholder: 'Leave a note — be kind.' },
-        dark: 'html[data-theme="dark"]',
-        reaction: true,
-        pageview: false,
-        comment: 500,
-      });
-    } else {
-      document.getElementById('waline').innerHTML =
-        '<div class="guestbook__pending">Guestbook backend not configured yet. ' +
-        'Deploy <code>/waline</code> to Vercel and paste the URL in <code>index.html</code>.</div>';
-    }
-  </script>
 
   <!-- Tweaks panel -->
   <div class="tweaks" id="tweaksPanel" hidden>
