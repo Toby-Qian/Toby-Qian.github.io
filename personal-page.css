@@ -1135,65 +1135,50 @@ body.cursor-hover .cursor-ring {
    CONTACT
    ====================================================== */
 .contact {
-  padding: 100px 0 60px;
+  padding: 64px 0 40px;
   border-top: 1px solid var(--ink-line);
 }
-.contact__inner { max-width: 880px; }
+.contact__inner { max-width: 720px; }
 .contact__title {
-  margin: 16px 0 16px;
+  margin: 12px 0 12px;
   font-family: var(--serif-display);
   font-weight: 400;
-  font-size: clamp(3rem, 7vw, 6rem);
-  line-height: .95;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: .98;
   letter-spacing: -0.02em;
 }
 .contact__title em { font-style: italic; color: var(--accent); }
 .contact__lede {
   font-family: var(--serif);
-  font-size: clamp(1.1rem, 1.35vw, 1.3rem);
+  font-size: clamp(.95rem, 1.1vw, 1.05rem);
   line-height: 1.55;
   color: var(--ink-soft);
   max-width: 52ch;
-  margin: 0 0 36px;
+  margin: 0 0 24px;
 }
 
-.contact__rows {
-  display: flex; flex-direction: column;
-  border-top: 1px solid var(--ink);
-  margin-bottom: 48px;
+.contact__icons {
+  display: flex;
+  gap: 14px;
+  margin: 0 0 32px;
+  flex-wrap: wrap;
 }
-.c-row {
-  display: grid;
-  grid-template-columns: 90px 1fr auto;
-  gap: 16px;
-  align-items: baseline;
-  padding: 12px 4px;
-  border-bottom: 1px solid var(--ink-line);
-  text-align: left;
-  font: inherit;
-  transition: padding-left .3s, background .25s;
-}
-.c-row:hover { padding-left: 20px; background: color-mix(in oklab, var(--accent) 6%, transparent); }
-.c-row__k {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: .22em;
-  color: var(--ink-muted);
-}
-.c-row__v {
-  font-family: var(--serif-display);
-  font-style: italic;
-  font-size: clamp(1rem, 1.4vw, 1.25rem);
+.c-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  border: 1px solid var(--ink-line);
+  border-radius: 999px;
   color: var(--ink-soft);
-  transition: color .25s;
+  background: color-mix(in oklab, var(--paper) 70%, transparent);
+  text-decoration: none;
+  transition: color .2s, border-color .2s, transform .2s, background .2s;
 }
-.c-row:hover .c-row__v { color: var(--accent); }
-.c-row__arr {
-  font-size: 14px;
-  color: var(--ink-muted);
-  transition: transform .3s, color .25s;
+.c-icon svg { width: 18px; height: 18px; display: block; }
+.c-icon:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
-.c-row:hover .c-row__arr { color: var(--accent); transform: translate(4px, -4px); }
 
 .colophon {
   padding: 18px 0 0;
@@ -1600,20 +1585,12 @@ body.menu-open .menu-toggle span::after  { top: 0; transform: rotate(-45deg); }
   .entry__len { display: none; }
 
   /* contact */
-  .contact { padding: 64px 0 30px; }
-  .contact__title { font-size: clamp(2.4rem, 10vw, 3.6rem); }
-  .contact__lede { font-size: 1.02rem; margin-bottom: 24px; }
-  .c-row {
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-    gap: 4px 12px;
-    padding: 16px 4px;
-  }
-  .c-row:hover { padding-left: 4px; }
-  .c-row__k { grid-column: 1; grid-row: 1; font-size: 10px; }
-  .c-row__arr { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-size: 18px; }
-  .c-row__v { grid-column: 1; grid-row: 2; font-size: 1.3rem; }
-  .colophon { font-size: .9rem; line-height: 1.6; padding-top: 14px; }
+  .contact { padding: 48px 0 24px; }
+  .contact__title { font-size: clamp(1.8rem, 7vw, 2.6rem); }
+  .contact__lede { font-size: .95rem; margin-bottom: 20px; }
+  .c-icon { width: 38px; height: 38px; }
+  .c-icon svg { width: 16px; height: 16px; }
+  .colophon { font-size: .85rem; line-height: 1.6; padding-top: 14px; }
 
   /* tweaks */
   .tweaks {
@@ -1630,7 +1607,7 @@ body.menu-open .menu-toggle span::after  { top: 0; transform: rotate(-45deg); }
 @media (max-width: 380px) {
   .hero__title { font-size: clamp(3rem, 19vw, 4.6rem); }
   .hero__title .line-2 { padding-left: 10vw; }
-  .contact__title { font-size: clamp(2.1rem, 11vw, 3rem); }
+  .contact__title { font-size: clamp(1.6rem, 8vw, 2.2rem); }
   .footer__big { font-size: clamp(2.2rem, 16vw, 4rem); }
   .btn span { white-space: nowrap; }
 }
