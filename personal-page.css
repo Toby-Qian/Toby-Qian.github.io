@@ -799,6 +799,22 @@ body.cursor-hover .cursor-ring {
   border-bottom: 1px solid var(--ink-line);
   background: var(--paper-2);
 }
+.work-card__img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .6s cubic-bezier(.2,.7,.2,1), filter .4s;
+  filter: saturate(.9) contrast(1.02);
+}
+.work-card:hover .work-card__img { transform: scale(1.04); filter: saturate(1) contrast(1.05); }
+.cover-claude {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 42%; height: 72%;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,.18));
+}
 .work-card--feature .work-card__cover { aspect-ratio: 21 / 8; }
 
 .work-card__cover--1 {
@@ -914,11 +930,9 @@ body.cursor-hover .cursor-ring {
 }
 .pf-frame__photo {
   position: absolute; inset: 0;
-  background:
-    radial-gradient(circle at 30% 35%, color-mix(in oklab, var(--accent) 55%, #fff) 0%, transparent 45%),
-    radial-gradient(circle at 70% 70%, color-mix(in oklab, var(--accent-2) 60%, #fff) 0%, transparent 50%),
-    linear-gradient(135deg, color-mix(in oklab, var(--ink) 20%, var(--paper-2)), var(--paper-2));
-  filter: saturate(.85) contrast(1.05);
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: saturate(.95) contrast(1.02);
 }
 .pf-frame__label {
   position: absolute; top: 8px; left: 10px;
