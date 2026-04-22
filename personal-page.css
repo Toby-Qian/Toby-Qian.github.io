@@ -1437,6 +1437,11 @@ body.menu-open .menu-toggle span::after  { top: 0; transform: rotate(-45deg); }
   .work-card--feature { grid-column: span 2; }
   .work-card--feature .work-card__cover { aspect-ratio: 16 / 9; }
 
+  /* Paper Figure cover: hide caption on narrow screens so shiba fills the frame */
+  .work-card__cover--pf { padding: 10px; gap: 0; }
+  .pf-caption { display: none; }
+  .pf-frame { min-height: 0; }
+
   .sheet { margin: 0 clamp(14px, 4vw, 32px); }
   .footer { margin: 40px clamp(14px, 4vw, 32px) 0; }
   .footer__big { font-size: clamp(3rem, 14vw, 10rem); }
