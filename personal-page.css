@@ -1011,6 +1011,90 @@ body.cursor-hover .cursor-ring {
 .pf-caption strong { font-weight: 700; }
 .pf-caption em { font-style: italic; color: var(--accent); }
 
+/* ---- Resume Hub feature cover ---- */
+.work-card__cover--rh {
+  background:
+    linear-gradient(180deg,
+      color-mix(in oklab, var(--accent) 8%, var(--paper)) 0%,
+      var(--paper) 100%);
+  padding: 22px 22px 14px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.rh-paper {
+  position: relative;
+  flex: 1;
+  background: #fdfdfb;
+  border: 1px solid var(--ink);
+  box-shadow: 0 1px 0 rgba(0,0,0,.04), 8px 8px 0 -4px color-mix(in oklab, var(--accent) 22%, transparent);
+  padding: 14px 16px 12px;
+  display: flex; flex-direction: column; gap: 10px;
+  min-height: 160px;
+  overflow: hidden;
+}
+.rh-head {
+  display: flex; align-items: center; gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid color-mix(in oklab, var(--ink) 25%, transparent);
+}
+.rh-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 35%,
+      color-mix(in oklab, var(--accent) 70%, #fff) 0%,
+      var(--accent) 60%,
+      color-mix(in oklab, var(--accent) 60%, var(--ink)) 100%);
+  border: 1px solid var(--ink);
+  flex: 0 0 auto;
+}
+.rh-name { display: flex; flex-direction: column; gap: 5px; flex: 1; }
+.rh-line {
+  display: block; height: 6px; border-radius: 3px;
+  background: color-mix(in oklab, var(--ink) 70%, transparent);
+}
+.rh-line--title { width: 55%; height: 9px; background: var(--ink); }
+.rh-line--sub   { width: 78%; height: 5px; background: color-mix(in oklab, var(--ink) 45%, transparent); }
+.rh-line--short { width: 40%; }
+.rh-section {
+  display: flex; flex-direction: column; gap: 5px;
+  position: relative;
+  padding-left: 36px;
+}
+.rh-tag {
+  position: absolute; left: 0; top: 1px;
+  font-family: var(--mono); font-size: 9px; letter-spacing: .12em;
+  color: var(--accent); font-weight: 700;
+}
+.rh-chips { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+.rh-chips i {
+  display: inline-block; width: 32px; height: 12px; border-radius: 6px;
+  background: color-mix(in oklab, var(--accent) 22%, var(--paper));
+  border: 1px solid color-mix(in oklab, var(--accent) 50%, var(--ink));
+}
+.rh-chips i:nth-child(2) { width: 44px; }
+.rh-chips i:nth-child(3) { width: 26px; }
+.rh-chips i:nth-child(4) { width: 38px; }
+.rh-stamp {
+  position: absolute; right: 8px; bottom: 8px;
+  font-family: var(--mono); font-size: 9px; letter-spacing: .14em;
+  color: var(--accent);
+  border: 1px dashed var(--accent);
+  padding: 2px 6px;
+  transform: rotate(-6deg);
+  opacity: .85;
+}
+.rh-caption {
+  font-family: var(--serif);
+  font-size: 12px; line-height: 1.45;
+  color: var(--ink);
+}
+.rh-caption strong { font-weight: 700; }
+.rh-caption em { font-style: italic; color: var(--accent); }
+.work-card:hover .rh-paper { transform: translateY(-2px); transition: transform .35s ease; }
+@media (max-width: 720px) {
+  .work-card__cover--rh { padding: 12px; }
+  .rh-caption { display: none; }
+}
+
 .work-card__body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .work-card__meta {
   display: flex; justify-content: space-between;
