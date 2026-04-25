@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600;900&family=Inter:wght@400;500;600&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Space+Grotesk:wght@400;500;600&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="personal-page.css?v=4" />
+  <link rel="stylesheet" href="personal-page.css?v=5" />
 </head>
 <body>
 
@@ -36,11 +36,10 @@
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#about"><em>01</em>About</a>
-      <a href="#stack"><em>02</em>Stack</a>
-      <a href="#work"><em>03</em>Work</a>
-      <a href="#timeline"><em>04</em>Path</a>
-      <a href="#journal"><em>05</em>Journal</a>
-      <a href="#contact"><em>06</em>Contact</a>
+      <a href="#work"><em>02</em>Work</a>
+      <a href="#timeline"><em>03</em>Path</a>
+      <a href="#journal"><em>04</em>Notes</a>
+      <a href="#contact"><em>05</em>Contact</a>
     </nav>
     <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false">
       <span></span>
@@ -176,39 +175,10 @@
       </div>
     </section>
 
-    <!-- ============ STACK / SKILLS ============ -->
-    <section class="stack" id="stack">
-      <div class="stack__head">
-        <span class="folio">B.02</span>
-        <h2 class="section-title"><em>Tools</em> on the desk.</h2>
-        <p class="stack__sub">A messy, honest list. Some I love, some I'm learning, some I keep around.</p>
-      </div>
-
-      <div class="stack__grid">
-        <div class="stack__group">
-          <h3>Learning</h3>
-          <ul class="chips">
-            <li>Python</li><li>English</li>
-          </ul>
-        </div>
-        <div class="stack__group">
-          <h3>Playing</h3>
-          <ul class="chips">
-            <li>Video games</li><li>Slacking off</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="stack__pullquote">
-        <span class="pq-open">“</span>
-        <p>Good tools disappear. The ones left on the desk are the ones you actually reach for.</p>
-      </div>
-    </section>
-
     <!-- ============ WORK ============ -->
     <section class="work" id="work">
       <div class="work__head">
-        <span class="folio">C.03</span>
+        <span class="folio">B.02</span>
         <h2 class="section-title">Selected <em>work</em>.</h2>
         <div class="filters" role="tablist" aria-label="filter">
           <button class="filter is-active" data-filter="all">All</button>
@@ -220,31 +190,8 @@
 
       <div class="work__grid">
 
-        <a class="work-card work-card--feature" href="https://github.com/Toby-Qian/academic-assignment-assistant" target="_blank" rel="noreferrer" data-category="tool" data-hoverable>
-          <div class="work-card__cover work-card__cover--1">
-            <img class="cover-claude" src="assets/claude-color.svg" alt="Claude" loading="lazy" />
-            <div class="cover-grid"></div>
-          </div>
-          <div class="work-card__body">
-            <div class="work-card__meta"><span>01 · Claude Code Skill</span><span>2026 · MIT</span></div>
-            <h3>Academic Assignment Assistant</h3>
-            <p>
-              Feed it a professor's assignment file. It reads the <em>actual</em> requirements
-              (and the unspoken ones), then hands back a ready-to-submit Word doc —
-              in <strong>two versions</strong>, so you get to pick the angle. It will not make up citations.
-              You still have to put your name on it.
-            </p>
-            <p class="work-card__tags">
-              <span>Claude Code</span>
-              <span>Python</span>
-              <span>python-docx</span>
-              <span>5 citation styles</span>
-            </p>
-            <span class="work-card__cta">View on GitHub <svg viewBox="0 0 24 24"><path d="M7 17L17 7M10 7h7v7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
-          </div>
-        </a>
-
-        <a class="work-card work-card--feature" href="https://toby-qian.github.io/paper-figure/" target="_blank" rel="noreferrer" data-category="tool" data-hoverable>
+        <!-- HERO — Paper Figure Studio -->
+        <a class="work-card work-card--hero" href="https://toby-qian.github.io/paper-figure/" target="_blank" rel="noreferrer" data-category="tool" data-hoverable>
           <div class="work-card__cover work-card__cover--pf">
             <div class="pf-frame">
               <img class="pf-frame__photo" src="assets/shiba.jpg" alt="" loading="lazy" />
@@ -257,13 +204,13 @@
             </div>
           </div>
           <div class="work-card__body">
-            <div class="work-card__meta"><span>02 · Web / Canvas Tool</span><span>2026 · MIT</span></div>
+            <div class="work-card__meta"><span>01 · Canvas Tool</span><span>2026 · MIT</span></div>
             <h3>Paper Figure Studio</h3>
             <p>
-              Drop in a photo of your cat. Stamp on <em>(a)(b)(c)</em>, a scale bar, an arrow,
-              a very serious caption — and suddenly it looks like <em>Nature</em> Volume 621.
-              One click swaps between Nature · Science · Cell · IEEE · Elsevier house styles.
-              Runs entirely in your browser. Please don't submit to real journals.
+              Drop in a photo of your cat, stamp on <em>(a)(b)(c)</em>, add a scale bar — suddenly
+              it looks like <em>Nature</em> Volume 621. One click swaps between Nature · Science ·
+              Cell · IEEE · Elsevier house styles. Runs entirely in your browser. Please don't submit
+              to real journals.
             </p>
             <p class="work-card__tags">
               <span>Canvas 2D</span>
@@ -275,7 +222,25 @@
           </div>
         </a>
 
-        <a class="work-card work-card--feature" href="https://github.com/Toby-Qian/game-of-life" target="_blank" rel="noreferrer" data-category="tool" data-hoverable>
+        <!-- MEDIUM — Academic Assignment Assistant -->
+        <a class="work-card work-card--med" href="https://github.com/Toby-Qian/academic-assignment-assistant" target="_blank" rel="noreferrer" data-category="tool" data-hoverable>
+          <div class="work-card__cover work-card__cover--1">
+            <img class="cover-claude" src="assets/claude-color.svg" alt="Claude" loading="lazy" />
+            <div class="cover-grid"></div>
+          </div>
+          <div class="work-card__body">
+            <div class="work-card__meta"><span>02 · Claude Skill</span><span>2026</span></div>
+            <h3>Academic Assignment Assistant</h3>
+            <p>
+              Feed it an assignment file. It reads the <em>actual</em> requirements and hands back
+              a ready-to-submit Word doc — in two versions. Won't invent citations.
+            </p>
+            <span class="work-card__cta">On GitHub →</span>
+          </div>
+        </a>
+
+        <!-- MEDIUM — Game of Life -->
+        <a class="work-card work-card--med" href="https://github.com/Toby-Qian/game-of-life" target="_blank" rel="noreferrer" data-category="tool" data-hoverable>
           <div class="work-card__cover work-card__cover--life">
             <div class="life-grid">
               <span style="--x:2;--y:1"></span>
@@ -290,25 +255,19 @@
             <div class="life-caption">B3/S23 · generation ∞</div>
           </div>
           <div class="work-card__body">
-            <div class="work-card__meta"><span>03 · Canvas Simulation</span><span>2026 · MIT</span></div>
+            <div class="work-card__meta"><span>03 · Canvas Sim</span><span>2026</span></div>
             <h3>Conway's Game of Life</h3>
             <p>
-              Paint a few cells, press play, and watch them <em>live</em> by three tiny rules.
-              Dark theme, toroidal world, gradient-tinted cells, and the classic cast —
-              <strong>glider</strong>, <strong>pulsar</strong>, Gosper's gun, LWSS, R-pentomino.
-              No dependencies, pure Canvas 2D. A zero-player game that plays itself.
+              Paint cells, hit play, watch them <em>live</em> by three rules.
+              Toroidal world, the classic cast — glider, pulsar, Gosper's gun.
+              A zero-player game that plays itself.
             </p>
-            <p class="work-card__tags">
-              <span>Canvas 2D</span>
-              <span>Vanilla JS</span>
-              <span>5 presets</span>
-              <span>Keyboard-first</span>
-            </p>
-            <span class="work-card__cta">Play the simulation <svg viewBox="0 0 24 24"><path d="M7 17L17 7M10 7h7v7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+            <span class="work-card__cta">Play it →</span>
           </div>
         </a>
 
-        <a class="work-card work-card--feature" href="https://resume-hub-mu-eight.vercel.app" target="_blank" rel="noreferrer" data-category="web" data-hoverable>
+        <!-- MEDIUM — Resume Hub -->
+        <a class="work-card work-card--med" href="https://resume-hub-mu-eight.vercel.app" target="_blank" rel="noreferrer" data-category="web" data-hoverable>
           <div class="work-card__cover work-card__cover--rh">
             <div class="rh-paper">
               <div class="rh-head">
@@ -337,77 +296,15 @@
               </div>
               <div class="rh-stamp">A4 · PDF</div>
             </div>
-            <div class="rh-caption">
-              <strong>Resume Hub.</strong> One JSON · six themes · drag-anywhere notes ·
-              <em>print-to-PDF</em> in any browser.
-            </div>
           </div>
           <div class="work-card__body">
-            <div class="work-card__meta"><span>04 · Web App</span><span>2026 · MIT</span></div>
+            <div class="work-card__meta"><span>04 · Web App</span><span>2026</span></div>
             <h3>Resume Hub</h3>
             <p>
-              A bilingual resume studio. Fill in <em>one</em> JSON-Resume-shaped form and watch it
-              re-render across six themes — modern, classic, minimal, 中文正式, 中文创意, English academic.
-              Drop in <strong>free-floating text boxes &amp; images</strong>, drag them anywhere on the page,
-              undo/redo every keystroke, then hit <em>Print → A4 PDF</em>. Also a gallery of
-              500+ scraped GitHub resume templates with one-click <strong>Open in Overleaf</strong>.
+              A bilingual resume studio. One JSON form, six themes, free-floating notes, undo/redo
+              every keystroke, and <em>Print → A4 PDF</em>. Plus 500+ Overleaf-ready templates.
             </p>
-            <p class="work-card__tags">
-              <span>Next.js 14</span>
-              <span>Zustand + persist</span>
-              <span>6 themes</span>
-              <span>Free-form notes</span>
-              <span>Print-to-PDF</span>
-            </p>
-            <span class="work-card__cta">Open the editor <svg viewBox="0 0 24 24"><path d="M7 17L17 7M10 7h7v7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
-          </div>
-        </a>
-
-        <a class="work-card" href="post.html?id=work-01" data-category="web" data-hoverable>
-          <div class="work-card__cover">
-            <img class="work-card__img" src="https://picsum.photos/seed/personalpress/800/450" alt="" loading="lazy" />
-          </div>
-          <div class="work-card__body">
-            <div class="work-card__meta"><span>05 · Web</span><span>2026</span></div>
-            <h3>Personal Press — v1</h3>
-            <p>A magazine-style personal website. Built from scratch in HTML, CSS and a little JavaScript — a home for notes, projects and experiments.</p>
-            <span class="work-card__cta">Open issue →</span>
-          </div>
-        </a>
-
-        <a class="work-card" href="post.html?id=work-03" data-category="tool" data-hoverable>
-          <div class="work-card__cover">
-            <img class="work-card__img" src="https://picsum.photos/seed/terminalcli/800/450" alt="" loading="lazy" />
-          </div>
-          <div class="work-card__body">
-            <div class="work-card__meta"><span>06 · Tool</span><span>2025</span></div>
-            <h3>CLI scaffolds for side projects</h3>
-            <p>Tiny CLI that sets up the boring parts of a new idea so I can start playing in five minutes.</p>
-            <span class="work-card__cta">See repo →</span>
-          </div>
-        </a>
-
-        <a class="work-card" href="post.html?id=work-04" data-category="web" data-hoverable>
-          <div class="work-card__cover">
-            <img class="work-card__img" src="https://picsum.photos/seed/readingbooks/800/450" alt="" loading="lazy" />
-          </div>
-          <div class="work-card__body">
-            <div class="work-card__meta"><span>07 · Web</span><span>2025</span></div>
-            <h3>Reading journal</h3>
-            <p>A slow, personal reading log — annotations, quotes, and connections over time.</p>
-            <span class="work-card__cta">Read entries →</span>
-          </div>
-        </a>
-
-        <a class="work-card" href="post.html?id=work-05" data-category="design" data-hoverable>
-          <div class="work-card__cover">
-            <img class="work-card__img" src="https://picsum.photos/seed/slowbrand/800/450" alt="" loading="lazy" />
-          </div>
-          <div class="work-card__body">
-            <div class="work-card__meta"><span>08 · Design</span><span>2024</span></div>
-            <h3>Slow brand system</h3>
-            <p>A warm, quiet identity system for a friend's small studio — paper, ink, patience.</p>
-            <span class="work-card__cta">View case →</span>
+            <span class="work-card__cta">Open the editor →</span>
           </div>
         </a>
 
@@ -417,7 +314,7 @@
     <!-- ============ TIMELINE ============ -->
     <section class="timeline" id="timeline">
       <div class="timeline__head">
-        <span class="folio">D.04</span>
+        <span class="folio">C.03</span>
         <h2 class="section-title">A <em>path</em>, so far.</h2>
         <p class="timeline__sub">Not a resume — more like a map with a few pins in it.</p>
       </div>
@@ -448,7 +345,7 @@
           <div class="t-item__tag">START</div>
         </li>
         <li class="t-item">
-          <div class="t-item__year">Before</div>
+          <div class="t-item__year">— 2022</div>
           <div class="t-item__body">
             <h4>Curious about every weird button on a screen</h4>
             <p>Broke a lot of things. Fixed some of them. The habit stuck.</p>
@@ -461,49 +358,38 @@
     <!-- ============ JOURNAL ============ -->
     <section class="journal" id="journal">
       <div class="journal__head">
-        <span class="folio">E.05</span>
-        <h2 class="section-title"><em>Journal</em> &amp; notes.</h2>
-        <p class="journal__sub">Shorter than blog posts, longer than tweets. Published when ready.</p>
+        <span class="folio">D.04</span>
+        <h2 class="section-title"><em>Notes</em>, soon.</h2>
+        <p class="journal__sub">Short writing lives here when it's ready. Until then, four drafts in the queue.</p>
       </div>
 
-      <div class="journal__list">
-        <a class="entry" href="post.html?id=journal-04" data-hoverable>
-          <span class="entry__num">No. 004</span>
-          <div class="entry__body">
-            <h3>How a student put himself on the internet</h3>
-            <p>Notes on building this site — the mistakes and the lessons.</p>
-          </div>
-          <span class="entry__date">COMING</span>
-          <span class="entry__len">—</span>
-        </a>
-        <a class="entry" href="post.html?id=journal-03" data-hoverable>
-          <span class="entry__num">No. 003</span>
-          <div class="entry__body">
-            <h3>Games worth bragging about</h3>
-            <p>Not a review — just biased opinions.</p>
-          </div>
-          <span class="entry__date">COMING</span>
-          <span class="entry__len">—</span>
-        </a>
-        <a class="entry" href="post.html?id=journal-02" data-hoverable>
-          <span class="entry__num">No. 002</span>
-          <div class="entry__body">
-            <h3>Notes from life in Guangzhou</h3>
-            <p>Weather, late-night snacks, and small things that don't quite add up.</p>
-          </div>
-          <span class="entry__date">COMING</span>
-          <span class="entry__len">—</span>
-        </a>
-        <a class="entry" href="post.html?id=journal-01" data-hoverable>
-          <span class="entry__num">No. 001</span>
-          <div class="entry__body">
-            <h3>Hello — why this site exists</h3>
-            <p>First entry. A little about the <em>why</em>.</p>
-          </div>
-          <span class="entry__date">COMING</span>
-          <span class="entry__len">—</span>
-        </a>
+      <div class="journal__queue">
+        <div class="queue-card">
+          <span class="queue-card__num">No. 001</span>
+          <h3>Hello — why this site exists</h3>
+          <p>First entry. A little about the <em>why</em>.</p>
+        </div>
+        <div class="queue-card">
+          <span class="queue-card__num">No. 002</span>
+          <h3>Notes from life in Guangzhou</h3>
+          <p>Weather, late-night snacks, small things that don't quite add up.</p>
+        </div>
+        <div class="queue-card">
+          <span class="queue-card__num">No. 003</span>
+          <h3>Games worth bragging about</h3>
+          <p>Not a review — just biased opinions.</p>
+        </div>
+        <div class="queue-card">
+          <span class="queue-card__num">No. 004</span>
+          <h3>How a student put himself on the internet</h3>
+          <p>Notes on building this site — the mistakes and the lessons.</p>
+        </div>
       </div>
+
+      <p class="journal__foot">
+        <span class="journal__foot-rule"></span>
+        <span>Want to know when these go up? <a href="mailto:q1509713692@gmail.com">drop me a line</a> — I'll send them by hand.</span>
+      </p>
     </section>
 
     <!-- ============ CONTACT ============ -->
@@ -543,9 +429,8 @@
         <span>Issue 01 / 2026</span>
       </div>
       <div class="footer__row footer__stats">
-        <span>Views <span id="busuanzi_value_site_pv">…</span></span>
-        <span>—</span>
-        <span>Visitors <span id="busuanzi_value_site_uv">…</span></span>
+        <span class="counter">Views <b id="busuanzi_value_site_pv">…</b></span>
+        <span class="counter">Visitors <b id="busuanzi_value_site_uv">…</b></span>
       </div>
     </div>
 
