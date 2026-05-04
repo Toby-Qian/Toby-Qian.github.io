@@ -3,508 +3,320 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Toby Qian — Personal Space</title>
+  <title>Toby Qian — Personal Page</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@400;600;900&family=Inter:wght@400;500;600&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Space+Grotesk:wght@400;500;600&family=DM+Serif+Display:ital@0;1&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="personal-page.css?v=5" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="personal-page.css?v=10" />
 </head>
 <body>
 
-  <!-- Grain / paper texture overlay -->
-  <div class="paper-grain" aria-hidden="true"></div>
-  <div class="paper-noise" aria-hidden="true"></div>
-
-  <!-- Cursor follower -->
+  <div class="grain" aria-hidden="true"></div>
   <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
 
-  <!-- Floating page furniture -->
-  <div class="page-corner page-corner--tl">
-    <span class="rot">EST. 2026 · ISSUE NO. 01 · PERSONAL PRESS</span>
-  </div>
-  <div class="page-corner page-corner--tr">
-    <span>TOBY / 001</span>
-  </div>
+  <!-- Decorative tape strips -->
+  <div class="tape tape--1" aria-hidden="true"></div>
+  <div class="tape tape--2" aria-hidden="true"></div>
 
   <!-- Top bar -->
   <header class="topbar">
-    <a class="brand" href="#home">
-      <span class="brand__mark">◉</span>
+    <a class="brand" href="#home" data-hoverable>
+      <span class="brand__mark">✺</span>
       <span class="brand__name">Toby Qian</span>
-      <span class="brand__sub">/ personal press</span>
+      <span class="brand__sub" data-en="/ lilac diary" data-zh="/ 紫丁香日记">/ lilac diary</span>
     </a>
     <nav class="nav" aria-label="Main">
-      <a href="#about"><em>01</em>About</a>
-      <a href="#work"><em>02</em>Work</a>
-      <a href="#timeline"><em>03</em>Path</a>
-      <a href="#journal"><em>04</em>Notes</a>
-      <a href="#contact"><em>05</em>Contact</a>
+      <a href="#about" data-en="About" data-zh="关于">About</a>
+      <a href="#work" data-en="Work" data-zh="作品">Work</a>
+      <a href="#notes" data-en="Notes" data-zh="随笔">Notes</a>
+      <a href="#contact" data-en="Hello" data-zh="联系">Hello</a>
     </nav>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false">
-      <span></span>
-    </button>
-    <button class="time-chip" id="timeChip" type="button">
-      <span class="time-chip__dot"></span>
-      <span id="timeText">—</span>
-    </button>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <div class="lang" role="group" aria-label="language">
+      <button data-lang="en" class="is-on">EN</button>
+      <button data-lang="zh">中文</button>
+    </div>
   </header>
 
-  <main class="sheet">
+  <main class="page" id="home">
 
     <!-- ============ HERO ============ -->
-    <section class="hero" id="home">
-      <div class="hero__meta">
-        <div class="rule"></div>
-        <p class="kicker"><span>VOL. 01</span><span>·</span><span>THE TOBY ISSUE</span><span>·</span><span id="todayText">—</span></p>
-      </div>
-
-      <h1 class="hero__title" aria-label="Hello, I'm Toby Qian.">
-        <span class="line line-1">
-          <span class="word"><span class="char">H</span><span class="char">e</span><span class="char">l</span><span class="char">l</span><span class="char">o</span><span class="char">,</span></span>
-        </span>
-        <span class="line line-2">
-          <span class="word word--italic"><span class="char">I</span><span class="char">'</span><span class="char">m</span></span>
-          <span class="word word--outline" data-hoverable>
-            <span class="char">T</span><span class="char">o</span><span class="char">b</span><span class="char">y</span>
-          </span>
-        </span>
-        <span class="line line-3">
-          <span class="word word--big"><span class="char">Q</span><span class="char">i</span><span class="char">a</span><span class="char">n</span><span class="char">.</span></span>
-          <span class="hero__asterisk" aria-hidden="true">✺</span>
-        </span>
-      </h1>
-
-      <div class="hero__side">
-        <div class="hero__stamp">
-          <svg viewBox="0 0 120 120" aria-hidden="true">
+    <section class="hero">
+      <div class="hero__left">
+        <div class="mascot reveal" data-hoverable>
+          <svg viewBox="0 0 240 280" aria-hidden="true">
             <defs>
-              <path id="circlePath" d="M 60,60 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0" />
+              <radialGradient id="catBody" cx="50%" cy="50%" r="60%">
+                <stop offset="0%" stop-color="#f4ecff"/>
+                <stop offset="100%" stop-color="#cdb8e8"/>
+              </radialGradient>
             </defs>
-            <text class="stamp-text">
-              <textPath href="#circlePath">· BUILDING · WRITING · EXPLORING · INTERNET CRAFT · </textPath>
-            </text>
-            <text x="60" y="58" text-anchor="middle" class="stamp-center">TQ</text>
-            <text x="60" y="76" text-anchor="middle" class="stamp-small">2026</text>
+            <path d="M58 130 L78 70 L102 118 Z" fill="url(#catBody)"/>
+            <path d="M182 130 L162 70 L138 118 Z" fill="url(#catBody)"/>
+            <path d="M70 122 L82 88 L94 118 Z" fill="#e6b48f" opacity=".75"/>
+            <path d="M170 122 L158 88 L146 118 Z" fill="#e6b48f" opacity=".75"/>
+            <ellipse cx="120" cy="160" rx="78" ry="68" fill="url(#catBody)"/>
+            <ellipse cx="98" cy="158" rx="5" ry="7" fill="#2a2042"/>
+            <ellipse cx="142" cy="158" rx="5" ry="7" fill="#2a2042"/>
+            <ellipse cx="100" cy="155" rx="1.6" ry="2" fill="#fff"/>
+            <ellipse cx="144" cy="155" rx="1.6" ry="2" fill="#fff"/>
+            <path d="M115 176 L125 176 L120 182 Z" fill="#a3283a"/>
+            <path d="M120 182 L120 188 M120 188 Q112 194 106 188 M120 188 Q128 194 134 188" stroke="#2a2042" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <ellipse cx="86" cy="175" rx="9" ry="6" fill="#e6b48f" opacity=".55"/>
+            <ellipse cx="154" cy="175" rx="9" ry="6" fill="#e6b48f" opacity=".55"/>
+            <path d="M70 174 L46 168 M70 180 L46 182 M70 186 L46 196" stroke="#7e63a8" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+            <path d="M170 174 L194 168 M170 180 L194 182 M170 186 L194 196" stroke="#7e63a8" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+            <path d="M70 220 Q120 240 170 220 L168 240 Q120 256 72 240 Z" fill="#a3283a"/>
+            <path d="M120 240 L140 268 L132 268 L116 250 Z" fill="#7e1a2a"/>
+            <g fill="#9c7fc4">
+              <path d="M40 100 L43 110 L53 113 L43 116 L40 126 L37 116 L27 113 L37 110 Z"/>
+              <path d="M210 70 L212 76 L218 78 L212 80 L210 86 L208 80 L202 78 L208 76 Z"/>
+            </g>
           </svg>
         </div>
+        <div class="stickers">
+          <span class="sticker sticker--1" data-hoverable data-en="★ studying" data-zh="★ 学习中">★ studying</span>
+          <span class="sticker sticker--2" data-hoverable data-en="♡ writing" data-zh="♡ 写作">♡ writing</span>
+          <span class="sticker sticker--3" data-hoverable data-en="✺ web" data-zh="✺ 网页">✺ web</span>
+          <span class="sticker sticker--4" data-hoverable data-en="⌬ STM32" data-zh="⌬ 单片机">⌬ STM32</span>
+        </div>
+      </div>
 
-        <p class="hero__lede">
-          A student in Guangzhou who builds <em>small web tools</em>.
-          This is where I keep the things I've shipped.
+      <div class="hero__right">
+        <p class="kicker reveal" data-en="VOL. 01 · THE TOBY ISSUE · 2026" data-zh="第 01 卷 · 关于 TOBY · 2026">VOL. 01 · THE TOBY ISSUE · 2026</p>
+        <h1 class="hero__title">
+          <span class="reveal" data-en="Hello," data-zh="你好，">Hello,</span>
+          <span class="reveal">
+            <em data-en="I'm" data-zh="我是">I'm</em>
+            <span class="hero__name" data-hoverable data-en="Toby Qian." data-zh="钱 Toby。">Toby Qian.</span>
+          </span>
+        </h1>
+        <p class="lede reveal" data-en="A mechatronics student in Guangzhou who builds small web tools and the occasional little robot. This is where I keep the things I've shipped." data-zh="一个住在广州的机电一体化学生，做一些小巧的网页工具，偶尔也搓个小机器人。这里收着我目前做完的东西。">
+          A mechatronics student in Guangzhou who builds small web tools and the occasional little robot. This is where I keep the things I've shipped.
         </p>
 
-        <div class="hero__ticker">
-          <span class="hero__ticker-label">NOW</span>
-          <span class="hero__ticker-dot"></span>
-          <span id="nowText">Writing about small tools.</span>
+        <div class="hero__row reveal">
+          <div class="now">
+            <span class="now__dot"></span>
+            <span class="now__label" data-en="NOW" data-zh="近况">NOW</span>
+            <span id="nowText" data-en="Wiring servos for the tea-picking arm." data-zh="给采茶机械臂接舵机。">Wiring servos for the tea-picking arm.</span>
+          </div>
+          <div class="actions">
+            <a href="#work" class="btn btn--primary" data-hoverable data-en="Read the issue" data-zh="翻开本期">Read the issue</a>
+            <a href="#contact" class="btn" data-hoverable data-en="Say hello" data-zh="打个招呼">Say hello</a>
+          </div>
         </div>
 
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="#work" data-hoverable>
-            <span>Read the issue</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </a>
-          <a class="btn btn--ghost" href="#contact" data-hoverable>
-            <span>Say hello</span>
-          </a>
+        <div class="facts reveal">
+          <div class="fact"><span class="fact__k" data-en="BASED" data-zh="所在">BASED</span><span class="fact__v" data-en="Guangzhou · SCAU" data-zh="广州 · 华农">Guangzhou · SCAU</span></div>
+          <div class="fact"><span class="fact__k" data-en="ROLE" data-zh="身份">ROLE</span><span class="fact__v" data-en="Student · Builder" data-zh="学生 · 制作者">Student · Builder</span></div>
+          <div class="fact"><span class="fact__k" data-en="MAKES" data-zh="在做">MAKES</span><span class="fact__v" data-en="Web tools · STM32" data-zh="网页工具 · 单片机">Web tools · STM32</span></div>
+          <div class="fact"><span class="fact__k" data-en="AVAILABLE" data-zh="状态">AVAILABLE</span><span class="fact__v"><span class="avail-dot"></span><span data-en="Open to chats" data-zh="随时聊聊">Open to chats</span></span></div>
         </div>
       </div>
-
-      <!-- Scroll hint -->
-      <div class="scroll-hint"><span>SCROLL</span><span class="scroll-hint__arr">↓</span></div>
     </section>
-
-    <!-- ============ MARQUEE divider ============ -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>✺ Personal Press</span><span>·</span>
-        <span>Typography</span><span>·</span>
-        <span>Interaction</span><span>·</span>
-        <span>Front-end Craft</span><span>·</span>
-        <span>Small Web</span><span>·</span>
-        <span>Issue 01 / 2026</span><span>·</span>
-        <span>✺ Personal Press</span><span>·</span>
-        <span>Typography</span><span>·</span>
-        <span>Interaction</span><span>·</span>
-        <span>Front-end Craft</span><span>·</span>
-        <span>Small Web</span><span>·</span>
-        <span>Issue 01 / 2026</span><span>·</span>
-      </div>
-    </div>
 
     <!-- ============ ABOUT ============ -->
     <section class="about" id="about">
-      <aside class="about__aside">
-        <span class="folio">A.01</span>
-        <div class="pill">COLUMN ONE</div>
-        <p class="about__tag">The <em>about</em> page, printed.</p>
-      </aside>
-
-      <div class="about__col">
-        <h2 class="section-title"><span>A portrait,</span> <em>in five lines.</em></h2>
-        <div class="dropcap">
-          <p>
-            <span class="drop">A</span> student in Guangzhou who likes small, <em>focused</em>
-            tools — the kind that do one thing well and fit on a single page.
-          </p>
-          <p>
-            I build web things in vanilla HTML &amp; CSS and write a bit of Python.
-            This site is where the finished stuff lives.
-          </p>
-        </div>
-      </div>
-
-      <div class="about__facts">
-        <div class="fact">
-          <span class="fact__k">BASED</span>
-          <span class="fact__v">Guangzhou</span>
-        </div>
-        <div class="fact">
-          <span class="fact__k">ROLE</span>
-          <span class="fact__v">Student · Builder</span>
-        </div>
-        <div class="fact">
-          <span class="fact__k">MAKES</span>
-          <span class="fact__v">Small web tools</span>
-        </div>
-        <div class="fact">
-          <span class="fact__k">AVAILABLE</span>
-          <span class="fact__v"><span class="avail-dot"></span>Open to chats</span>
-        </div>
+      <div class="card about__card reveal">
+        <span class="stamp">A.01</span>
+        <h2 class="h2"><span data-en="A portrait," data-zh="一段自述，">A portrait,</span> <em data-en="in five lines." data-zh="约莫五句。">in five lines.</em></h2>
+        <p class="prose" data-en="A mechatronics student at South China Agricultural University. Currently building a four-DoF tea-bud picking arm — STM32 + servo bus + a small OLED yelling status at me." data-zh="华南农业大学机电一体化的学生。眼下在做四自由度的茶叶嫩尖采摘机械手——STM32 加舵机控制板，还有一块小 OLED 在旁边喊状态。">
+          A mechatronics student at South China Agricultural University. Currently building a four-DoF tea-bud picking arm — STM32 + servo bus + a small OLED yelling status at me.
+        </p>
+        <p class="prose" data-en="In the other tab, I write web things in vanilla HTML &amp; CSS, a bit of Python, and Next.js when the project asks for it. I like tools that do one thing well and fit on a single page." data-zh="另一个 tab 里写网页：vanilla HTML &amp; CSS，一点 Python，需要时也写 Next.js。偏爱小而专注、装得进一页的工具。">
+          In the other tab, I write web things in vanilla HTML &amp; CSS, a bit of Python, and Next.js when the project asks for it. I like tools that do one thing well and fit on a single page.
+        </p>
       </div>
     </section>
 
     <!-- ============ WORK ============ -->
     <section class="work" id="work">
-      <div class="work__head">
-        <span class="folio">B.02</span>
-        <h2 class="section-title">Selected <em>work</em>.</h2>
-        <div class="filters" role="tablist" aria-label="filter">
-          <button class="filter is-active" data-filter="all">All</button>
-          <button class="filter" data-filter="web">Web</button>
-          <button class="filter" data-filter="design">Design</button>
-          <button class="filter" data-filter="tool">Tools</button>
-        </div>
+      <div class="sec-head reveal">
+        <span class="stamp">B.02</span>
+        <h2 class="h2"><span data-en="Selected" data-zh="几件">Selected</span> <em data-en="work." data-zh="近作。">work.</em></h2>
       </div>
 
-      <div class="work__grid">
+      <div class="work__list">
 
-        <!-- HERO — Paper Figure Studio -->
-        <a class="work-card work-card--hero" href="https://toby-qian.github.io/paper-figure/" target="_blank" rel="noreferrer" data-category="tool" data-hoverable>
-          <div class="work-card__cover work-card__cover--pf">
-            <div class="pf-frame">
-              <img class="pf-frame__photo" src="assets/shiba.jpg" alt="" loading="lazy" />
-              <span class="pf-frame__label">a</span>
-              <span class="pf-frame__scale"><i></i>10 μm</span>
-            </div>
-            <div class="pf-caption">
-              <strong>Fig. 1.</strong> A browser-only pipeline from raw photo to
-              submission-ready panel figure. <em>(a)</em> auto-fit into journal grid.
-            </div>
+        <a class="card entry entry--left reveal" href="https://toby-qian.github.io/paper-figure/" target="_blank" rel="noreferrer" data-hoverable>
+          <div class="poly poly--photo">
+            <img src="assets/shiba.jpg" alt="" loading="lazy" />
+            <span class="poly__cap">Fig. 1 · paper figure</span>
           </div>
-          <div class="work-card__body">
-            <div class="work-card__meta"><span>01 · Canvas Tool</span><span>2026 · MIT</span></div>
-            <h3>Paper Figure Studio</h3>
-            <p>
-              Drop in a photo of your cat, stamp on <em>(a)(b)(c)</em>, add a scale bar — suddenly
-              it looks like <em>Nature</em> Volume 621. One click swaps between Nature · Science ·
-              Cell · IEEE · Elsevier house styles. Runs entirely in your browser. Please don't submit
-              to real journals.
+          <div class="entry__body">
+            <span class="entry__meta" data-en="01 · Canvas Tool · 2026 · MIT" data-zh="01 · Canvas 工具 · 2026 · MIT">01 · Canvas Tool · 2026 · MIT</span>
+            <h3 data-en="Paper Figure Studio" data-zh="论文配图工作室">Paper Figure Studio</h3>
+            <p data-en="Drop in a photo of your cat, stamp on (a)(b)(c), add a scale bar — suddenly it looks like a real journal panel. One click swaps house styles. Runs entirely in your browser." data-zh="丢一张猫片进去，盖个 (a)(b)(c)、画个比例尺——立刻像一篇期刊配图。五种排版风格一键切换。完全跑在浏览器里。">
+              Drop in a photo of your cat, stamp on (a)(b)(c), add a scale bar — suddenly it looks like a real journal panel. One click swaps house styles. Runs entirely in your browser.
             </p>
-            <p class="work-card__tags">
-              <span>Canvas 2D</span>
-              <span>Vanilla JS</span>
-              <span>5 journal presets</span>
-              <span>Mobile-first</span>
-            </p>
-            <span class="work-card__cta">Open the studio <svg viewBox="0 0 24 24"><path d="M7 17L17 7M10 7h7v7" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></span>
+            <span class="entry__cta" data-en="Open the studio →" data-zh="打开工作室 →">Open the studio →</span>
           </div>
         </a>
 
-        <!-- MEDIUM — Academic Assignment Assistant -->
-        <a class="work-card work-card--med" href="https://github.com/Toby-Qian/academic-assignment-assistant" target="_blank" rel="noreferrer" data-category="tool" data-hoverable>
-          <div class="work-card__cover work-card__cover--1">
-            <img class="cover-claude" src="assets/claude-color.svg" alt="Claude" loading="lazy" />
-            <div class="cover-grid"></div>
+        <a class="card entry entry--right reveal" href="https://github.com/Toby-Qian/academic-assignment-assistant" target="_blank" rel="noreferrer" data-hoverable>
+          <div class="poly poly--claude">
+            <div class="poly__claude"><img src="assets/claude-color.svg" alt="" /></div>
+            <span class="poly__cap">claude · skill</span>
           </div>
-          <div class="work-card__body">
-            <div class="work-card__meta"><span>02 · Claude Skill</span><span>2026</span></div>
-            <h3>Academic Assignment Assistant</h3>
-            <p>
-              Feed it an assignment file. It reads the <em>actual</em> requirements and hands back
-              a ready-to-submit Word doc — in two versions. Won't invent citations.
+          <div class="entry__body">
+            <span class="entry__meta" data-en="02 · Claude Skill · 2026" data-zh="02 · Claude 技能 · 2026">02 · Claude Skill · 2026</span>
+            <h3 data-en="Academic Assignment Assistant" data-zh="学术作业小助手">Academic Assignment Assistant</h3>
+            <p data-en="Feed it an assignment file. It reads the actual requirements and hands back a ready-to-submit Word doc — in two versions. Won't invent citations." data-zh="丢一份作业文件给它，它会认真读题，再给回两份可以直接提交的 Word 文档。引用不会瞎编。">
+              Feed it an assignment file. It reads the actual requirements and hands back a ready-to-submit Word doc — in two versions. Won't invent citations.
             </p>
-            <span class="work-card__cta">On GitHub →</span>
+            <span class="entry__cta" data-en="On GitHub →" data-zh="在 GitHub →">On GitHub →</span>
           </div>
         </a>
 
-        <!-- MEDIUM — Game of Life -->
-        <a class="work-card work-card--med" href="https://github.com/Toby-Qian/game-of-life" target="_blank" rel="noreferrer" data-category="tool" data-hoverable>
-          <div class="work-card__cover work-card__cover--life">
-            <div class="life-grid">
+        <a class="card entry entry--left reveal" href="https://github.com/Toby-Qian/game-of-life" target="_blank" rel="noreferrer" data-hoverable>
+          <div class="poly poly--life">
+            <div class="poly__life">
               <span style="--x:2;--y:1"></span>
               <span style="--x:3;--y:2"></span>
               <span style="--x:1;--y:3"></span><span style="--x:2;--y:3"></span><span style="--x:3;--y:3"></span>
               <span style="--x:9;--y:2"></span><span style="--x:10;--y:2"></span>
               <span style="--x:9;--y:3"></span><span style="--x:10;--y:3"></span>
-              <span style="--x:16;--y:4"></span><span style="--x:17;--y:4"></span><span style="--x:18;--y:4"></span>
-              <span style="--x:16;--y:5"></span>
-              <span style="--x:17;--y:6"></span>
             </div>
-            <div class="life-caption">B3/S23 · generation ∞</div>
+            <span class="poly__cap">B3/S23</span>
           </div>
-          <div class="work-card__body">
-            <div class="work-card__meta"><span>03 · Canvas Sim</span><span>2026</span></div>
-            <h3>Conway's Game of Life</h3>
-            <p>
-              Paint cells, hit play, watch them <em>live</em> by three rules.
-              Toroidal world, the classic cast — glider, pulsar, Gosper's gun.
-              A zero-player game that plays itself.
+          <div class="entry__body">
+            <span class="entry__meta" data-en="03 · Canvas Sim · 2026" data-zh="03 · Canvas 模拟 · 2026">03 · Canvas Sim · 2026</span>
+            <h3 data-en="Conway's Game of Life" data-zh="康威生命游戏">Conway's Game of Life</h3>
+            <p data-en="Paint cells, hit play, watch them live by three rules. Toroidal world, the classic cast — glider, pulsar, Gosper's gun." data-zh="画几格、点播放，让细胞按三条规则活下去。环形宇宙、经典阵型一应俱全：滑翔机、脉冲星、高斯帕之枪。">
+              Paint cells, hit play, watch them live by three rules. Toroidal world, the classic cast — glider, pulsar, Gosper's gun.
             </p>
-            <span class="work-card__cta">Play it →</span>
+            <span class="entry__cta" data-en="Play it →" data-zh="去玩玩 →">Play it →</span>
           </div>
         </a>
 
-        <!-- MEDIUM — Resume Hub -->
-        <a class="work-card work-card--med" href="https://resume-hub-mu-eight.vercel.app" target="_blank" rel="noreferrer" data-category="web" data-hoverable>
-          <div class="work-card__cover work-card__cover--rh">
-            <div class="rh-paper">
-              <div class="rh-head">
-                <div class="rh-avatar"></div>
-                <div class="rh-name">
-                  <span class="rh-line rh-line--title"></span>
-                  <span class="rh-line rh-line--sub"></span>
-                </div>
-              </div>
-              <div class="rh-section">
-                <span class="rh-tag">EDU</span>
-                <span class="rh-line"></span>
-                <span class="rh-line rh-line--short"></span>
-              </div>
-              <div class="rh-section">
-                <span class="rh-tag">EXP</span>
-                <span class="rh-line"></span>
-                <span class="rh-line"></span>
-                <span class="rh-line rh-line--short"></span>
-              </div>
-              <div class="rh-section">
-                <span class="rh-tag">SKL</span>
-                <span class="rh-chips">
-                  <i></i><i></i><i></i><i></i>
-                </span>
-              </div>
-              <div class="rh-stamp">A4 · PDF</div>
+        <a class="card entry entry--right reveal" href="https://resume-hub-mu-eight.vercel.app" target="_blank" rel="noreferrer" data-hoverable>
+          <div class="poly poly--rh">
+            <div class="poly__rh">
+              <span></span><span></span><span style="width:60%"></span>
+              <span></span><span style="width:70%"></span>
             </div>
+            <span class="poly__cap">resume · A4</span>
           </div>
-          <div class="work-card__body">
-            <div class="work-card__meta"><span>04 · Web App</span><span>2026</span></div>
-            <h3>Resume Hub</h3>
-            <p>
-              A bilingual resume studio. One JSON form, six themes, free-floating notes, undo/redo
-              every keystroke, and <em>Print → A4 PDF</em>. Plus 500+ Overleaf-ready templates.
+          <div class="entry__body">
+            <span class="entry__meta" data-en="04 · Web App · 2026" data-zh="04 · 网页应用 · 2026">04 · Web App · 2026</span>
+            <h3 data-en="Resume Hub" data-zh="简历工坊">Resume Hub</h3>
+            <p data-en="A bilingual resume studio. One JSON form, six themes, free-floating notes, undo/redo every keystroke, and Print → A4 PDF." data-zh="双语简历工坊。一份 JSON，六套主题，自由便签，每个按键都能撤销重做，一键打印 A4 PDF。">
+              A bilingual resume studio. One JSON form, six themes, free-floating notes, undo/redo every keystroke, and Print → A4 PDF.
             </p>
-            <span class="work-card__cta">Open the editor →</span>
+            <span class="entry__cta" data-en="Open the editor →" data-zh="打开编辑器 →">Open the editor →</span>
+          </div>
+        </a>
+
+        <a class="card entry entry--left reveal" href="#contact" data-hoverable>
+          <div class="poly poly--arm">
+            <div class="poly__arm">
+              <svg viewBox="0 0 160 120" aria-hidden="true">
+                <rect x="62" y="92" width="36" height="14" rx="2" fill="#2a2042"/>
+                <rect x="76" y="40" width="8" height="56" rx="3" fill="#7e63a8"/>
+                <rect x="80" y="38" width="36" height="8" rx="3" fill="#a3283a" transform="rotate(-22 80 38)"/>
+                <circle cx="80" cy="42" r="6" fill="#cdb8e8" stroke="#2a2042" stroke-width="1.4"/>
+                <circle cx="116" cy="22" r="5" fill="#cdb8e8" stroke="#2a2042" stroke-width="1.4"/>
+                <path d="M118 17 L128 14 M118 27 L128 30" stroke="#5a6a3a" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <circle cx="130" cy="14" r="3" fill="#7aa86d"/>
+                <circle cx="132" cy="30" r="3" fill="#7aa86d"/>
+              </svg>
+            </div>
+            <span class="poly__cap">4-DoF · 茶尖</span>
+          </div>
+          <div class="entry__body">
+            <span class="entry__meta" data-en="05 · STM32 · 2026 · WIP" data-zh="05 · STM32 · 2026 · 进行中">05 · STM32 · 2026 · WIP</span>
+            <h3 data-en="Tea-bud Picking Arm" data-zh="茶叶嫩尖采摘机械手">Tea-bud Picking Arm</h3>
+            <p data-en="Graduation project. Four MG996R/SG90 servos on an LSC-16 bus, STM32F103 brain, OLED status, ultrasonic distance, HC-05 phone control. Currently in mechanical assembly." data-zh="毕业设计。四个 MG996R/SG90 舵机挂在 LSC-16 控制板上，STM32F103 当大脑，OLED 显示状态，超声波测距，HC-05 蓝牙手机控。当前阶段：机械装配。">
+              Graduation project. Four MG996R/SG90 servos on an LSC-16 bus, STM32F103 brain, OLED status, ultrasonic distance, HC-05 phone control. Currently in mechanical assembly.
+            </p>
+            <span class="entry__cta" data-en="Ask me about it →" data-zh="想聊就来 →">Ask me about it →</span>
+          </div>
+        </a>
+
+        <a class="card entry entry--right reveal" href="https://github.com/Toby-Qian" target="_blank" rel="noreferrer" data-hoverable>
+          <div class="poly poly--paper">
+            <div class="poly__paper">
+              <span class="paper-title"></span>
+              <span></span><span></span><span style="width:55%"></span>
+              <span class="paper-eq">∫ f(x)dx</span>
+              <span></span><span style="width:75%"></span>
+            </div>
+            <span class="poly__cap">elsarticle · LaTeX</span>
+          </div>
+          <div class="entry__body">
+            <span class="entry__meta" data-en="06 · Research Note · 2026" data-zh="06 · 研究随笔 · 2026">06 · Research Note · 2026</span>
+            <h3 data-en="LMs v1.1 — Elsevier Draft" data-zh="LMs v1.1 — Elsevier 投稿稿">LMs v1.1 — Elsevier Draft</h3>
+            <p data-en="A first-author manuscript ported from Word to elsarticle LaTeX — eight sections, 41 references, four equations, seven figure slots. PDF compiles clean in 25 pages." data-zh="把第一作者初稿从 Word 搬进 elsarticle LaTeX 模板：八节、41 条参考文献、四个公式、七张图位。PDF 干净编译 25 页。">
+              A first-author manuscript ported from Word to elsarticle LaTeX — eight sections, 41 references, four equations, seven figure slots. PDF compiles clean in 25 pages.
+            </p>
+            <span class="entry__cta" data-en="More on GitHub →" data-zh="GitHub 上看更多 →">More on GitHub →</span>
           </div>
         </a>
 
       </div>
     </section>
 
-    <!-- ============ TIMELINE ============ -->
-    <section class="timeline" id="timeline">
-      <div class="timeline__head">
-        <span class="folio">C.03</span>
-        <h2 class="section-title">A <em>path</em>, so far.</h2>
-        <p class="timeline__sub">Not a resume — more like a map with a few pins in it.</p>
+    <!-- ============ NOTES ============ -->
+    <section class="notes" id="notes">
+      <div class="sec-head reveal">
+        <span class="stamp">C.03</span>
+        <h2 class="h2"><em data-en="Notes," data-zh="随笔，">Notes,</em> <span data-en="soon." data-zh="在路上。">soon.</span></h2>
+        <p class="sub" data-en="Short writing lives here when it's ready. Until then, four drafts in the queue." data-zh="等写好了，就放在这里。先放四份草稿。">Short writing lives here when it's ready. Until then, four drafts in the queue.</p>
       </div>
-
-      <ol class="timeline__list">
-        <li class="t-item">
-          <div class="t-item__year">2026</div>
-          <div class="t-item__body">
-            <h4>Built this personal site</h4>
-            <p>A byproduct of slacking off — first time putting myself on the internet.</p>
-          </div>
-          <div class="t-item__tag">NOW</div>
-        </li>
-        <li class="t-item">
-          <div class="t-item__year">2025</div>
-          <div class="t-item__body">
-            <h4>Pretending to learn things</h4>
-            <p>Hopping between Python and English. Progress bar moving, slowly.</p>
-          </div>
-          <div class="t-item__tag">LEARN</div>
-        </li>
-        <li class="t-item">
-          <div class="t-item__year">2023</div>
-          <div class="t-item__body">
-            <h4>University begins</h4>
-            <p>Classes by day (sometimes). Games by night (usually).</p>
-          </div>
-          <div class="t-item__tag">START</div>
-        </li>
-        <li class="t-item">
-          <div class="t-item__year">— 2022</div>
-          <div class="t-item__body">
-            <h4>Curious about every weird button on a screen</h4>
-            <p>Broke a lot of things. Fixed some of them. The habit stuck.</p>
-          </div>
-          <div class="t-item__tag">ORIGIN</div>
-        </li>
-      </ol>
-    </section>
-
-    <!-- ============ JOURNAL ============ -->
-    <section class="journal" id="journal">
-      <div class="journal__head">
-        <span class="folio">D.04</span>
-        <h2 class="section-title"><em>Notes</em>, soon.</h2>
-        <p class="journal__sub">Short writing lives here when it's ready. Until then, four drafts in the queue.</p>
-      </div>
-
-      <div class="journal__queue">
-        <div class="queue-card">
-          <span class="queue-card__num">No. 001</span>
-          <h3>Hello — why this site exists</h3>
-          <p>First entry. A little about the <em>why</em>.</p>
+      <div class="note-grid">
+        <div class="note note--1 reveal" data-hoverable>
+          <span class="note__num">No. 001</span>
+          <h3 data-en="Hello — why this site exists" data-zh="你好——这站为什么存在">Hello — why this site exists</h3>
+          <p data-en="First entry. A little about the why." data-zh="第一篇。聊聊原由。">First entry. A little about the why.</p>
         </div>
-        <div class="queue-card">
-          <span class="queue-card__num">No. 002</span>
-          <h3>Notes from life in Guangzhou</h3>
-          <p>Weather, late-night snacks, small things that don't quite add up.</p>
+        <div class="note note--2 reveal" data-hoverable>
+          <span class="note__num">No. 002</span>
+          <h3 data-en="Notes from life in Guangzhou" data-zh="在广州的小记">Notes from life in Guangzhou</h3>
+          <p data-en="Weather, late-night snacks, small things that don't quite add up." data-zh="天气、夜宵，和那些说不通的小事。">Weather, late-night snacks, small things that don't quite add up.</p>
         </div>
-        <div class="queue-card">
-          <span class="queue-card__num">No. 003</span>
-          <h3>Games worth bragging about</h3>
-          <p>Not a review — just biased opinions.</p>
+        <div class="note note--3 reveal" data-hoverable>
+          <span class="note__num">No. 003</span>
+          <h3 data-en="A green LED that wouldn't turn off" data-zh="一颗关不掉的绿灯">A green LED that wouldn't turn off</h3>
+          <p data-en="The HSE crystal that wasn't, the SysTick that wasn't either." data-zh="不肯起振的 HSE，和没装上的 SysTick。">The HSE crystal that wasn't, the SysTick that wasn't either.</p>
         </div>
-        <div class="queue-card">
-          <span class="queue-card__num">No. 004</span>
-          <h3>How a student put himself on the internet</h3>
-          <p>Notes on building this site — the mistakes and the lessons.</p>
+        <div class="note note--4 reveal" data-hoverable>
+          <span class="note__num">No. 004</span>
+          <h3 data-en="How a student put himself on the internet" data-zh="一个学生如何把自己放上网">How a student put himself on the internet</h3>
+          <p data-en="Notes on building this site — the mistakes and the lessons." data-zh="建站的错误与心得。">Notes on building this site — the mistakes and the lessons.</p>
         </div>
       </div>
-
-      <p class="journal__foot">
-        <span class="journal__foot-rule"></span>
-        <span>Want to know when these go up? <a href="mailto:q1509713692@gmail.com">drop me a line</a> — I'll send them by hand.</span>
+      <p class="notes__foot" data-en="Want to know when these go up? Drop me a line — I'll send them by hand." data-zh="想知道更新？写信给我——我会亲手寄给你。">
+        Want to know when these go up? Drop me a line — I'll send them by hand.
       </p>
     </section>
 
     <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="card contact__card reveal">
+        <span class="stamp">E.05</span>
+        <h2 class="h2"><span data-en="Say" data-zh="打个">Say</span> <em data-en="hello." data-zh="招呼。">hello.</em></h2>
+        <p class="sub" data-en="Or just lurk — both are welcome." data-zh="或者就这样静静看着——都欢迎。">Or just lurk — both are welcome.</p>
+        <ul class="links">
+          <li><a class="ulink" href="https://github.com/Toby-Qian" target="_blank" rel="noreferrer" data-hoverable><span class="link__k">GitHub</span><span class="link__v">@Toby-Qian</span></a></li>
+          <li><a class="ulink" href="mailto:q1509713692@gmail.com" data-hoverable><span class="link__k">Email</span><span class="link__v">q1509713692@gmail.com</span></a></li>
+          <li><a class="ulink" href="https://v.douyin.com/6Nq5mOJGOYY/" target="_blank" rel="noreferrer" data-hoverable><span class="link__k">Douyin</span><span class="link__v">@toby.qian</span></a></li>
+        </ul>
+        <div class="counter">
+          <span data-en="Visits" data-zh="访问">Visits</span>
+          <b id="busuanzi_value_site_pv">…</b>
+          <span>·</span>
+          <span data-en="People" data-zh="访客">People</span>
+          <b id="busuanzi_value_site_uv">…</b>
+        </div>
+      </div>
+      <p class="foot" data-en="© 2026 Toby Qian — Lilac Diary · written by hand" data-zh="© 2026 钱 Toby — 紫丁香日记 · 手写">© 2026 Toby Qian — Lilac Diary · written by hand</p>
+    </section>
+
   </main>
 
-  <footer class="footer" id="contact">
-    <div class="footer__connect">
-      <h4 class="footer__heading">Connect</h4>
-      <ul class="footer__links">
-        <li>
-          <a href="https://github.com/Toby-Qian" target="_blank" rel="noreferrer" data-hoverable>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.27-1.68-1.27-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.23-1.27-5.23-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.57.23 2.73.11 3.02.74.8 1.18 1.82 1.18 3.07 0 4.4-2.69 5.37-5.25 5.65.41.36.78 1.06.78 2.15v3.19c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
-            <span>GitHub</span>
-          </a>
-        </li>
-        <li>
-          <a href="mailto:q1509713692@gmail.com" data-hoverable>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2.5 5.5A1.5 1.5 0 0 1 4 4h16a1.5 1.5 0 0 1 1.5 1.5v13A1.5 1.5 0 0 1 20 20H4a1.5 1.5 0 0 1-1.5-1.5v-13Zm2.2.5 7.3 5.47L19.3 6H4.7ZM20 7.4l-7.4 5.55a1 1 0 0 1-1.2 0L4 7.4V18h16V7.4Z"/></svg>
-            <span>Email</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://v.douyin.com/6Nq5mOJGOYY/" target="_blank" rel="noreferrer" data-hoverable>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.3 2.3c.5 1.9 1.9 3.4 3.8 3.9v3.1a7.5 7.5 0 0 1-3.8-1.1v6.9a6.4 6.4 0 1 1-6.4-6.4c.34 0 .67.03 1 .08v3.24a3.2 3.2 0 1 0 2.2 3.04V2.3h3.2Z"/></svg>
-            <span>Douyin</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="footer__meta">
-      <div class="footer__row">
-        <span>© <span id="year"></span> Toby Qian</span>
-        <span>—</span>
-        <span>Personal Press</span>
-        <span>—</span>
-        <span>Issue 01 / 2026</span>
-      </div>
-      <div class="footer__row footer__stats">
-        <span class="counter">Views <b id="busuanzi_value_site_pv">…</b></span>
-        <span class="counter">Visitors <b id="busuanzi_value_site_uv">…</b></span>
-      </div>
-    </div>
-
-    <div class="footer__big" aria-hidden="true">
-      <div class="footer__big-track">
-        <span>TOBY · QIAN</span><span>TOBY · QIAN</span><span>TOBY · QIAN</span><span>TOBY · QIAN</span><span>TOBY · QIAN</span><span>TOBY · QIAN</span>
-      </div>
-    </div>
-  </footer>
-
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  <!-- Tweaks panel -->
-  <div class="tweaks" id="tweaksPanel" hidden>
-    <div class="tweaks__head">
-      <span>Tweaks</span>
-      <button class="tweaks__close" id="tweaksClose" aria-label="close">×</button>
-    </div>
-    <div class="tweaks__body">
-      <div class="tw-row">
-        <label>Type</label>
-        <div class="tw-seg tw-seg--type" data-key="typeset">
-          <button data-val="editorial">Editorial</button>
-          <button data-val="classic">Classic</button>
-          <button data-val="quiet">Quiet</button>
-          <button data-val="modern">Modern</button>
-          <button data-val="plex">Plex</button>
-        </div>
-      </div>
-      <div class="tw-row">
-        <label>Accent</label>
-        <div class="tw-seg" data-key="accent">
-          <button data-val="amber" style="--sw:#c46d2b"></button>
-          <button data-val="ink"   style="--sw:#1a1a1a"></button>
-          <button data-val="ruby"  style="--sw:#a3283a"></button>
-          <button data-val="olive" style="--sw:#5a6a3a"></button>
-          <button data-val="cobalt" style="--sw:#2a4a8a"></button>
-        </div>
-      </div>
-      <div class="tw-row">
-        <label>Paper</label>
-        <div class="tw-seg" data-key="paper">
-          <button data-val="cream">Cream</button>
-          <button data-val="bone">Bone</button>
-          <button data-val="ink">Ink</button>
-        </div>
-      </div>
-      <div class="tw-row">
-        <label>Grain</label>
-        <div class="tw-seg" data-key="grain">
-          <button data-val="on">On</button>
-          <button data-val="off">Off</button>
-        </div>
-      </div>
-      <div class="tw-row">
-        <label>Cursor</label>
-        <div class="tw-seg" data-key="cursor">
-          <button data-val="on">Follow</button>
-          <button data-val="off">Off</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Tweakable defaults — host can persist edits between these markers
-    window.__TWEAKS__ = /*EDITMODE-BEGIN*/{
-      "typeset": "modern",
-      "accent": "ruby",
-      "paper": "cream",
-      "grain": "on",
-      "cursor": "off"
-    }/*EDITMODE-END*/;
-  </script>
-  <script src="personal-page.js?v=2"></script>
+  <script src="personal-page.js?v=10"></script>
 </body>
 </html>
