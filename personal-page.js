@@ -2,23 +2,6 @@
 (function () {
   const body = document.body;
 
-  /* ---------- Bilingual toggle ---------- */
-  const langButtons = document.querySelectorAll(".lang button");
-  const i18nNodes = document.querySelectorAll("[data-en], [data-zh]");
-  function setLang(lang) {
-    document.documentElement.lang = lang === "zh" ? "zh" : "en";
-    i18nNodes.forEach(n => {
-      const v = n.getAttribute("data-" + lang);
-      if (v != null) n.textContent = v;
-    });
-    langButtons.forEach(b => b.classList.toggle("is-on", b.dataset.lang === lang));
-    try { localStorage.setItem("tq-lang", lang); } catch (_) {}
-  }
-  let saved = "en";
-  try { saved = localStorage.getItem("tq-lang") || (navigator.language || "").startsWith("zh") ? "zh" : "en"; } catch (_) {}
-  setLang(saved);
-  langButtons.forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
-
   /* ---------- Mobile menu ---------- */
   const menuToggle = document.getElementById("menuToggle");
   const nav = document.querySelector(".nav");
@@ -35,31 +18,20 @@
 
   /* ---------- NOW rotator ---------- */
   const nowText = document.getElementById("nowText");
-  const phrases = {
-    en: [
-      "Wiring servos for the tea-picking arm.",
-      "Playing with variable serif faces and tight grids.",
-      "Reading about small-web, writing about tools.",
-      "Debugging an STM32 that won't blink."
-    ],
-    zh: [
-      "给采茶机械臂接舵机。",
-      "在玩可变衬线和紧凑的栅格。",
-      "看 small-web 的文章，写工具的文章。",
-      "在调一颗死活不肯闪的 STM32。"
-    ]
-  };
+  const phrases = [
+    "Playing with variable serif faces and tight grids.",
+    "Drafting the first issue of a personal press.",
+    "Reading about small-web, writing about tools.",
+    "Rewriting the about page for the third time."
+  ];
   if (nowText) {
     let i = 0;
     setInterval(() => {
-      i = (i + 1) % 4;
-      const lang = document.documentElement.lang === "zh" ? "zh" : "en";
+      i = (i + 1) % phrases.length;
       nowText.style.opacity = "0";
       nowText.style.transform = "translateY(6px)";
       setTimeout(() => {
-        nowText.textContent = phrases[lang][i];
-        nowText.setAttribute("data-en", phrases.en[i]);
-        nowText.setAttribute("data-zh", phrases.zh[i]);
+        nowText.textContent = phrases[i];
         nowText.style.opacity = "1";
         nowText.style.transform = "translateY(0)";
       }, 320);

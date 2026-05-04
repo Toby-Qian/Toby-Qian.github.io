@@ -6,8 +6,8 @@
   <title>Toby Qian — Personal Page</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="personal-page.css?v=10" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="personal-page.css?v=11" />
 </head>
 <body>
 
@@ -18,25 +18,23 @@
   <!-- Decorative tape strips -->
   <div class="tape tape--1" aria-hidden="true"></div>
   <div class="tape tape--2" aria-hidden="true"></div>
+  <div class="tape tape--3" aria-hidden="true"></div>
 
   <!-- Top bar -->
   <header class="topbar">
     <a class="brand" href="#home" data-hoverable>
       <span class="brand__mark">✺</span>
       <span class="brand__name">Toby Qian</span>
-      <span class="brand__sub" data-en="/ lilac diary" data-zh="/ 紫丁香日记">/ lilac diary</span>
+      <span class="brand__sub">/ lilac diary</span>
     </a>
     <nav class="nav" aria-label="Main">
-      <a href="#about" data-en="About" data-zh="关于">About</a>
-      <a href="#work" data-en="Work" data-zh="作品">Work</a>
-      <a href="#notes" data-en="Notes" data-zh="随笔">Notes</a>
-      <a href="#contact" data-en="Hello" data-zh="联系">Hello</a>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#notes">Notes</a>
+      <a href="#gallery">Frames</a>
+      <a href="#contact">Hello</a>
     </nav>
     <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false"><span></span></button>
-    <div class="lang" role="group" aria-label="language">
-      <button data-lang="en" class="is-on">EN</button>
-      <button data-lang="zh">中文</button>
-    </div>
   </header>
 
   <main class="page" id="home">
@@ -48,7 +46,7 @@
           <svg viewBox="0 0 240 280" aria-hidden="true">
             <defs>
               <radialGradient id="catBody" cx="50%" cy="50%" r="60%">
-                <stop offset="0%" stop-color="#f4ecff"/>
+                <stop offset="0%" stop-color="#fbf6ff"/>
                 <stop offset="100%" stop-color="#cdb8e8"/>
               </radialGradient>
             </defs>
@@ -76,43 +74,42 @@
           </svg>
         </div>
         <div class="stickers">
-          <span class="sticker sticker--1" data-hoverable data-en="★ studying" data-zh="★ 学习中">★ studying</span>
-          <span class="sticker sticker--2" data-hoverable data-en="♡ writing" data-zh="♡ 写作">♡ writing</span>
-          <span class="sticker sticker--3" data-hoverable data-en="✺ web" data-zh="✺ 网页">✺ web</span>
-          <span class="sticker sticker--4" data-hoverable data-en="⌬ STM32" data-zh="⌬ 单片机">⌬ STM32</span>
+          <span class="sticker sticker--1" data-hoverable>★ studying</span>
+          <span class="sticker sticker--2" data-hoverable>♡ writing</span>
+          <span class="sticker sticker--3" data-hoverable>✺ web</span>
         </div>
       </div>
 
       <div class="hero__right">
-        <p class="kicker reveal" data-en="VOL. 01 · THE TOBY ISSUE · 2026" data-zh="第 01 卷 · 关于 TOBY · 2026">VOL. 01 · THE TOBY ISSUE · 2026</p>
+        <p class="kicker reveal">VOL. 01 · THE TOBY ISSUE · 2026</p>
         <h1 class="hero__title">
-          <span class="reveal" data-en="Hello," data-zh="你好，">Hello,</span>
+          <span class="reveal">Hello,</span>
           <span class="reveal">
-            <em data-en="I'm" data-zh="我是">I'm</em>
-            <span class="hero__name" data-hoverable data-en="Toby Qian." data-zh="钱 Toby。">Toby Qian.</span>
+            <em>I'm</em>
+            <span class="hero__name" data-hoverable>Toby Qian.</span>
           </span>
         </h1>
-        <p class="lede reveal" data-en="A mechatronics student in Guangzhou who builds small web tools and the occasional little robot. This is where I keep the things I've shipped." data-zh="一个住在广州的机电一体化学生，做一些小巧的网页工具，偶尔也搓个小机器人。这里收着我目前做完的东西。">
-          A mechatronics student in Guangzhou who builds small web tools and the occasional little robot. This is where I keep the things I've shipped.
+        <p class="lede reveal">
+          A student in Guangzhou who builds small web tools. This is where I keep the things I've shipped.
         </p>
 
         <div class="hero__row reveal">
           <div class="now">
             <span class="now__dot"></span>
-            <span class="now__label" data-en="NOW" data-zh="近况">NOW</span>
-            <span id="nowText" data-en="Wiring servos for the tea-picking arm." data-zh="给采茶机械臂接舵机。">Wiring servos for the tea-picking arm.</span>
+            <span class="now__label">NOW</span>
+            <span id="nowText">Playing with variable serif faces and tight grids.</span>
           </div>
           <div class="actions">
-            <a href="#work" class="btn btn--primary" data-hoverable data-en="Read the issue" data-zh="翻开本期">Read the issue</a>
-            <a href="#contact" class="btn" data-hoverable data-en="Say hello" data-zh="打个招呼">Say hello</a>
+            <a href="#work" class="btn btn--primary" data-hoverable>Read the issue</a>
+            <a href="#contact" class="btn" data-hoverable>Say hello</a>
           </div>
         </div>
 
         <div class="facts reveal">
-          <div class="fact"><span class="fact__k" data-en="BASED" data-zh="所在">BASED</span><span class="fact__v" data-en="Guangzhou · SCAU" data-zh="广州 · 华农">Guangzhou · SCAU</span></div>
-          <div class="fact"><span class="fact__k" data-en="ROLE" data-zh="身份">ROLE</span><span class="fact__v" data-en="Student · Builder" data-zh="学生 · 制作者">Student · Builder</span></div>
-          <div class="fact"><span class="fact__k" data-en="MAKES" data-zh="在做">MAKES</span><span class="fact__v" data-en="Web tools · STM32" data-zh="网页工具 · 单片机">Web tools · STM32</span></div>
-          <div class="fact"><span class="fact__k" data-en="AVAILABLE" data-zh="状态">AVAILABLE</span><span class="fact__v"><span class="avail-dot"></span><span data-en="Open to chats" data-zh="随时聊聊">Open to chats</span></span></div>
+          <div class="fact"><span class="fact__k">BASED</span><span class="fact__v">Guangzhou</span></div>
+          <div class="fact"><span class="fact__k">ROLE</span><span class="fact__v">Student · Builder</span></div>
+          <div class="fact"><span class="fact__k">MAKES</span><span class="fact__v">Small web tools</span></div>
+          <div class="fact"><span class="fact__k">AVAILABLE</span><span class="fact__v"><span class="avail-dot"></span>Open to chats</span></div>
         </div>
       </div>
     </section>
@@ -121,12 +118,12 @@
     <section class="about" id="about">
       <div class="card about__card reveal">
         <span class="stamp">A.01</span>
-        <h2 class="h2"><span data-en="A portrait," data-zh="一段自述，">A portrait,</span> <em data-en="in five lines." data-zh="约莫五句。">in five lines.</em></h2>
-        <p class="prose" data-en="A mechatronics student at South China Agricultural University. Currently building a four-DoF tea-bud picking arm — STM32 + servo bus + a small OLED yelling status at me." data-zh="华南农业大学机电一体化的学生。眼下在做四自由度的茶叶嫩尖采摘机械手——STM32 加舵机控制板，还有一块小 OLED 在旁边喊状态。">
-          A mechatronics student at South China Agricultural University. Currently building a four-DoF tea-bud picking arm — STM32 + servo bus + a small OLED yelling status at me.
+        <h2 class="h2">A portrait, <em>in five lines.</em></h2>
+        <p class="prose">
+          A student in Guangzhou who likes small, focused tools — the kind that do one thing well and fit on a single page.
         </p>
-        <p class="prose" data-en="In the other tab, I write web things in vanilla HTML &amp; CSS, a bit of Python, and Next.js when the project asks for it. I like tools that do one thing well and fit on a single page." data-zh="另一个 tab 里写网页：vanilla HTML &amp; CSS，一点 Python，需要时也写 Next.js。偏爱小而专注、装得进一页的工具。">
-          In the other tab, I write web things in vanilla HTML &amp; CSS, a bit of Python, and Next.js when the project asks for it. I like tools that do one thing well and fit on a single page.
+        <p class="prose">
+          I build web things in vanilla HTML &amp; CSS and write a bit of Python. This site is where the finished stuff lives.
         </p>
       </div>
     </section>
@@ -135,7 +132,7 @@
     <section class="work" id="work">
       <div class="sec-head reveal">
         <span class="stamp">B.02</span>
-        <h2 class="h2"><span data-en="Selected" data-zh="几件">Selected</span> <em data-en="work." data-zh="近作。">work.</em></h2>
+        <h2 class="h2">Selected <em>work.</em></h2>
       </div>
 
       <div class="work__list">
@@ -146,12 +143,10 @@
             <span class="poly__cap">Fig. 1 · paper figure</span>
           </div>
           <div class="entry__body">
-            <span class="entry__meta" data-en="01 · Canvas Tool · 2026 · MIT" data-zh="01 · Canvas 工具 · 2026 · MIT">01 · Canvas Tool · 2026 · MIT</span>
-            <h3 data-en="Paper Figure Studio" data-zh="论文配图工作室">Paper Figure Studio</h3>
-            <p data-en="Drop in a photo of your cat, stamp on (a)(b)(c), add a scale bar — suddenly it looks like a real journal panel. One click swaps house styles. Runs entirely in your browser." data-zh="丢一张猫片进去，盖个 (a)(b)(c)、画个比例尺——立刻像一篇期刊配图。五种排版风格一键切换。完全跑在浏览器里。">
-              Drop in a photo of your cat, stamp on (a)(b)(c), add a scale bar — suddenly it looks like a real journal panel. One click swaps house styles. Runs entirely in your browser.
-            </p>
-            <span class="entry__cta" data-en="Open the studio →" data-zh="打开工作室 →">Open the studio →</span>
+            <span class="entry__meta">01 · Canvas Tool · 2026 · MIT</span>
+            <h3>Paper Figure Studio</h3>
+            <p>Drop in a photo of your cat, stamp on (a)(b)(c), add a scale bar — suddenly it looks like a real journal panel. One click swaps house styles. Runs entirely in your browser.</p>
+            <span class="entry__cta">Open the studio →</span>
           </div>
         </a>
 
@@ -161,12 +156,10 @@
             <span class="poly__cap">claude · skill</span>
           </div>
           <div class="entry__body">
-            <span class="entry__meta" data-en="02 · Claude Skill · 2026" data-zh="02 · Claude 技能 · 2026">02 · Claude Skill · 2026</span>
-            <h3 data-en="Academic Assignment Assistant" data-zh="学术作业小助手">Academic Assignment Assistant</h3>
-            <p data-en="Feed it an assignment file. It reads the actual requirements and hands back a ready-to-submit Word doc — in two versions. Won't invent citations." data-zh="丢一份作业文件给它，它会认真读题，再给回两份可以直接提交的 Word 文档。引用不会瞎编。">
-              Feed it an assignment file. It reads the actual requirements and hands back a ready-to-submit Word doc — in two versions. Won't invent citations.
-            </p>
-            <span class="entry__cta" data-en="On GitHub →" data-zh="在 GitHub →">On GitHub →</span>
+            <span class="entry__meta">02 · Claude Skill · 2026</span>
+            <h3>Academic Assignment Assistant</h3>
+            <p>Feed it an assignment file. It reads the actual requirements and hands back a ready-to-submit Word doc — in two versions. Won't invent citations.</p>
+            <span class="entry__cta">On GitHub →</span>
           </div>
         </a>
 
@@ -182,12 +175,10 @@
             <span class="poly__cap">B3/S23</span>
           </div>
           <div class="entry__body">
-            <span class="entry__meta" data-en="03 · Canvas Sim · 2026" data-zh="03 · Canvas 模拟 · 2026">03 · Canvas Sim · 2026</span>
-            <h3 data-en="Conway's Game of Life" data-zh="康威生命游戏">Conway's Game of Life</h3>
-            <p data-en="Paint cells, hit play, watch them live by three rules. Toroidal world, the classic cast — glider, pulsar, Gosper's gun." data-zh="画几格、点播放，让细胞按三条规则活下去。环形宇宙、经典阵型一应俱全：滑翔机、脉冲星、高斯帕之枪。">
-              Paint cells, hit play, watch them live by three rules. Toroidal world, the classic cast — glider, pulsar, Gosper's gun.
-            </p>
-            <span class="entry__cta" data-en="Play it →" data-zh="去玩玩 →">Play it →</span>
+            <span class="entry__meta">03 · Canvas Sim · 2026</span>
+            <h3>Conway's Game of Life</h3>
+            <p>Paint cells, hit play, watch them live by three rules. Toroidal world, the classic cast — glider, pulsar, Gosper's gun.</p>
+            <span class="entry__cta">Play it →</span>
           </div>
         </a>
 
@@ -200,58 +191,10 @@
             <span class="poly__cap">resume · A4</span>
           </div>
           <div class="entry__body">
-            <span class="entry__meta" data-en="04 · Web App · 2026" data-zh="04 · 网页应用 · 2026">04 · Web App · 2026</span>
-            <h3 data-en="Resume Hub" data-zh="简历工坊">Resume Hub</h3>
-            <p data-en="A bilingual resume studio. One JSON form, six themes, free-floating notes, undo/redo every keystroke, and Print → A4 PDF." data-zh="双语简历工坊。一份 JSON，六套主题，自由便签，每个按键都能撤销重做，一键打印 A4 PDF。">
-              A bilingual resume studio. One JSON form, six themes, free-floating notes, undo/redo every keystroke, and Print → A4 PDF.
-            </p>
-            <span class="entry__cta" data-en="Open the editor →" data-zh="打开编辑器 →">Open the editor →</span>
-          </div>
-        </a>
-
-        <a class="card entry entry--left reveal" href="#contact" data-hoverable>
-          <div class="poly poly--arm">
-            <div class="poly__arm">
-              <svg viewBox="0 0 160 120" aria-hidden="true">
-                <rect x="62" y="92" width="36" height="14" rx="2" fill="#2a2042"/>
-                <rect x="76" y="40" width="8" height="56" rx="3" fill="#7e63a8"/>
-                <rect x="80" y="38" width="36" height="8" rx="3" fill="#a3283a" transform="rotate(-22 80 38)"/>
-                <circle cx="80" cy="42" r="6" fill="#cdb8e8" stroke="#2a2042" stroke-width="1.4"/>
-                <circle cx="116" cy="22" r="5" fill="#cdb8e8" stroke="#2a2042" stroke-width="1.4"/>
-                <path d="M118 17 L128 14 M118 27 L128 30" stroke="#5a6a3a" stroke-width="2" stroke-linecap="round" fill="none"/>
-                <circle cx="130" cy="14" r="3" fill="#7aa86d"/>
-                <circle cx="132" cy="30" r="3" fill="#7aa86d"/>
-              </svg>
-            </div>
-            <span class="poly__cap">4-DoF · 茶尖</span>
-          </div>
-          <div class="entry__body">
-            <span class="entry__meta" data-en="05 · STM32 · 2026 · WIP" data-zh="05 · STM32 · 2026 · 进行中">05 · STM32 · 2026 · WIP</span>
-            <h3 data-en="Tea-bud Picking Arm" data-zh="茶叶嫩尖采摘机械手">Tea-bud Picking Arm</h3>
-            <p data-en="Graduation project. Four MG996R/SG90 servos on an LSC-16 bus, STM32F103 brain, OLED status, ultrasonic distance, HC-05 phone control. Currently in mechanical assembly." data-zh="毕业设计。四个 MG996R/SG90 舵机挂在 LSC-16 控制板上，STM32F103 当大脑，OLED 显示状态，超声波测距，HC-05 蓝牙手机控。当前阶段：机械装配。">
-              Graduation project. Four MG996R/SG90 servos on an LSC-16 bus, STM32F103 brain, OLED status, ultrasonic distance, HC-05 phone control. Currently in mechanical assembly.
-            </p>
-            <span class="entry__cta" data-en="Ask me about it →" data-zh="想聊就来 →">Ask me about it →</span>
-          </div>
-        </a>
-
-        <a class="card entry entry--right reveal" href="https://github.com/Toby-Qian" target="_blank" rel="noreferrer" data-hoverable>
-          <div class="poly poly--paper">
-            <div class="poly__paper">
-              <span class="paper-title"></span>
-              <span></span><span></span><span style="width:55%"></span>
-              <span class="paper-eq">∫ f(x)dx</span>
-              <span></span><span style="width:75%"></span>
-            </div>
-            <span class="poly__cap">elsarticle · LaTeX</span>
-          </div>
-          <div class="entry__body">
-            <span class="entry__meta" data-en="06 · Research Note · 2026" data-zh="06 · 研究随笔 · 2026">06 · Research Note · 2026</span>
-            <h3 data-en="LMs v1.1 — Elsevier Draft" data-zh="LMs v1.1 — Elsevier 投稿稿">LMs v1.1 — Elsevier Draft</h3>
-            <p data-en="A first-author manuscript ported from Word to elsarticle LaTeX — eight sections, 41 references, four equations, seven figure slots. PDF compiles clean in 25 pages." data-zh="把第一作者初稿从 Word 搬进 elsarticle LaTeX 模板：八节、41 条参考文献、四个公式、七张图位。PDF 干净编译 25 页。">
-              A first-author manuscript ported from Word to elsarticle LaTeX — eight sections, 41 references, four equations, seven figure slots. PDF compiles clean in 25 pages.
-            </p>
-            <span class="entry__cta" data-en="More on GitHub →" data-zh="GitHub 上看更多 →">More on GitHub →</span>
+            <span class="entry__meta">04 · Web App · 2026</span>
+            <h3>Resume Hub</h3>
+            <p>A bilingual resume studio. One JSON form, six themes, free-floating notes, undo/redo every keystroke, and Print → A4 PDF.</p>
+            <span class="entry__cta">Open the editor →</span>
           </div>
         </a>
 
@@ -262,61 +205,92 @@
     <section class="notes" id="notes">
       <div class="sec-head reveal">
         <span class="stamp">C.03</span>
-        <h2 class="h2"><em data-en="Notes," data-zh="随笔，">Notes,</em> <span data-en="soon." data-zh="在路上。">soon.</span></h2>
-        <p class="sub" data-en="Short writing lives here when it's ready. Until then, four drafts in the queue." data-zh="等写好了，就放在这里。先放四份草稿。">Short writing lives here when it's ready. Until then, four drafts in the queue.</p>
+        <h2 class="h2"><em>Notes,</em> soon.</h2>
+        <p class="sub">Short writing lives here when it's ready. Until then, four drafts in the queue.</p>
       </div>
       <div class="note-grid">
         <div class="note note--1 reveal" data-hoverable>
           <span class="note__num">No. 001</span>
-          <h3 data-en="Hello — why this site exists" data-zh="你好——这站为什么存在">Hello — why this site exists</h3>
-          <p data-en="First entry. A little about the why." data-zh="第一篇。聊聊原由。">First entry. A little about the why.</p>
+          <h3>Hello — why this site exists</h3>
+          <p>First entry. A little about the why.</p>
         </div>
         <div class="note note--2 reveal" data-hoverable>
           <span class="note__num">No. 002</span>
-          <h3 data-en="Notes from life in Guangzhou" data-zh="在广州的小记">Notes from life in Guangzhou</h3>
-          <p data-en="Weather, late-night snacks, small things that don't quite add up." data-zh="天气、夜宵，和那些说不通的小事。">Weather, late-night snacks, small things that don't quite add up.</p>
+          <h3>Notes from life in Guangzhou</h3>
+          <p>Weather, late-night snacks, small things that don't quite add up.</p>
         </div>
         <div class="note note--3 reveal" data-hoverable>
           <span class="note__num">No. 003</span>
-          <h3 data-en="A green LED that wouldn't turn off" data-zh="一颗关不掉的绿灯">A green LED that wouldn't turn off</h3>
-          <p data-en="The HSE crystal that wasn't, the SysTick that wasn't either." data-zh="不肯起振的 HSE，和没装上的 SysTick。">The HSE crystal that wasn't, the SysTick that wasn't either.</p>
+          <h3>Games worth bragging about</h3>
+          <p>Not a review — just biased opinions.</p>
         </div>
         <div class="note note--4 reveal" data-hoverable>
           <span class="note__num">No. 004</span>
-          <h3 data-en="How a student put himself on the internet" data-zh="一个学生如何把自己放上网">How a student put himself on the internet</h3>
-          <p data-en="Notes on building this site — the mistakes and the lessons." data-zh="建站的错误与心得。">Notes on building this site — the mistakes and the lessons.</p>
+          <h3>How a student put himself on the internet</h3>
+          <p>Notes on building this site — the mistakes and the lessons.</p>
         </div>
       </div>
-      <p class="notes__foot" data-en="Want to know when these go up? Drop me a line — I'll send them by hand." data-zh="想知道更新？写信给我——我会亲手寄给你。">
-        Want to know when these go up? Drop me a line — I'll send them by hand.
-      </p>
+      <p class="notes__foot">Want to know when these go up? Drop me a line — I'll send them by hand.</p>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="gallery" id="gallery">
+      <div class="sec-head reveal">
+        <span class="stamp">D.04</span>
+        <h2 class="h2">A few <em>frames.</em></h2>
+        <p class="sub">Pictures from desk and street.</p>
+      </div>
+      <div class="gal">
+        <figure class="gal__cell gal__cell--1 reveal" data-hoverable>
+          <div class="gal__ph gal__ph--1"><span>image 01</span></div>
+          <figcaption>· 01 ·</figcaption>
+        </figure>
+        <figure class="gal__cell gal__cell--2 reveal" data-hoverable>
+          <div class="gal__ph gal__ph--2"><img src="assets/shiba.jpg" alt="" loading="lazy" /></div>
+          <figcaption>· 02 ·</figcaption>
+        </figure>
+        <figure class="gal__cell gal__cell--3 reveal" data-hoverable>
+          <div class="gal__ph gal__ph--3"><span>image 03</span></div>
+          <figcaption>· 03 ·</figcaption>
+        </figure>
+        <figure class="gal__cell gal__cell--4 reveal" data-hoverable>
+          <div class="gal__ph gal__ph--4"><span>image 04</span></div>
+          <figcaption>· 04 ·</figcaption>
+        </figure>
+        <figure class="gal__cell gal__cell--5 reveal" data-hoverable>
+          <div class="gal__ph gal__ph--5"><span>image 05</span></div>
+          <figcaption>· 05 ·</figcaption>
+        </figure>
+        <figure class="gal__cell gal__cell--6 reveal" data-hoverable>
+          <div class="gal__ph gal__ph--6"><span>image 06</span></div>
+          <figcaption>· 06 ·</figcaption>
+        </figure>
+      </div>
     </section>
 
     <!-- ============ CONTACT ============ -->
     <section class="contact" id="contact">
       <div class="card contact__card reveal">
         <span class="stamp">E.05</span>
-        <h2 class="h2"><span data-en="Say" data-zh="打个">Say</span> <em data-en="hello." data-zh="招呼。">hello.</em></h2>
-        <p class="sub" data-en="Or just lurk — both are welcome." data-zh="或者就这样静静看着——都欢迎。">Or just lurk — both are welcome.</p>
+        <h2 class="h2">Say <em>hello.</em></h2>
+        <p class="sub">Or just lurk — both are welcome.</p>
         <ul class="links">
           <li><a class="ulink" href="https://github.com/Toby-Qian" target="_blank" rel="noreferrer" data-hoverable><span class="link__k">GitHub</span><span class="link__v">@Toby-Qian</span></a></li>
           <li><a class="ulink" href="mailto:q1509713692@gmail.com" data-hoverable><span class="link__k">Email</span><span class="link__v">q1509713692@gmail.com</span></a></li>
           <li><a class="ulink" href="https://v.douyin.com/6Nq5mOJGOYY/" target="_blank" rel="noreferrer" data-hoverable><span class="link__k">Douyin</span><span class="link__v">@toby.qian</span></a></li>
         </ul>
         <div class="counter">
-          <span data-en="Visits" data-zh="访问">Visits</span>
-          <b id="busuanzi_value_site_pv">…</b>
+          <span>Visits</span><b id="busuanzi_value_site_pv">…</b>
           <span>·</span>
-          <span data-en="People" data-zh="访客">People</span>
-          <b id="busuanzi_value_site_uv">…</b>
+          <span>People</span><b id="busuanzi_value_site_uv">…</b>
         </div>
       </div>
-      <p class="foot" data-en="© 2026 Toby Qian — Lilac Diary · written by hand" data-zh="© 2026 钱 Toby — 紫丁香日记 · 手写">© 2026 Toby Qian — Lilac Diary · written by hand</p>
+      <p class="foot">© 2026 Toby Qian — Lilac Diary · written by hand</p>
     </section>
 
   </main>
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <script src="personal-page.js?v=10"></script>
+  <script src="personal-page.js?v=11"></script>
 </body>
 </html>
