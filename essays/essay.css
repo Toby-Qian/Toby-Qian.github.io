@@ -4,9 +4,13 @@
 
 .essay-page {
   position: relative; z-index: 2;
-  max-width: 760px;
+  max-width: 920px;
   margin: 0 auto;
-  padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 36px) 100px;
+  padding: clamp(36px, 5vw, 64px) clamp(20px, 4vw, 36px) 100px;
+  background: rgba(255,255,255,.55);
+  border-left: 1px solid var(--ink-line);
+  border-right: 1px solid var(--ink-line);
+  backdrop-filter: blur(2px);
 }
 
 .back-link {
@@ -72,8 +76,8 @@
 
 .essay-article .lede {
   font-family: var(--serif-it); font-style: italic;
-  font-size: clamp(19px, 1.6vw, 24px); line-height: 1.5;
-  color: var(--ink-soft); max-width: 58ch;
+  font-size: clamp(21px, 1.8vw, 26px); line-height: 1.45;
+  color: var(--ink-soft); max-width: 60ch;
   margin-top: 4px;
 }
 
@@ -87,34 +91,36 @@
 
 .essay-body {
   font-family: var(--serif-it);
-  font-size: clamp(17px, 1.3vw, 19.5px);
-  line-height: 1.75;
+  font-size: clamp(19px, 1.5vw, 22px);
+  line-height: 1.78;
   color: var(--ink);
+  max-width: 68ch;
+  margin: 0 auto;
 }
-.essay-body p { margin-bottom: 1.2em; }
+.essay-body p { margin-bottom: 1.25em; }
 .essay-body p:first-of-type::first-letter {
   font-family: var(--serif); font-style: normal;
   float: left;
-  font-size: 4.4em; line-height: .88;
-  padding: 6px 12px 0 0;
+  font-size: 5em; line-height: .88;
+  padding: 8px 14px 0 0;
   color: var(--lilac-deep);
 }
 
 .essay-body h2 {
   font-family: var(--serif); font-weight: 400;
-  font-size: clamp(24px, 2.4vw, 32px); line-height: 1.15;
+  font-size: clamp(28px, 2.8vw, 38px); line-height: 1.15;
   color: var(--ink);
-  margin: 1.8em 0 .6em;
+  margin: 2em 0 .6em;
 }
 .essay-body h2 em { font-family: var(--serif-it); font-style: italic; color: var(--lilac-deep); }
 
 .essay-body blockquote {
   font-family: var(--serif-it); font-style: italic;
-  font-size: 1.05em; line-height: 1.55;
+  font-size: 1.12em; line-height: 1.55;
   color: var(--ink-soft);
-  border-left: 2px solid var(--lilac-deep);
-  padding: 6px 0 6px 22px;
-  margin: 1.4em 0;
+  border-left: 3px solid var(--lilac-deep);
+  padding: 10px 0 10px 26px;
+  margin: 1.6em 0;
 }
 
 .essay-body a { color: var(--rose); border-bottom: 1px solid currentColor; }
