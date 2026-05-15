@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="personal-page.css?v=12" />
+  <link rel="stylesheet" href="personal-page.css?v=16" />
 </head>
 <body>
 
@@ -307,6 +307,18 @@
       </div>
     </section>
 
+    <!-- ============ GUESTBOOK ============ -->
+    <section class="guestbook" id="guestbook">
+      <div class="sec-head reveal">
+        <span class="stamp">F.06</span>
+        <h2 class="h2">Leave a <em>note.</em></h2>
+        <p class="sub">A line, a thought, a hello — whatever fits in the margin.</p>
+      </div>
+      <div class="card guestbook__card reveal">
+        <div id="twikoo"></div>
+      </div>
+    </section>
+
     <!-- end-of-issue ornament -->
     <div class="end-mark reveal" aria-hidden="true">
       <span>·</span><span>·</span><span>✺</span><span>·</span><span>·</span>
@@ -337,5 +349,15 @@
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script src="personal-page.js?v=11"></script>
+
+  <!-- Twikoo guestbook -->
+  <script src="https://cdn.jsdelivr.net/npm/twikoo@1.7.9/dist/twikoo.all.min.js"></script>
+  <script>
+    twikoo.init({
+      envId: 'https://toby-twikoo.vercel.app',
+      el: '#twikoo',
+      lang: 'en'
+    });
+  </script>
 </body>
 </html>

@@ -522,6 +522,29 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   margin-top: 28px;
 }
 
+/* ---------- Guestbook (Twikoo) ---------- */
+.guestbook__card {
+  max-width: 880px; margin: 0 auto;
+  padding: clamp(20px, 2.4vw, 32px);
+}
+#twikoo {
+  font-family: var(--sans);
+  color: var(--ink);
+  /* element-plus theme overrides — Twikoo auto-derives shades */
+  --el-color-primary: #7e63a8;
+  --el-color-primary-light-3: #9c7fc4;
+  --el-color-primary-light-5: #cdb8e8;
+  --el-color-primary-light-7: #e6dcfa;
+  --el-color-primary-light-8: #efe6fb;
+  --el-color-primary-light-9: #f4ecff;
+  --el-color-primary-dark-2: #5a3f88;
+  --el-border-radius-base: 8px;
+  --el-font-family: var(--sans);
+}
+#twikoo a { color: var(--lilac-deep); }
+#twikoo a:hover { color: var(--rose); }
+#twikoo .tk-avatar img { border-radius: 50%; }
+
 /* ---------- End-of-issue mark ---------- */
 .end-mark {
   text-align: center;
