@@ -145,8 +145,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .stickers { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 320px; }
 .sticker {
-  font-family: var(--hand); font-size: 18px;
-  padding: 6px 14px; border-radius: 999px;
+  font-family: var(--hand); font-size: 20px;
+  padding: 6px 16px; border-radius: 999px;
   border: 1.5px dashed var(--lilac-deep); background: #fff;
   transform: rotate(-2deg); transition: transform .25s;
 }
@@ -228,8 +228,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .stamp {
   display: inline-block;
-  font-family: var(--hand); font-size: 18px;
-  padding: 2px 12px;
+  font-family: var(--hand); font-size: 20px;
+  padding: 3px 14px;
   border: 1.5px dashed var(--lilac-deep); border-radius: 999px;
   color: var(--lilac-deep);
   transform: rotate(-3deg); margin-bottom: 16px;
@@ -242,7 +242,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .h2 em { font-family: var(--serif-it); font-style: italic; color: var(--lilac-deep); }
 .sub {
   font-family: var(--serif-it); font-style: italic;
-  color: var(--ink-soft); font-size: 18px; margin-bottom: 24px;
+  color: var(--ink-soft); font-size: clamp(18px, 1.4vw, 22px); margin-bottom: 24px;
 }
 .prose { font-family: var(--serif-it); font-size: clamp(18px, 1.5vw, 23px); line-height: 1.6; color: var(--ink-soft); margin-bottom: 14px; }
 .prose:last-child { margin-bottom: 0; }
@@ -266,14 +266,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .entry {
   display: grid;
-  grid-template-columns: minmax(220px, 320px) 1fr;
-  gap: clamp(24px, 4vw, 56px);
+  grid-template-columns: minmax(280px, 420px) 1fr;
+  gap: clamp(28px, 4vw, 64px);
   align-items: center;
   text-decoration: none;
   transition: transform .3s cubic-bezier(.2,.8,.2,1);
 }
 .entry:hover { transform: translateY(-4px); }
-.entry--right { grid-template-columns: 1fr minmax(220px, 320px); }
+.entry--right { grid-template-columns: 1fr minmax(280px, 420px); }
 .entry--right .poly { order: 2; }
 .entry--right .entry__body { order: 1; text-align: right; }
 .entry--right .entry__body p { margin-left: auto; }
@@ -317,11 +317,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .poly__rh span { display: block; height: 8px; background: var(--lilac); border-radius: 2px; width: 100%; }
 .poly__rh span:first-child { height: 14px; background: var(--ink); width: 60%; margin-bottom: 6px; }
 
-.entry__body { display: flex; flex-direction: column; gap: 10px; }
-.entry__meta { font-size: 11px; letter-spacing: .18em; color: var(--ink-muted); text-transform: uppercase; }
-.entry__body h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 3vw, 38px); line-height: 1.1; color: var(--ink); }
-.entry__body p { font-family: var(--serif-it); font-size: clamp(15px, 1.2vw, 18px); line-height: 1.55; color: var(--ink-soft); max-width: 56ch; }
-.entry__cta { font-family: var(--hand); font-size: 22px; color: var(--rose); margin-top: 6px; }
+.entry__body { display: flex; flex-direction: column; gap: 12px; }
+.entry__meta { font-size: 12px; letter-spacing: .18em; color: var(--ink-muted); text-transform: uppercase; }
+.entry__body h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.1; color: var(--ink); }
+.entry__body p { font-family: var(--serif-it); font-size: clamp(17px, 1.4vw, 21px); line-height: 1.55; color: var(--ink-soft); max-width: 56ch; }
+.entry__cta { font-family: var(--hand); font-size: 24px; color: var(--rose); margin-top: 6px; }
 .entry:hover .entry__cta { color: var(--lilac-deep); }
 
 /* ---------- Journal ---------- */
@@ -353,14 +353,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .essay--feature .essay__body { display: flex; flex-direction: column; gap: 14px; }
 .essay--feature h3 {
-  font-family: var(--serif); font-weight: 400;
-  font-size: clamp(28px, 3.6vw, 48px); line-height: 1.05; letter-spacing: -.01em;
+  font-family: var(--serif-it); font-style: italic; font-weight: 400;
+  font-size: clamp(32px, 4.2vw, 56px); line-height: 1.08; letter-spacing: -.005em;
   color: var(--ink);
 }
 .essay--feature .essay__lede {
   font-family: var(--serif-it); font-style: italic;
-  font-size: clamp(17px, 1.4vw, 21px); line-height: 1.55; color: var(--ink-soft);
-  max-width: 50ch;
+  font-size: clamp(19px, 1.6vw, 24px); line-height: 1.55; color: var(--ink-soft);
+  max-width: 52ch;
 }
 
 .essay__pin {
@@ -375,8 +375,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* Grid of recent essays */
 .essay-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: clamp(20px, 2.4vw, 32px);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(24px, 2.6vw, 36px);
 }
 .essay--card {
   display: flex; flex-direction: column; gap: 14px;
@@ -392,20 +392,20 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-radius: 6px; overflow: hidden;
 }
 .essay--card h3 {
-  font-family: var(--serif); font-weight: 400;
-  font-size: 22px; line-height: 1.18; color: var(--ink);
+  font-family: var(--serif-it); font-style: italic; font-weight: 400;
+  font-size: clamp(22px, 1.7vw, 28px); line-height: 1.2; color: var(--ink);
 }
 .essay--card p {
-  font-family: var(--serif-it); font-size: 15.5px; line-height: 1.5; color: var(--ink-soft);
+  font-family: var(--serif-it); font-size: clamp(16px, 1.2vw, 18px); line-height: 1.55; color: var(--ink-soft);
 }
 
-.essay__body { display: flex; flex-direction: column; gap: 10px; padding: 0 4px; }
+.essay__body { display: flex; flex-direction: column; gap: 12px; padding: 0 4px; }
 .essay__meta {
-  font-family: var(--sans); font-size: 11px; letter-spacing: .18em;
+  font-family: var(--sans); font-size: 12px; letter-spacing: .18em;
   color: var(--ink-muted); text-transform: uppercase;
 }
 .essay__cta {
-  font-family: var(--hand); font-size: 22px; color: var(--rose); margin-top: auto;
+  font-family: var(--hand); font-size: 24px; color: var(--rose); margin-top: auto;
 }
 .essay:hover .essay__cta { color: var(--lilac-deep); }
 
@@ -452,8 +452,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .gal {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  max-width: 1080px; margin: 0 auto;
+  gap: 28px;
+  max-width: 1320px; margin: 0 auto;
 }
 .gal__cell {
   background: #fff;
