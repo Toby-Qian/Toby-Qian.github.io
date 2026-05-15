@@ -32,8 +32,8 @@
   --hand: "Caveat", "DM Serif Display", cursive;
   --sans: "Inter", system-ui, sans-serif;
 
-  --gutter: clamp(12px, 2vw, 28px);
-  --maxw: 1320px;
+  --gutter: clamp(16px, 2.4vw, 36px);
+  --maxw: 1480px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -175,7 +175,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .lede {
   font-family: var(--serif-it); font-style: italic;
-  font-size: clamp(18px, 1.6vw, 22px); line-height: 1.5;
+  font-size: clamp(20px, 1.9vw, 28px); line-height: 1.5;
   color: var(--ink-soft); max-width: 56ch;
   margin-bottom: 28px;
 }
@@ -210,8 +210,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .facts { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px 24px; max-width: 520px; }
 @media (min-width: 720px) { .facts { grid-template-columns: repeat(4, minmax(0,1fr)); } }
 .fact { display: flex; flex-direction: column; gap: 4px; padding-top: 10px; border-top: 1px solid var(--ink-line); }
-.fact__k { font-size: 10px; letter-spacing: .2em; color: var(--ink-muted); }
-.fact__v { font-family: var(--serif-it); font-style: italic; font-size: 16px; display: inline-flex; align-items: center; gap: 6px; }
+.fact__k { font-size: 11px; letter-spacing: .2em; color: var(--ink-muted); }
+.fact__v { font-family: var(--serif-it); font-style: italic; font-size: 18px; display: inline-flex; align-items: center; gap: 6px; }
 .avail-dot { width: 8px; height: 8px; border-radius: 50%; background: #6fbf73; }
 
 /* ---------- Card base ---------- */
@@ -244,7 +244,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   font-family: var(--serif-it); font-style: italic;
   color: var(--ink-soft); font-size: 18px; margin-bottom: 24px;
 }
-.prose { font-family: var(--serif-it); font-size: clamp(17px, 1.4vw, 21px); line-height: 1.6; color: var(--ink-soft); margin-bottom: 14px; }
+.prose { font-family: var(--serif-it); font-size: clamp(18px, 1.5vw, 23px); line-height: 1.6; color: var(--ink-soft); margin-bottom: 14px; }
 .prose:last-child { margin-bottom: 0; }
 
 .about__card { max-width: 880px; margin: 0 auto; }
