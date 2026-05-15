@@ -350,14 +350,38 @@
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script src="personal-page.js?v=11"></script>
 
-  <!-- Twikoo guestbook -->
-  <script src="https://cdn.jsdelivr.net/npm/twikoo@1.7.9/dist/twikoo.all.min.js"></script>
+  <!-- Twikoo guestbook (lazy: only load when scrolling near it) -->
   <script>
-    twikoo.init({
-      envId: 'https://toby-twikoo.vercel.app',
-      el: '#twikoo',
-      lang: 'en'
-    });
+    (function () {
+      var gb = document.getElementById('guestbook');
+      if (!gb) return;
+      var loaded = false;
+      function loadTwikoo() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/npm/twikoo@1.7.9/dist/twikoo.all.min.js';
+        s.onload = function () {
+          window.twikoo && twikoo.init({
+            envId: 'https://toby-twikoo.vercel.app',
+            el: '#twikoo',
+            lang: 'en'
+          });
+        };
+        document.body.appendChild(s);
+      }
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting) { loadTwikoo(); io.disconnect(); }
+        }, { rootMargin: '400px' });
+        io.observe(gb);
+      } else {
+        // fallback: load on first user interaction
+        ['scroll','click','touchstart'].forEach(function (ev) {
+          window.addEventListener(ev, loadTwikoo, { once: true, passive: true });
+        });
+      }
+    })();
   </script>
 </body>
 </html>
