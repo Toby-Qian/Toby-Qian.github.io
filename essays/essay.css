@@ -4,9 +4,9 @@
 
 .essay-page {
   position: relative; z-index: 2;
-  max-width: 920px;
+  max-width: 1240px;
   margin: 0 auto;
-  padding: clamp(36px, 5vw, 64px) clamp(20px, 4vw, 36px) 100px;
+  padding: clamp(36px, 5vw, 64px) clamp(28px, 5vw, 56px) 100px;
   background: rgba(255,255,255,.55);
   border-left: 1px solid var(--ink-line);
   border-right: 1px solid var(--ink-line);
@@ -76,8 +76,8 @@
 
 .essay-article .lede {
   font-family: var(--serif-it); font-style: italic;
-  font-size: clamp(21px, 1.8vw, 26px); line-height: 1.45;
-  color: var(--ink-soft); max-width: 60ch;
+  font-size: clamp(23px, 2vw, 30px); line-height: 1.45;
+  color: var(--ink-soft); max-width: 64ch;
   margin-top: 4px;
 }
 
@@ -91,10 +91,10 @@
 
 .essay-body {
   font-family: var(--serif-it);
-  font-size: clamp(19px, 1.5vw, 22px);
-  line-height: 1.78;
+  font-size: clamp(21px, 1.75vw, 26px);
+  line-height: 1.75;
   color: var(--ink);
-  max-width: 68ch;
+  max-width: 76ch;
   margin: 0 auto;
 }
 .essay-body p { margin-bottom: 1.25em; }
@@ -108,7 +108,7 @@
 
 .essay-body h2 {
   font-family: var(--serif); font-weight: 400;
-  font-size: clamp(28px, 2.8vw, 38px); line-height: 1.15;
+  font-size: clamp(30px, 3vw, 42px); line-height: 1.15;
   color: var(--ink);
   margin: 2em 0 .6em;
 }
