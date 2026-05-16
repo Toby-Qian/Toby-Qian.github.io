@@ -4,9 +4,9 @@
 
 .essay-page {
   position: relative; z-index: 2;
-  max-width: 1240px;
+  max-width: 1480px;
   margin: 0 auto;
-  padding: clamp(36px, 5vw, 64px) clamp(28px, 5vw, 56px) 100px;
+  padding: clamp(36px, 5vw, 64px) clamp(36px, 6vw, 80px) 100px;
   background: rgba(255,255,255,.55);
   border-left: 1px solid var(--ink-line);
   border-right: 1px solid var(--ink-line);
@@ -94,7 +94,7 @@
   font-size: clamp(21px, 1.75vw, 26px);
   line-height: 1.75;
   color: var(--ink);
-  max-width: 76ch;
+  max-width: 82ch;
   margin: 0 auto;
 }
 .essay-body p { margin-bottom: 1.25em; }
