@@ -90,7 +90,7 @@
 .essay-article .byline .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--ink-line); }
 
 .essay-body {
-  font-family: var(--serif-it);
+  font-family: "EB Garamond", "Instrument Serif", Georgia, serif;
   font-size: clamp(21px, 1.75vw, 26px);
   line-height: 1.75;
   color: var(--ink);
@@ -99,7 +99,8 @@
 }
 .essay-body p { margin-bottom: 1.25em; }
 .essay-body p:first-of-type::first-letter {
-  font-family: var(--serif); font-style: normal;
+  font-family: "DM Serif Display", "EB Garamond", Georgia, serif;
+  font-style: normal;
   float: left;
   font-size: 5em; line-height: .88;
   padding: 8px 14px 0 0;

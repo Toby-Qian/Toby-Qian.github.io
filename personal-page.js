@@ -84,4 +84,34 @@
       if (title)  title.style.transform  = `translate(${cx * -8}px, ${cy * -5}px)`;
     }, { passive: true });
   }
+
+  /* ---------- Twikoo guestbook (lazy: load near viewport) ---------- */
+  const gb = document.getElementById("guestbook");
+  if (gb) {
+    let loaded = false;
+    const loadTwikoo = () => {
+      if (loaded) return;
+      loaded = true;
+      const s = document.createElement("script");
+      s.src = "https://cdn.jsdelivr.net/npm/twikoo@1.7.9/dist/twikoo.all.min.js";
+      s.onload = () => {
+        window.twikoo && twikoo.init({
+          envId: "https://toby-twikoo.vercel.app",
+          el: "#twikoo",
+          lang: "en"
+        });
+      };
+      document.body.appendChild(s);
+    };
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) { loadTwikoo(); io.disconnect(); }
+      }, { rootMargin: "400px" });
+      io.observe(gb);
+    } else {
+      ["scroll", "click", "touchstart"].forEach((ev) => {
+        window.addEventListener(ev, loadTwikoo, { once: true, passive: true });
+      });
+    }
+  }
 })();

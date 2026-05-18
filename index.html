@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="personal-page.css?v=19" />
+  <link rel="stylesheet" href="personal-page.css?v=20" />
 </head>
 <body>
 
@@ -41,35 +41,7 @@
     <section class="hero">
       <div class="hero__left">
         <div class="mascot reveal" data-hoverable>
-          <svg viewBox="0 0 240 280" aria-hidden="true">
-            <defs>
-              <radialGradient id="catBody" cx="50%" cy="50%" r="60%">
-                <stop offset="0%" stop-color="#fbf6ff"/>
-                <stop offset="100%" stop-color="#cdb8e8"/>
-              </radialGradient>
-            </defs>
-            <path d="M58 130 L78 70 L102 118 Z" fill="url(#catBody)"/>
-            <path d="M182 130 L162 70 L138 118 Z" fill="url(#catBody)"/>
-            <path d="M70 122 L82 88 L94 118 Z" fill="#e6b48f" opacity=".75"/>
-            <path d="M170 122 L158 88 L146 118 Z" fill="#e6b48f" opacity=".75"/>
-            <ellipse cx="120" cy="160" rx="78" ry="68" fill="url(#catBody)"/>
-            <ellipse cx="98" cy="158" rx="5" ry="7" fill="#2a2042"/>
-            <ellipse cx="142" cy="158" rx="5" ry="7" fill="#2a2042"/>
-            <ellipse cx="100" cy="155" rx="1.6" ry="2" fill="#fff"/>
-            <ellipse cx="144" cy="155" rx="1.6" ry="2" fill="#fff"/>
-            <path d="M115 176 L125 176 L120 182 Z" fill="#a3283a"/>
-            <path d="M120 182 L120 188 M120 188 Q112 194 106 188 M120 188 Q128 194 134 188" stroke="#2a2042" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <ellipse cx="86" cy="175" rx="9" ry="6" fill="#e6b48f" opacity=".55"/>
-            <ellipse cx="154" cy="175" rx="9" ry="6" fill="#e6b48f" opacity=".55"/>
-            <path d="M70 174 L46 168 M70 180 L46 182 M70 186 L46 196" stroke="#7e63a8" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-            <path d="M170 174 L194 168 M170 180 L194 182 M170 186 L194 196" stroke="#7e63a8" stroke-width="1.4" stroke-linecap="round" fill="none"/>
-            <path d="M70 220 Q120 240 170 220 L168 240 Q120 256 72 240 Z" fill="#a3283a"/>
-            <path d="M120 240 L140 268 L132 268 L116 250 Z" fill="#7e1a2a"/>
-            <g fill="#9c7fc4">
-              <path d="M40 100 L43 110 L53 113 L43 116 L40 126 L37 116 L27 113 L37 110 Z"/>
-              <path d="M210 70 L212 76 L218 78 L212 80 L210 86 L208 80 L202 78 L208 76 Z"/>
-            </g>
-          </svg>
+          <img src="assets/mascot.svg" alt="" />
         </div>
         <div class="stickers">
           <span class="sticker sticker--1" data-hoverable>★ studying</span>
@@ -225,7 +197,7 @@
       <div class="essay-grid">
         <a class="essay essay--card reveal" href="essays/002-stones.html" data-hoverable>
           <div class="essay__cover">
-            <img class="essay__photo" src="assets/cover-002.png" alt="" loading="lazy" />
+            <img class="essay__photo" src="assets/cover-002.jpg" alt="" loading="lazy" />
           </div>
           <div class="essay__body">
             <span class="essay__meta">No. 002 · Essay · 7 min</span>
@@ -348,40 +320,6 @@
   </main>
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <script src="personal-page.js?v=11"></script>
-
-  <!-- Twikoo guestbook (lazy: only load when scrolling near it) -->
-  <script>
-    (function () {
-      var gb = document.getElementById('guestbook');
-      if (!gb) return;
-      var loaded = false;
-      function loadTwikoo() {
-        if (loaded) return;
-        loaded = true;
-        var s = document.createElement('script');
-        s.src = 'https://cdn.jsdelivr.net/npm/twikoo@1.7.9/dist/twikoo.all.min.js';
-        s.onload = function () {
-          window.twikoo && twikoo.init({
-            envId: 'https://toby-twikoo.vercel.app',
-            el: '#twikoo',
-            lang: 'en'
-          });
-        };
-        document.body.appendChild(s);
-      }
-      if ('IntersectionObserver' in window) {
-        var io = new IntersectionObserver(function (entries) {
-          if (entries[0].isIntersecting) { loadTwikoo(); io.disconnect(); }
-        }, { rootMargin: '400px' });
-        io.observe(gb);
-      } else {
-        // fallback: load on first user interaction
-        ['scroll','click','touchstart'].forEach(function (ev) {
-          window.addEventListener(ev, loadTwikoo, { once: true, passive: true });
-        });
-      }
-    })();
-  </script>
+  <script src="personal-page.js?v=20"></script>
 </body>
 </html>

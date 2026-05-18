@@ -430,19 +430,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .essay:hover .essay__photo { transform: scale(1.05); filter: saturate(1.1); }
 
-/* Cover gradient art (placeholder backgrounds) */
-.essay__art { position: absolute; inset: 0; }
-.essay__art--1 { background: linear-gradient(135deg, #cdb8e8 0%, #f8c8d8 60%, #fde68a 100%); }
-.essay__art--2 { background: linear-gradient(135deg, #c8dcf0, #cdb8e8); }
-.essay__art--3 { background: linear-gradient(135deg, #fde68a, #e6b48f); }
-.essay__art--4 { background: linear-gradient(135deg, #c8e8d8, #cdb8e8); }
-.essay__art--5 { background: linear-gradient(135deg, #f8c8d8, #cdb8e8); }
-.essay__art::after {
-  content: ""; position: absolute; inset: 0;
-  background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,.45), transparent 60%);
-  mix-blend-mode: screen;
-}
-
 .journal__foot {
   text-align: center; font-family: var(--hand); font-size: 22px; color: var(--ink-muted);
   margin-top: 8px;
@@ -487,11 +474,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   overflow: hidden;
 }
 .gal__ph img { width: 100%; height: 100%; object-fit: cover; }
-.gal__ph--1 { background: linear-gradient(135deg, #f4ecff, #cdb8e8); }
-.gal__ph--3 { background: linear-gradient(135deg, #fde68a, #f8c8d8); }
-.gal__ph--4 { background: linear-gradient(135deg, #c8e8d8, #cdb8e8); }
-.gal__ph--5 { background: linear-gradient(135deg, #f8c8d8, #cdb8e8); }
-.gal__ph--6 { background: linear-gradient(135deg, #c8dcf0, #cdb8e8); }
 
 .gal__cell figcaption {
   position: absolute; left: 0; right: 0; bottom: 8px;
