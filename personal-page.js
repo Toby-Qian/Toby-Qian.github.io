@@ -38,26 +38,6 @@
     }, 4500);
   }
 
-  /* ---------- Cursor follower ---------- */
-  const dot = document.querySelector(".cursor-dot");
-  const ring = document.querySelector(".cursor-ring");
-  let mx = innerWidth / 2, my = innerHeight / 2, rx = mx, ry = my;
-  window.addEventListener("mousemove", (e) => {
-    mx = e.clientX; my = e.clientY;
-    if (dot) { dot.style.left = mx + "px"; dot.style.top = my + "px"; }
-  }, { passive: true });
-  function frame() {
-    rx += (mx - rx) * 0.18;
-    ry += (my - ry) * 0.18;
-    if (ring) { ring.style.left = rx + "px"; ring.style.top = ry + "px"; }
-    requestAnimationFrame(frame);
-  }
-  frame();
-  document.querySelectorAll("[data-hoverable], a, button").forEach(el => {
-    el.addEventListener("mouseenter", () => body.classList.add("cursor-hover"));
-    el.addEventListener("mouseleave", () => body.classList.remove("cursor-hover"));
-  });
-
   /* ---------- Reveal on scroll ---------- */
   const reveals = document.querySelectorAll(".reveal");
   reveals.forEach((el, i) => { el.style.transitionDelay = `${Math.min(i * 18, 240)}ms`; });
