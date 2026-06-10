@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lost page · Toby Qian</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#f4ecff" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/personal-page.css?v=26" />
+  <style>
+    .lost {
+      min-height: calc(100vh - 70px);
+      display: grid; place-items: center;
+      padding: 40px var(--gutter);
+      position: relative; z-index: 2;
+    }
+    .lost__card { max-width: 560px; text-align: center; }
+    .lost__mascot { width: 180px; margin: 0 auto 18px; filter: drop-shadow(0 12px 20px rgba(126,99,168,.25)); }
+    .lost__code {
+      font-family: var(--serif); font-size: clamp(64px, 10vw, 110px);
+      line-height: 1; color: var(--lilac-deep); margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="tape tape--1" aria-hidden="true"></div>
+  <div class="tape tape--2" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand__mark">✺</span>
+      <span class="brand__name">Toby Qian</span>
+      <span class="brand__sub">/ lilac diary</span>
+    </a>
+  </header>
+
+  <main class="lost">
+    <div class="card lost__card">
+      <img class="lost__mascot" src="/assets/mascot.svg?v=2" alt="" width="240" height="280" />
+      <div class="lost__code">404</div>
+      <span class="stamp">page not found</span>
+      <p class="sub">This page fell out of the diary — maybe it was never written, maybe it moved.</p>
+      <div class="actions" style="justify-content:center">
+        <a href="/" class="btn btn--primary">Back to the front page</a>
+        <a href="/#notes" class="btn">Read the journal</a>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

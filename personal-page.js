@@ -73,17 +73,67 @@
     });
   }
 
-  /* ---------- Hero parallax ---------- */
-  const mascot = document.querySelector(".mascot");
+  /* ---------- Hero parallax ----------
+     Targets the img (not .mascot) so the container's :hover rotate and
+     .reveal transition keep working; rAF-throttled. */
+  const mascotImg = document.querySelector(".mascot img");
   const title = document.querySelector(".hero__title");
   const isCoarse = matchMedia("(hover: none), (max-width: 900px)").matches;
   if (!isCoarse) {
+    let cx = 0, cy = 0, ticking = false;
     window.addEventListener("mousemove", (e) => {
-      const cx = e.clientX / innerWidth - 0.5;
-      const cy = e.clientY / innerHeight - 0.5;
-      if (mascot) mascot.style.transform = `translate(${cx * 14}px, ${cy * 10}px)`;
-      if (title)  title.style.transform  = `translate(${cx * -8}px, ${cy * -5}px)`;
+      cx = e.clientX / innerWidth - 0.5;
+      cy = e.clientY / innerHeight - 0.5;
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        if (mascotImg) mascotImg.style.transform = `translate(${cx * 14}px, ${cy * 10}px)`;
+        if (title)     title.style.transform     = `translate(${cx * -8}px, ${cy * -5}px)`;
+        ticking = false;
+      });
     }, { passive: true });
+  }
+
+  /* ---------- Busuanzi counter (lazy: only near contact) ---------- */
+  const contact = document.getElementById("contact");
+  if (contact) {
+    let bszLoaded = false;
+    const loadBsz = () => {
+      if (bszLoaded) return;
+      bszLoaded = true;
+      const s = document.createElement("script");
+      s.async = true;
+      s.src = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js";
+      document.body.appendChild(s);
+    };
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) { loadBsz(); io.disconnect(); }
+      }, { rootMargin: "600px" });
+      io.observe(contact);
+    } else {
+      loadBsz();
+    }
+  }
+
+  /* ---------- Gallery lightbox ---------- */
+  const gal = document.querySelector(".gal");
+  if (gal) {
+    const ov = document.createElement("div");
+    ov.className = "lightbox";
+    ov.innerHTML = "<img alt=\"\" />";
+    document.body.appendChild(ov);
+    const ovImg = ov.querySelector("img");
+    gal.addEventListener("click", (e) => {
+      const img = e.target.closest(".gal__ph img");
+      if (!img) return;
+      ovImg.src = img.currentSrc || img.src;
+      ov.classList.add("is-open");
+    });
+    ov.addEventListener("click", () => ov.classList.remove("is-open"));
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") ov.classList.remove("is-open");
+    });
   }
 
   /* ---------- Twikoo guestbook (lazy: load near viewport) ---------- */
@@ -94,7 +144,7 @@
       if (loaded) return;
       loaded = true;
       const s = document.createElement("script");
-      s.src = "https://cdn.jsdelivr.net/npm/twikoo@1.7.9/dist/twikoo.all.min.js";
+      s.src = "assets/vendor/twikoo.all.min.js";
       s.onload = () => {
         window.twikoo && twikoo.init({
           envId: "https://toby-twikoo.vercel.app",
