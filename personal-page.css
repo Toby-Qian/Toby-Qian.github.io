@@ -183,7 +183,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   filter: blur(8px);
 }
 .mascot {
-  width: clamp(300px, 36vw, 460px);
+  width: clamp(340px, 44vw, 580px);
+  max-width: 100%;
   filter: drop-shadow(0 18px 30px rgba(126,99,168,.25));
   transition: transform .35s cubic-bezier(.2,.8,.2,1);
 }
