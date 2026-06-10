@@ -71,7 +71,7 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; overflow-x: clip; }
 html, body {
   background: var(--paper);
   color: var(--ink);
@@ -201,7 +201,8 @@ body::before {
 .hero__left { display: flex; flex-direction: column; align-items: center; gap: 24px; position: relative; }
 .hero__left::before {
   content: ""; position: absolute; z-index: -1;
-  width: 130%; aspect-ratio: 1/1; top: -6%;
+  width: 130%; max-width: 96vw; aspect-ratio: 1/1; top: -6%;
+  left: 50%; transform: translateX(-50%);
   background: radial-gradient(circle at 50% 42%,
     rgba(205,184,232,.55), rgba(248,200,216,.32) 45%, transparent 68%);
   filter: blur(8px);
@@ -530,6 +531,8 @@ body::before {
 @media (max-width: 760px) {
   .essay--feature { grid-template-columns: 1fr; }
   .essay--feature .essay__cover { aspect-ratio: 16/10; }
+  /* 21/10 strips crop too hard on a narrow phone */
+  .essay--card .essay__cover { aspect-ratio: 16/10; }
 }
 
 /* ---------- Gallery ---------- */
@@ -588,7 +591,11 @@ body::before {
 }
 
 @media (max-width: 720px) {
-  .gal { grid-template-columns: repeat(2, 1fr); }
+  .gal { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+}
+
+@media (max-width: 640px) {
+  .drift { display: none; }
 }
 
 /* ---------- Contact ---------- */
