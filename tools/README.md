@@ -5,11 +5,16 @@ Rather than maintain that in seven files, each essay keeps **only its body** in
 `tools/content/essays/<name>.html`, and `build_essays.py` wraps it with the one
 shared shell in `tools/templates/essay.html`.
 
+The build also generates the home-page journal section and the RSS feed from
+`tools/content/essays/_manifest.json`.
+
 ```
 tools/
-  templates/essay.html        # the shared shell ({{TITLE}} + {{BODY}})
+  templates/essay.html        # the shared shell ({{TITLE}}, {{SLUG}}, {{BODY}})
   content/essays/*.html        # per-essay body fragments (the source of truth)
+  content/essays/_manifest.json# card metadata: heading, blurb, cover, date...
   build_essays.py              # fragment + template -> essays/<name>.html
+                               # manifest -> index.html journal + feed.xml
 ```
 
 ## Write a new essay
@@ -38,8 +43,10 @@ tools/
 
    That writes `essays/00X-slug.html`.
 
-3. Add the matching card + cover image to `index.html` by hand — the home-page
-   journal grid is not templated.
+3. Add an entry to `tools/content/essays/_manifest.json` (heading, blurb,
+   cover name, date). The `--apply` run rewrites the journal cards between the
+   `JOURNAL:AUTO` markers in `index.html` and regenerates `feed.xml` — no hand
+   editing of the home page.
 
 ## Verify without writing anything
 
