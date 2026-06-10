@@ -52,6 +52,27 @@
     reveals.forEach(el => el.classList.add("is-in"));
   }
 
+  /* ---------- Scrollspy: highlight nav link of current section ---------- */
+  const navLinks = Array.from(document.querySelectorAll(".nav a[href^='#']"));
+  if (navLinks.length && "IntersectionObserver" in window) {
+    const byId = {};
+    navLinks.forEach(a => { byId[a.getAttribute("href").slice(1)] = a; });
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        const link = byId[en.target.id];
+        if (!link) return;
+        if (en.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove("is-active"));
+          link.classList.add("is-active");
+        }
+      });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    Object.keys(byId).forEach(id => {
+      const sec = document.getElementById(id);
+      if (sec) spy.observe(sec);
+    });
+  }
+
   /* ---------- Hero parallax ---------- */
   const mascot = document.querySelector(".mascot");
   const title = document.querySelector(".hero__title");

@@ -2,6 +2,44 @@
    LILAC DIARY — Toby Qian personal page
    ========================================================= */
 
+/* ---------- Self-hosted fonts (latin subsets) ---------- */
+@font-face {
+  font-family: "DM Serif Display"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("assets/fonts/dm-serif-display-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "DM Serif Display"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("assets/fonts/dm-serif-display-latin-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Instrument Serif"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("assets/fonts/instrument-serif-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Instrument Serif"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("assets/fonts/instrument-serif-latin-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Caveat"; font-style: normal; font-weight: 500; font-display: swap;
+  src: url("assets/fonts/caveat-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Caveat"; font-style: normal; font-weight: 600; font-display: swap;
+  src: url("assets/fonts/caveat-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "EB Garamond"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("assets/fonts/eb-garamond-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "EB Garamond"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("assets/fonts/eb-garamond-latin-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "EB Garamond"; font-style: normal; font-weight: 500; font-display: swap;
+  src: url("assets/fonts/eb-garamond-latin-500-normal.woff2") format("woff2");
+}
+
 :root {
   --paper: #f4ecff;          /* light lilac page */
   --paper-2: #e9dcfa;
@@ -30,7 +68,7 @@
   --serif: "DM Serif Display", "Instrument Serif", Georgia, serif;
   --serif-it: "Instrument Serif", "DM Serif Display", Georgia, serif;
   --hand: "Caveat", "DM Serif Display", cursive;
-  --sans: "Inter", system-ui, sans-serif;
+  --sans: system-ui, "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif;
 
   --gutter: clamp(16px, 2.4vw, 36px);
   --maxw: 1480px;
@@ -63,7 +101,6 @@ body {
   background-image:
     linear-gradient(to right, transparent 88px, rgba(163,40,58,0.18) 88px, rgba(163,40,58,0.18) 89px, transparent 89px),
     repeating-linear-gradient(to bottom, transparent 0, transparent 31px, var(--paper-line) 31px, var(--paper-line) 32px);
-  background-attachment: fixed;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -112,6 +149,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   background: var(--lilac-deep); transition: width .25s ease;
 }
 .nav a:hover::after { width: 100%; }
+.nav a.is-active { color: var(--ink); }
+.nav a.is-active::after { width: 100%; background: var(--rose); }
 
 .menu-toggle { display: none; width: 36px; height: 36px; border: 1px solid var(--ink-line); border-radius: 50%; align-items: center; justify-content: center; }
 .menu-toggle span, .menu-toggle span::before, .menu-toggle span::after {
@@ -135,7 +174,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   gap: clamp(30px, 5vw, 70px);
   align-items: center;
 }
-.hero__left { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.hero__left { display: flex; flex-direction: column; align-items: center; gap: 24px; position: relative; }
+.hero__left::before {
+  content: ""; position: absolute; z-index: -1;
+  width: 130%; aspect-ratio: 1/1; top: -6%;
+  background: radial-gradient(circle at 50% 42%,
+    rgba(205,184,232,.55), rgba(248,200,216,.32) 45%, transparent 68%);
+  filter: blur(8px);
+}
 .mascot {
   width: clamp(300px, 36vw, 460px);
   filter: drop-shadow(0 18px 30px rgba(126,99,168,.25));
@@ -171,8 +217,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hero__name {
   position: relative; display: inline-block;
   background: linear-gradient(180deg, transparent 70%, var(--note-yellow) 70%);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  animation: highlight-sweep .9s cubic-bezier(.2,.8,.2,1) .5s forwards;
   padding: 0 6px;
 }
+@keyframes highlight-sweep { to { background-size: 100% 100%; } }
 .lede {
   font-family: var(--serif-it); font-style: italic;
   font-size: clamp(20px, 1.9vw, 28px); line-height: 1.5;
@@ -213,6 +263,22 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .fact__k { font-size: 11px; letter-spacing: .2em; color: var(--ink-muted); }
 .fact__v { font-family: var(--serif-it); font-style: italic; font-size: 18px; display: inline-flex; align-items: center; gap: 6px; }
 .avail-dot { width: 8px; height: 8px; border-radius: 50%; background: #6fbf73; }
+
+/* ---------- Ticker (magazine strip) ---------- */
+.ticker {
+  overflow: hidden; white-space: nowrap;
+  border-top: 1px solid var(--ink-line); border-bottom: 1px solid var(--ink-line);
+  padding: 12px 0;
+  font-family: var(--serif-it); font-style: italic;
+  font-size: clamp(16px, 1.4vw, 20px); color: var(--ink-soft);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+.ticker__track { display: inline-flex; animation: ticker-scroll 36s linear infinite; }
+.ticker:hover .ticker__track { animation-play-state: paused; }
+.ticker__track span { padding: 0 22px; }
+.ticker__track .tick-mark { color: var(--lilac-deep); }
+@keyframes ticker-scroll { to { transform: translateX(-50%); } }
 
 /* ---------- Card base ---------- */
 .card {
@@ -330,9 +396,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .essay {
   display: block;
   text-decoration: none; color: inherit;
-  transition: transform .3s cubic-bezier(.2,.8,.2,1);
+  transition: transform .3s cubic-bezier(.2,.8,.2,1), border-color .3s, box-shadow .3s;
 }
-.essay:hover { transform: translateY(-4px); }
+.essay:hover { transform: translateY(-4px); border-color: var(--lilac-2); }
 
 /* Featured essay — magazine spread */
 .essay--feature {
@@ -552,8 +618,23 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 /* ---------- Reveal ---------- */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
 .reveal.is-in { opacity: 1; transform: none; }
+
+/* ---------- Rendering perf: skip offscreen layout ---------- */
+.gallery, .guestbook, .contact { content-visibility: auto; contain-intrinsic-size: auto 700px; }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; }
+  .hero__name { background-size: 100% 100%; }
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {

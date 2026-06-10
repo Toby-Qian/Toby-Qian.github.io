@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Toby Qian — Personal Page</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=DM+Serif+Display:ital@0;1&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="personal-page.css?v=21" />
+  <meta name="description" content="Toby Qian — a student in Guangzhou who builds focused web tools. Work, essays and frames, all in one issue." />
+  <meta name="theme-color" content="#f4ecff" />
+  <link rel="preload" href="assets/fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/instrument-serif-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/caveat-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="personal-page.css?v=22" />
 </head>
 <body>
 
@@ -41,7 +43,7 @@
     <section class="hero">
       <div class="hero__left">
         <div class="mascot reveal" data-hoverable>
-          <img src="assets/mascot.svg" alt="" />
+          <img src="assets/mascot.svg" alt="" width="240" height="280" fetchpriority="high" />
         </div>
         <div class="stickers">
           <span class="sticker sticker--1" data-hoverable>★ studying</span>
@@ -84,6 +86,22 @@
       </div>
     </section>
 
+    <!-- ============ TICKER ============ -->
+    <div class="ticker reveal" aria-hidden="true">
+      <div class="ticker__track">
+        <span>focused web tools</span><span class="tick-mark">✺</span>
+        <span>essays from desk &amp; street</span><span class="tick-mark">✺</span>
+        <span>vanilla html &amp; css</span><span class="tick-mark">✺</span>
+        <span>made in guangzhou</span><span class="tick-mark">✺</span>
+        <span>vol. 01 · the toby issue</span><span class="tick-mark">✺</span>
+        <span>focused web tools</span><span class="tick-mark">✺</span>
+        <span>essays from desk &amp; street</span><span class="tick-mark">✺</span>
+        <span>vanilla html &amp; css</span><span class="tick-mark">✺</span>
+        <span>made in guangzhou</span><span class="tick-mark">✺</span>
+        <span>vol. 01 · the toby issue</span><span class="tick-mark">✺</span>
+      </div>
+    </div>
+
     <!-- ============ ABOUT ============ -->
     <section class="about" id="about">
       <div class="card about__card reveal">
@@ -109,7 +127,7 @@
 
         <a class="card entry entry--left reveal" href="https://toby-qian.github.io/paper-figure/" target="_blank" rel="noreferrer" data-hoverable>
           <div class="poly poly--photo">
-            <img src="assets/shiba.jpg" alt="" loading="lazy" />
+            <img src="assets/shiba.webp" alt="" loading="lazy" decoding="async" />
             <span class="poly__cap">Fig. 1 · paper figure</span>
           </div>
           <div class="entry__body">
@@ -182,7 +200,7 @@
       <!-- Featured essay -->
       <a class="essay essay--feature reveal" href="essays/001-hello.html" data-hoverable>
         <div class="essay__cover">
-          <img class="essay__photo" src="assets/cover-001.jpg" alt="" loading="lazy" />
+          <img class="essay__photo" src="assets/cover-001.webp" alt="" loading="lazy" decoding="async" />
           <span class="essay__pin">Featured</span>
         </div>
         <div class="essay__body">
@@ -197,7 +215,7 @@
       <div class="essay-grid">
         <a class="essay essay--card reveal" href="essays/002-stones.html" data-hoverable>
           <div class="essay__cover">
-            <img class="essay__photo" src="assets/cover-002.jpg" alt="" loading="lazy" />
+            <img class="essay__photo" src="assets/cover-002.webp" alt="" loading="lazy" decoding="async" />
           </div>
           <div class="essay__body">
             <span class="essay__meta">No. 002 · Essay · 7 min</span>
@@ -208,7 +226,7 @@
         </a>
         <a class="essay essay--card reveal" href="essays/003-love.html" data-hoverable>
           <div class="essay__cover">
-            <img class="essay__photo" src="assets/cover-003.svg" alt="" loading="lazy" />
+            <img class="essay__photo" src="assets/cover-003.svg" alt="" loading="lazy" decoding="async" />
           </div>
           <div class="essay__body">
             <span class="essay__meta">No. 003 · Essay · 7 min</span>
@@ -219,7 +237,7 @@
         </a>
         <a class="essay essay--card reveal" href="essays/004-river.html" data-hoverable>
           <div class="essay__cover">
-            <img class="essay__photo" src="assets/cover-004.jpg" alt="" loading="lazy" />
+            <img class="essay__photo" src="assets/cover-004.webp" alt="" loading="lazy" decoding="async" />
           </div>
           <div class="essay__body">
             <span class="essay__meta">No. 004 · Essay · 6 min</span>
@@ -230,7 +248,7 @@
         </a>
         <a class="essay essay--card reveal" href="essays/005-games.html" data-hoverable>
           <div class="essay__cover">
-            <img class="essay__photo" src="assets/cover-005.jpg" alt="" loading="lazy" />
+            <img class="essay__photo" src="assets/cover-005.webp" alt="" loading="lazy" decoding="async" />
           </div>
           <div class="essay__body">
             <span class="essay__meta">No. 005 · 5 min</span>
@@ -241,7 +259,7 @@
         </a>
         <a class="essay essay--card reveal" href="essays/006-on-the-internet.html" data-hoverable>
           <div class="essay__cover">
-            <img class="essay__photo" src="assets/cover-006.jpg" alt="" loading="lazy" />
+            <img class="essay__photo" src="assets/cover-006.webp" alt="" loading="lazy" decoding="async" />
           </div>
           <div class="essay__body">
             <span class="essay__meta">No. 006 · 7 min</span>
@@ -252,7 +270,7 @@
         </a>
         <a class="essay essay--card reveal" href="essays/007-small-tools.html" data-hoverable>
           <div class="essay__cover">
-            <img class="essay__photo" src="assets/cover-007.jpg" alt="" loading="lazy" />
+            <img class="essay__photo" src="assets/cover-007.webp" alt="" loading="lazy" decoding="async" />
           </div>
           <div class="essay__body">
             <span class="essay__meta">No. 007 · 3 min</span>
@@ -275,27 +293,27 @@
       </div>
       <div class="gal">
         <figure class="gal__cell gal__cell--1 reveal" data-hoverable>
-          <div class="gal__ph"><img src="assets/photo1.jpg" alt="" loading="lazy" /></div>
+          <div class="gal__ph"><img src="assets/photo1.webp" alt="" loading="lazy" decoding="async" /></div>
           <figcaption>· 01 ·</figcaption>
         </figure>
         <figure class="gal__cell gal__cell--2 reveal" data-hoverable>
-          <div class="gal__ph"><img src="assets/photo2.jpg" alt="" loading="lazy" /></div>
+          <div class="gal__ph"><img src="assets/photo2.webp" alt="" loading="lazy" decoding="async" /></div>
           <figcaption>· 02 ·</figcaption>
         </figure>
         <figure class="gal__cell gal__cell--3 reveal" data-hoverable>
-          <div class="gal__ph"><img src="assets/photo3.jpg" alt="" loading="lazy" /></div>
+          <div class="gal__ph"><img src="assets/photo3.webp" alt="" loading="lazy" decoding="async" /></div>
           <figcaption>· 03 ·</figcaption>
         </figure>
         <figure class="gal__cell gal__cell--4 reveal" data-hoverable>
-          <div class="gal__ph"><img src="assets/photo4.jpg" alt="" loading="lazy" /></div>
+          <div class="gal__ph"><img src="assets/photo4.webp" alt="" loading="lazy" decoding="async" /></div>
           <figcaption>· 04 ·</figcaption>
         </figure>
         <figure class="gal__cell gal__cell--5 reveal" data-hoverable>
-          <div class="gal__ph"><img src="assets/photo5.jpg" alt="" loading="lazy" /></div>
+          <div class="gal__ph"><img src="assets/photo5.webp" alt="" loading="lazy" decoding="async" /></div>
           <figcaption>· 05 ·</figcaption>
         </figure>
         <figure class="gal__cell gal__cell--6 reveal" data-hoverable>
-          <div class="gal__ph"><img src="assets/shiba.jpg" alt="" loading="lazy" /></div>
+          <div class="gal__ph"><img src="assets/shiba.webp" alt="" loading="lazy" decoding="async" /></div>
           <figcaption>· 06 ·</figcaption>
         </figure>
       </div>
@@ -342,6 +360,6 @@
   </main>
 
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-  <script src="personal-page.js?v=21"></script>
+  <script src="personal-page.js?v=22"></script>
 </body>
 </html>
